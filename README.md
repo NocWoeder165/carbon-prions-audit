@@ -88,11 +88,9 @@ carbon-prions-audit/
 │   ├── optB_*.inp / optB_*.out
 │   └── vdw_*.inp / vdw_*.out
 │
-├── manuscript/                # LaTeX sources and PDF preprint
-│   ├── preprint_priones_carbono_.pdf      (Published v1.0 PDF in Spanish)
+├── manuscript/                # LaTeX manuscript sources (Official preprints hosted on Zenodo)
 │   ├── preprint_priones_de_carbono.tex    (Spanish LaTeX source)
-│   ├── preprint_carbon_prions_EN.tex      (English LaTeX source)
-│   └── preprint_carbon_prions_EN.md       (English Markdown manuscript)
+│   └── preprint_carbon_prions_EN.tex      (English LaTeX source)
 │
 └── scripts/                   # Simulation, orchestration, and analysis scripts
     ├── simulacion_paper1_priones_carbono.py  (Tier 1 MACE-MP-0 + D3 scan)
