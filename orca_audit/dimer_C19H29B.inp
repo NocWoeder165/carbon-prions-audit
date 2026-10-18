@@ -1,0 +1,9 @@
+! UKS wB97X-D3 def2-SVP def2/J TightSCF
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyzfile 0 1 dimer_bora_biadamantyl_relaxed.xyz

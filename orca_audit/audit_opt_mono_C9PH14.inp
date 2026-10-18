@@ -1,0 +1,9 @@
+! UKS B97-3c TightSCF Opt
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyzfile 0 2 monomer_phospha_adamantane_radical.xyz

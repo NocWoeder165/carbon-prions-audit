@@ -1,0 +1,50 @@
+{
+  "entorno": {
+    "torch_version": "2.11.0+cu130",
+    "ase_version": "3.29.0",
+    "mace_version": "0.3.16",
+    "precision": "float64",
+    "dispersion_d3": true
+  },
+  "sistemas": {
+    "C20H30": {
+      "formula": "C20H30",
+      "natoms": 50,
+      "idx1": 0,
+      "idx2": 25,
+      "e_infinito_eV": -293.078885,
+      "d_eq_libre_A": 1.596129,
+      "dE_enlace_eV": -2.576938,
+      "Ea_aparente_eV": 0.251056,
+      "d_max_barrera_A": 2.6,
+      "fmax_libre_eV_A": 0.01645,
+      "converged_libre": true
+    },
+    "C19BH29": {
+      "formula": "C19H29B",
+      "natoms": 49,
+      "idx1": 0,
+      "idx2": 25,
+      "e_infinito_eV": -286.838891,
+      "d_eq_libre_A": 1.634602,
+      "dE_enlace_eV": -1.439126,
+      "Ea_aparente_eV": 0.641944,
+      "d_max_barrera_A": 2.44,
+      "fmax_libre_eV_A": 0.017606,
+      "converged_libre": true
+    },
+    "C19PH29": {
+      "formula": "C19H29P",
+      "natoms": 49,
+      "idx1": 0,
+      "idx2": 25,
+      "e_infinito_eV": -285.367854,
+      "d_eq_libre_A": 1.642584,
+      "dE_enlace_eV": -1.858583,
+      "Ea_aparente_eV": 0.412759,
+      "d_max_barrera_A": 2.44,
+      "fmax_libre_eV_A": 0.01812,
+      "converged_libre": true
+    }
+  }
+}

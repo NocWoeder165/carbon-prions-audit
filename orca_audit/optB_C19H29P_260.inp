@@ -1,0 +1,14 @@
+! UKS wB97X-D3 def2-SVP def2/J RIJCOSX TightSCF NoPop
+
+%pal
+  nprocs 12
+end
+
+%maxcore 2000
+
+%scf
+  BrokenSym 1,1
+  MaxIter 200
+end
+
+* xyzfile 0 1 optB_C19H29P_260.xyz

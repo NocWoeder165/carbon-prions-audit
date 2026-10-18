@@ -1,0 +1,14 @@
+! UKS wB97X-D3 def2-SVP def2/J TightSCF
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+%scf
+  BrokenSym 1,1
+  MaxIter 250
+end
+
+* xyzfile 0 1 crest_opt_C19H29P.xyz

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+ENV/
+
+# ORCA scratch and large binary wavefunctions
+*.gbw
+*.gbw_hs
+*.densities
+*.densitiesinfo
+*.uno
+*.uno.*
+*.unoloc
+*.unso
+*.uco
+*.qro
+*.tmp
+*.scfp
+*.scfr
+
+# OS and Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.bak

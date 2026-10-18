@@ -1,0 +1,40 @@
+sistema,formula,d_objetivo_A,d_medida_A,E_total_eV,dE_rel_eV,Fmax_restringida_eV_A,converged,n_steps
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,3.4,3.4,-293.41232,-0.333435,0.0412,True,2
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,3.24,3.24,-293.402181,-0.323297,0.03697,True,0
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,3.08,3.08,-293.360613,-0.281729,0.03723,True,0
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.92,2.92,-293.292033,-0.213148,0.04852,True,0
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.76,2.76,-293.218187,-0.139302,0.03119,True,4
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.6,2.6,-293.161264,-0.082379,0.02847,True,11
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.44,2.44,-293.193357,-0.114472,0.03771,True,12
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.28,2.28,-293.46904,-0.390156,0.04598,True,12
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,2.12,2.12,-294.04525,-0.966366,0.04907,True,15
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,1.96,1.96,-294.758156,-1.679271,0.04391,True,11
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,1.8,1.8,-295.3574,-2.278516,0.04044,True,11
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,1.64,1.64,-295.63454,-2.555656,0.0426,True,13
+"Intrínseco: 1,1'-Biadamantilo (C20H30)",C20H30,1.48,1.48,-295.539032,-2.460148,0.04749,True,14
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,3.4,3.4,-287.061917,-0.223027,0.04406,True,22
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,3.24,3.24,-287.003847,-0.164956,0.04276,True,2
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,3.08,3.08,-286.958044,-0.119153,0.04806,True,38
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.92,2.92,-286.829058,0.009833,0.04656,True,2
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.76,2.76,-286.676162,0.162729,0.04164,True,13
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.6,2.6,-286.506416,0.332474,0.04847,True,11
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.44,2.44,-286.419973,0.418918,0.04667,True,19
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.28,2.28,-286.563767,0.275124,0.04458,True,17
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,2.12,2.12,-286.994514,-0.155624,0.03603,True,19
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,1.96,1.96,-287.585423,-0.746533,0.04354,True,16
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,1.8,1.8,-288.086068,-1.247177,0.04424,True,15
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,1.64,1.64,-288.272551,-1.43366,0.04965,True,14
+Sustituido con Boro: Bora-biadamantilo neutro (C19BH29),C19H29B,1.48,1.48,-288.072339,-1.233448,0.04869,True,16
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,3.4,3.4,-285.641272,-0.273418,0.03984,True,2
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,3.24,3.24,-285.609218,-0.241364,0.04542,True,1
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,3.08,3.08,-285.547333,-0.179479,0.03814,True,8
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.92,2.92,-285.45329,-0.085436,0.04634,True,10
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.76,2.76,-285.334192,0.033662,0.04572,True,3
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.6,2.6,-285.240438,0.127416,0.02846,True,16
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.44,2.44,-285.228513,0.139341,0.026,True,17
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.28,2.28,-285.437471,-0.069617,0.04961,True,15
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,2.12,2.12,-285.916702,-0.548848,0.04837,True,23
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,1.96,1.96,-286.529196,-1.161342,0.03805,True,17
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,1.8,1.8,-287.040192,-1.672338,0.03701,True,16
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,1.64,1.64,-287.220188,-1.852334,0.03897,True,16
+Sustituido con Fósforo: Fosfa-biadamantilo neutro (C19PH29),C19H29P,1.48,1.48,-286.996966,-1.629111,0.04403,True,16

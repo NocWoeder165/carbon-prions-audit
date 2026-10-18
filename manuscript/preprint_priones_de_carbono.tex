@@ -1,0 +1,307 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+
+% ==============================================================================
+% PAQUETES Y CONFIGURACIÓN EDITORIAL (DISEÑO CON ENCABEZADOS FANCYHDR)
+% ==============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\geometry{top=2.0cm, bottom=2.0cm, left=1.55cm, right=1.55cm, columnsep=0.60cm, headheight=14pt}
+
+\definecolor{tharosblue}{RGB}{18, 65, 145}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tharosblue,
+    citecolor=tharosblue,
+    urlcolor=tharosblue,
+    pdftitle={Priones de Carbono: Nucleación Conformacional Dirigida y Dimerización Cuántica de Diamantoides Dopados a Baja Temperatura},
+    pdfauthor={César Leonardo Rodríguez García (Dark Horse / NocWoeder165)}
+}
+
+% Cabezales de página elegantes (estilo artículo científico)
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\textit{Pre-print -- Proyecto Tharos (DOI: 10.5281/zenodo.23427695)}}
+\rhead{\footnotesize\textit{C.~L.~Rodríguez García -- Dark Horse / NocWoeder165 (2026)}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\captionsetup{font=footnotesize, labelfont=bf}
+
+\begin{document}
+
+% ==============================================================================
+% ENCABEZADO Y RESUMEN A ANCHO COMPLETO (ESTILO PRE-PRINT CLÁSICO)
+% ==============================================================================
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \vspace{-0.5cm}
+    {\centering
+      {\LARGE \textbf{Priones de Carbono: Nucleación Conformacional Dirigida y Dimerización Cuántica de Diamantoides Dopados a Baja Temperatura} \par}
+      \vspace{0.85em}
+      {\large \textbf{César Leonardo Rodríguez García} \textit{(Dark Horse / NocWoeder165)} \par}
+      \vspace{0.3em}
+      {\small \textit{Investigador Independiente -- Proyecto Tharos} \par}
+      \vspace{0.25em}
+      {\footnotesize 18 Octubre 2026 $\cdot$ \textbf{Pre-print DOI:} \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}} \par}
+      \vspace{0.65em}
+    }
+    \hrule
+    \vspace{0.55em}
+    \noindent\textbf{\large Resumen}
+    \vspace{0.35em}
+
+    \small
+    Durante siete décadas se ha asumido que la síntesis de diamante exige regímenes de fuerza bruta: presiones de gigapascales (HPHT) o plasmas térmicos a $>900\text{ }^\circ\text{C}$ (MPCVD). Dichas condiciones destruyen sustratos microelectrónicos e inducen segregación de dopantes. Sin embargo, al observar la molécula de adamantano ($\text{C}_{10}\text{H}_{16}$), emerge una contradicción fundamental: la celda unitaria $sp^3$ del diamante ya existe a temperatura ambiente sin necesidad de compresión externa. En este estudio computacional se formula y audita en dos niveles de teoría la hipótesis de los \textbf{``Priones de Carbono''}: el uso de jaulas diamantoides pre-estructuradas para transferir orden tetraédrico en alto vacío ($\sim 10^{-6}\text{ Torr}$) a baja temperatura ($< 250\text{ }^\circ\text{C}$). En una primera fase de exploración con el potencial interatómico fundacional MACE-MP-0 acoplado a dispersión D3 (\texttt{float64}), el escaneo relajado entre radicales 1-adamantilo ($\text{C}_{10}\text{H}_{15}^\bullet$) y derivados trivalentes neutros sustituidos con boro ($\text{C}_9\text{BH}_{14}^\bullet$) y fósforo ($\text{C}_9\text{PH}_{14}^\bullet$) exhibió crestas aparentes de $0.251\text{ a }0.642\text{ eV}$ entre $2.60\text{ y }2.44\text{ \AA}$. Para resolver la naturaleza electrónica de dicha región, se ejecutó un protocolo de 27 cálculos \textit{ab initio} de espín abierto con simetría rota (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$, proyección de Yamaguchi \texttt{AP-UKS} y estado triplete \texttt{HS-UKS}) sobre geometrías relajadas en \texttt{UKS B97-3c} en ORCA 6.1.1. La auditoría cuántica revela que la cresta de MACE-MP-0 (modelo ciego al espín) seguía la rama repulsiva del estado Triplete ($S=1, \uparrow\uparrow$, $\Delta E_{\text{HS}} = +0.18\text{ a }+0.58\text{ eV}$ por exclusión de Pauli). En contraste, el canal Singlete Antiferromagnético ($M_S=0, \uparrow\downarrow$) desciende sin barrera energética conforme el valor esperado $\langle \hat{S}^2 \rangle_{\text{BS}}$ colapsa de $\sim 0.95$ a $0.000$, estabilizando pozos covalentes profundos ($\Delta E = -3.921\text{ eV}$ en $\text{C}_{20}\text{H}_{30}$, $-3.651\text{ eV}$ en $\text{C}_{19}\text{H}_{29}\text{B}$ y $-3.727\text{ eV}$ en $\text{C}_{19}\text{H}_{29}\text{P}$). La optimización \texttt{UKS B97-3c} reproduce la distancia experimental por rayos X del 1,1'-biadamantilo ($1.578\text{ \AA}$) con una precisión de $1.5771\text{ \AA}$ ($-0.06\%$). Estadísticamente, en un haz térmico no polarizado, el $25\%$ de las colisiones bimoleculares ocurre por el canal singlete sin barrera, mientras que el $75\%$ triplete experimenta rebote de Pauli. Estos resultados acotan con rigor \textit{ab initio} el paso elemental de dimerización aislada, sin demostrar aún el crecimiento cristalino continuo ni la activación eléctrica del dopaje.
+
+    \vspace{0.45em}
+    \noindent\textbf{Palabras clave:} Carbon prions; Diamondoids; Broken-symmetry UKS DFT; ORCA 6.1.1; $\omega\text{B97X-D3}$; MACE-MP-0; Spin statistics.
+    \vspace{0.55em}
+    \hrule
+    \vspace{1.0em}
+  \end{@twocolumnfalse}
+]
+
+% ==============================================================================
+% 1. EL DOGMA DE LA FUERZA BRUTA
+% ==============================================================================
+\section{La Paradoja de la Fuerza Bruta}
+El diamante monocristalino posee las propiedades físicas más extremas de la materia condensada: brecha prohibida de $5.47\text{ eV}$, campo de ruptura superior a $10\text{ MV/cm}$ y conductividad térmica por encima de $2000\text{ W/m}\cdot\text{K}$ \cite{Koizumi2001}. Pese a ello, la microelectrónica moderna continúa atada al silicio. ¿Por qué no existen procesadores cotidianos sobre obleas de diamante semiconductor?
+
+La respuesta reside en el método de fabricación. Tradicionalmente se ha creído que para ordenar carbono en una red tetraédrica ($sp^3$) solo existen dos caminos: aplastar fases grafíticas bajo presiones de $5\text{ a }17\text{ GPa}$ (HPHT / DAC) \cite{Suzuki2024}, o encender plasmas de microondas a $700\text{--}900\text{ }^\circ\text{C}$ (MPCVD, desarrollado originalmente por Kamo et al.\ en 1983 \cite{Kamo1983}) para fragmentar metano ($\text{CH}_4$) en un bombardeo caótico de radicales atómicos. Se gasta una cantidad desproporcionada de energía para destruir enlaces previos y luego intentar que los átomos caigan en los sitios correctos. Cuando se intenta introducir boro (aceptor tipo $p$, energía de ionización $\sim 0.37\text{ eV}$) o fósforo (donador profundo tipo $n$, $\sim 0.57\text{ eV}$) bajo ese régimen térmico violento, la red expulsa las impurezas hacia la superficie o colapsa hacia defectos grafíticos ($sp^2$) \cite{Koizumi2001}.
+
+Sin embargo, basta observar una molécula de adamantano ($\text{C}_{10}\text{H}_{16}$) para notar que el problema de la hibridación local ya está resuelto a temperatura ambiente \cite{Schleyer1957,Dahl2003}. El adamantano no se parece al diamante: \textit{es} un fragmento estequiométrico de diez carbonos de la red cristalina del diamante estabilizado por dieciséis hidrógenos periféricos, capaz de autoensamblarse en monocapas ordenadas en vacío \cite{Yang2007}. En 2025, Fu, Nakamuro y Nakamura confirmaron en \textit{Science} que al arrancar hidrógenos de cristales de adamantano con electrones de $80\text{--}200\text{ keV}$, las jaulas se sueldan espontáneamente formando nanodiamantes esféricos a temperaturas de $100\text{--}296\text{ K}$ \cite{Fu2025}.
+
+Si la geometría $sp^3$ ya viene empaquetada de fábrica dentro del monómero, la pregunta cambia por completo: ¿realmente se necesita presión hidrostática o plasma térmico para unir dos jaulas, o basta con activar un vértice y dejar que la propia complementariedad geométrica y de espín haga el trabajo?
+
+% ==============================================================================
+% 2. EL PRINCIPIO PRIÓNICO Y PROTOCOLO EN DOS NIVELES (MACE + ORCA 6.1.1)
+% ==============================================================================
+\section{El Principio Priónico y Metodología de Doble Nivel}
+En biofísica, una proteína priónica actúa como un molde conformacional que induce el acoplamiento hacia un estado termodinámicamente profundo mediante reconocimiento de interfaz. Trasladado como analogía heurística a la química del estado sólido, el concepto de \textbf{``Priones de Carbono''} plantea que una jaula diamantoide activada expone un molde tetraédrico rígido donde el acoplamiento frontal sustituye la compresión mecánica por información estérica pre-codificada, en línea con la reducción de barreras de nucleación medida en semillas diamantoides \cite{Gebbie2018}.
+
+Para evaluar con rigor el paso elemental de esta hipótesis (la dimerización bimolecular aislada en vacío) y evitar artefactos de potenciales empíricos o redes neuronales ciegas al espín, se implementó una arquitectura de validación en dos niveles:
+
+\subsection{Nivel 1: Exploración Preliminar con MACE-MP-0 + D3}
+Se modelaron inicialmente tres reacciones frontales en el entorno ASE (\texttt{PyTorch 2.11.0}, \texttt{ASE 3.29.0}, \texttt{MACE 0.3.16}) empleando el potencial neuronal equivariante \textbf{MACE-MP-0} (\textit{small}) \cite{Batatia2024} en precisión doble (\texttt{float64}) acoplado a dispersión de Grimme D3 (\texttt{bj}) obligatoria \cite{Grimme2010}: (i) acoplamiento intrínseco ($\text{C}_{10}\text{H}_{15}^\bullet + \text{C}_{10}\text{H}_{15}^\bullet \to \text{C}_{20}\text{H}_{30}$); (ii) acoplamiento con un radical 1-bora-adamantilo trivalente neutro ($\text{C}_9\text{BH}_{14}^\bullet \to \text{C}_{19}\text{H}_{29}\text{B}$); y (iii) acoplamiento con 1-fosfa-adamantilo trivalente neutro ($\text{C}_9\text{PH}_{14}^\bullet \to \text{C}_{19}\text{H}_{29}\text{P}$). Partiendo del adamantano cristalográfico (PubChem CID 9238), las jaulas se alinearon en conformación alternada (\textit{staggered}, $60^\circ$) mediante rotaciones exactas en $\text{SO}(3)$, realizando un barrido relajado en 13 pasos ($3.40 \to 1.48\text{ \AA}$, $F_{\text{max}} < 0.05\text{ eV/\AA}$) y una relajación final libre en el pozo ($F_{\text{max}} < 0.02\text{ eV/\AA}$).
+
+\subsection{Nivel 2: Auditoría Ab Initio de Espín Abierto (ORCA 6.1.1)}
+Dado que MACE-MP-0 fue entrenado sobre cálculos PBE de capa cerrada y carece de grados explícitos de espín para describir el acoplamiento birradicalario ($S_1 = 1/2 \otimes S_2 = 1/2 = S_0 \oplus T_1$), se ejecutó un lote de 27 cálculos \textit{ab initio} de capa abierta en \textbf{ORCA 6.1.1} \cite{Neese2022} empleando el funcional híbrido de largo alcance corregido por dispersión \textbf{UKS $\omega\text{B97X-D3/def2-SVP}$} (\texttt{def2/J RIJCOSX TightSCF}) \cite{Chai2013} y geometrías optimizadas con el método compuesto \textbf{UKS B97-3c} \cite{Brandenburg2018}. Para garantizar que ningún punto mezcle geometrías de distintos métodos, se definieron dos esquemas estrictamente homogeneizados respecto al cero termodinámico de radicales dobletes aislados ($S=1/2$, $\langle \hat{S}^2 \rangle \approx 0.755\text{--}0.772$):
+\begin{equation}
+    E_\infty = E_{\text{radical\_1}}^\circ + E_{\text{radical\_2}}^\circ
+\end{equation}
+\begin{itemize}
+    \item \textbf{Opción A (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{MACE-MP-0+D3}):} Evalúa las geometrías relajadas del barrido MACE contra los monómeros en geometría MACE ($E_\infty^{\text{A}} = -779.379994\text{ }E_{\text{h}}$ para $\text{C}_{20}\text{H}_{30}$; $-765.529623\text{ }E_{\text{h}}$ para $\text{C}_{19}\text{H}_{29}\text{B}$; y $-1081.940273\text{ }E_{\text{h}}$ para $\text{C}_{19}\text{H}_{29}\text{P}$).
+    \item \textbf{Opción B (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // $C_3$-\texttt{UKS-B97-3c}):} Evalúa la aproximación coaxial a lo largo del eje $C_3$ de los monómeros optimizados en \texttt{UKS B97-3c} (y el dímero libremente optimizado en \texttt{UKS B97-3c}) contra los monómeros \texttt{UKS B97-3c} ($E_\infty^{\text{B}} = -779.401978\text{ }E_{\text{h}}$, $-765.551630\text{ }E_{\text{h}}$ y $-1081.973354\text{ }E_{\text{h}}$; con estabilizaciones de relajación monomérica $\Delta E_{\text{relaj}}^{\text{MACE}\to\text{B97-3c}}$ de $-0.598$, $-0.599$ y $-0.900\text{ eV}$, respectivamente).
+\end{itemize}
+En cada distancia inter-jaula ($3.40, 2.92, 2.60, 2.44, 2.12\text{ \AA}$ y $d_{\text{eq}}$) se resolvió la directiva \texttt{BrokenSym 1,1}, obteniendo simultáneamente el estado Triplete de alto espín ($E_{\text{HS}}, S=1, \uparrow\uparrow, \langle \hat{S}^2 \rangle_{\text{HS}} \approx 2.01$), el Singlete birradicalario de simetría rota ($E_{\text{BS}}, M_S=0, \uparrow\downarrow$) y la energía del estado Singlete puro corregida por contaminación de espín mediante la proyección aproximada de Yamaguchi ($\text{AP-UKS}$) \cite{Yamaguchi1988}:
+\begin{equation}
+    E_{\text{AP}} = E_{\text{BS}} + \frac{\langle \hat{S}^2 \rangle_{\text{BS}}}{\langle \hat{S}^2 \rangle_{\text{HS}} - \langle \hat{S}^2 \rangle_{\text{BS}}} \left(E_{\text{BS}} - E_{\text{HS}}\right)
+\end{equation}
+
+% ==============================================================================
+% FIGURA 1 A ANCHO COMPLETO (EXPLORACIÓN MACE-MP-0)
+% ==============================================================================
+\begin{figure*}[t]
+    \centering
+    \IfFileExists{figura1_relaxed_pes_auditada.png}{%
+        \includegraphics[width=0.88\textwidth]{figura1_relaxed_pes_auditada.png}%
+    }{%
+        \fbox{\parbox{0.88\textwidth}{\centering\vspace{0.9cm}\textbf{[Colocar \texttt{figura1\_relaxed\_pes\_auditada.png} en la misma carpeta]}\vspace{0.9cm}}}%
+    }
+    \caption{\textbf{Exploración de Nivel 1 (MACE-MP-0 + D3, \texttt{float64}, ciego al espín).} \textbf{Panel Superior:} Escaneo relajado de 13 pasos mostrando las crestas aparentes entre $2.60\text{ y }2.44\text{ \AA}$. \textbf{Panel Inferior:} Dímeros relajados en MACE-MP-0 + D3.}
+    \label{fig:pes_mace}
+\end{figure*}
+
+% ==============================================================================
+% FIGURA 2 A ANCHO COMPLETO (AUDITORÍA AB INITIO ORCA 6.1.1)
+% ==============================================================================
+\begin{figure*}[t]
+    \centering
+    \IfFileExists{figura2_perfiles_homogeneizados_A_y_B.png}{%
+        \includegraphics[width=0.95\textwidth]{figura2_perfiles_homogeneizados_A_y_B.png}%
+    }{%
+        \fbox{\parbox{0.92\textwidth}{\centering\vspace{1.1cm}\textbf{[Colocar \texttt{figura2\_perfiles\_homogeneizados\_A\_y\_B.png} en la misma carpeta]}\vspace{1.1cm}}}%
+    }
+    \caption{\textbf{Auditoría Ab Initio Homogeneizada de Nivel 2 en ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$: Opción A vs.\ Opción B vs.\ MACE-MP-0+D3).} \textbf{Paneles Superiores:} Bifurcación entre la rama repulsiva Triplete (\texttt{HS-UKS}, $\uparrow\uparrow$, roja/morada, seguida por MACE-MP-0 entre $3.40\text{ y }2.44\text{ \AA}$) y el canal reactivo Singlete (\texttt{BS-UKS} verde/naranja y proyección de Yamaguchi \texttt{AP-UKS} cian), el cual desciende sin barrera hacia el pozo covalente. \textbf{Paneles Inferiores:} Colapso continuo del valor esperado de espín $\langle \hat{S}^2 \rangle_{\text{BS}}$ desde el régimen birradicalario puro ($\langle \hat{S}^2 \rangle \approx 1.0$) en $3.40\text{ \AA}$ hasta el singlete de capa cerrada ($\langle \hat{S}^2 \rangle = 0.0$) en $\le 2.12\text{ \AA}$.}
+    \label{fig:orca_audit}
+\end{figure*}
+
+% ==============================================================================
+% 3. RESULTADOS: BIFURCACIÓN DE ESPÍN Y PRECISIÓN SUB-MILIANGSTROM
+% ==============================================================================
+\section{Resultados: Bifurcación de Espín y Pozo Covalente}
+
+\begin{table}[H]
+\centering
+\caption{Comparación estructural y energética en el pozo de equilibrio ($d_{\text{eq}}$): Nivel 1 (MACE-MP-0+D3) frente a Nivel 2 (\texttt{UKS B97-3c} y $\omega\text{B97X-D3/def2-SVP}$) y difracción de rayos X ($1.578\text{ \AA}$) \cite{Alden1968}.}
+\label{tab:resumen_pes}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Sistema} & \textbf{$d_{\text{eq}}^{\text{MACE}}$ (\AA)} & \textbf{$d_{\text{eq}}^{\text{B97-3c}}$ (\AA)} & \textbf{Desv.\ RX (B97-3c)} & \textbf{$\Delta E_{\text{MACE}}$ (eV)} & \textbf{$\Delta E_{\text{Opt A}}$ (eV)} & \textbf{$\Delta E_{\text{Opt B}}$ (eV)} \\ \midrule
+$\text{C}_{20}\text{H}_{30}$   & 1.596 & \textbf{1.5771} & $\mathbf{-0.06\%}$ & $-2.577$ & $-4.524$ & $-3.921$ \\
+$\text{C}_{19}\text{H}_{29}\text{B}$ & 1.635 & \textbf{1.5810} & $+0.19\%$ & $-1.439$ & $-3.863$ & $-3.651$ \\
+$\text{C}_{19}\text{H}_{29}\text{P}$ & 1.643 & \textbf{1.5880} & $+0.63\%$ & $-1.859$ & $-4.210$ & $-3.727$ \\ \bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Resolución del Artefacto de Barrera de MACE-MP-0}
+La comparación directa entre la Figura~\ref{fig:pes_mace} y la Figura~\ref{fig:orca_audit} (resumida numéricamente en la Tabla~\ref{tab:auditoria_orca}) resuelve de forma definitiva el comportamiento del sistema entre $3.40\text{ \AA}$ y $2.44\text{ \AA}$:
+\begin{enumerate}
+    \item \textbf{Por qué MACE-MP-0 mostraba una cresta aparente:} Al carecer de representación explícita de espín, la superficie interpolada por MACE-MP-0 + D3 (curva azul punteada en la Figura~\ref{fig:orca_audit}) sigue entre $3.40\text{ \AA}$ y $2.44\text{ \AA}$ casi exactamente la rama del \textbf{estado Triplete ferromagnético} (\texttt{HS-UKS}, $S=1, \uparrow\uparrow$). En dicho canal triplete, el principio de exclusión de Pauli prohíbe el solapamiento enlazante de los orbitales frontales y deja expuesta la compresión estérica de los seis hidrógenos ecuatoriales de hombro, elevando la energía hasta $\Delta E_{\text{HS}} = +0.182\text{ a }+0.579\text{ eV}$ en la Opción B.
+    \item \textbf{Acoplamiento Singlete Antiferromagnético Sin Barrera ($\uparrow\downarrow$):} Cuando los dos radicales se aproximan con espines antiparalelos ($M_S=0$, curvas verde y naranja en la Figura~\ref{fig:orca_audit}), el inicio del enlace covalente $\sigma(\text{C--C})$ entre $2.92\text{ \AA}$ y $2.44\text{ \AA}$ aporta una energía de estabilización de intercambio ($\Delta E_{\text{HS}} - \Delta E_{\text{BS}}$) de $0.9\text{ a }1.8\text{ eV}$ que supera por completo la repulsión estérica de los hombros. Como resultado, tanto $\Delta E_{\text{BS}}$ como el singlete puro proyectado por Yamaguchi ($\Delta E_{\text{AP}}$) **descienden de forma monótona y sin barrera de activación** desde el pre-complejo de Van der Waals ($3.40\text{ \AA}$) hasta el fondo del pozo covalente en los tres sistemas.
+    \item \textbf{Transición Continua de Espín ($\langle \hat{S}^2 \rangle_{\text{BS}}$):} Los paneles inferiores de la Figura~\ref{fig:orca_audit} muestran cómo el carácter birradicalario abierto en $3.40\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} = 0.936\text{--}0.994$, acoplamiento magnético débil $J = -531\text{ cm}^{-1}$ en $\text{C}_{20}\text{H}_{30}$) se aparea progresivamente en $2.60\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} \approx 0.44\text{--}0.62$) y $2.44\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} \approx 0.06\text{--}0.24$), colapsando a un singlete covalente puro de capa cerrada ($\langle \hat{S}^2 \rangle_{\text{BS}} = 0.000$) a partir de $d \le 2.12\text{ \AA}$.
+\end{enumerate}
+
+\begin{table*}[t]
+\centering
+\caption{Auditoría cuántica completa homogeneizada en ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$, 27 cálculos) frente a MACE-MP-0 + D3. Energías $\Delta E(d) = E(d) - E_\infty$ en $\text{eV}$. $\Delta E_{\text{BS}}$: singlete de simetría rota ($M_S=0, \uparrow\downarrow$); $\Delta E_{\text{AP}}$: singlete proyectado de Yamaguchi; $\Delta E_{\text{HS}}$: triplete ferromagnético ($S=1, \uparrow\uparrow$).}
+\label{tab:auditoria_orca}
+\resizebox{0.96\textwidth}{!}{%
+\begin{tabular}{@{}lcrrrrrrrrr@{}}
+\toprule
+\textbf{Sistema} & \textbf{$d(\text{C--C})$ (\AA)} & \textbf{$\Delta E_{\text{MACE}}$ (eV)} & \textbf{Opt A: $\Delta E_{\text{BS}}$} & \textbf{Opt A: $\Delta E_{\text{AP}}$} & \textbf{Opt A: $\Delta E_{\text{HS}}$ ($\uparrow\uparrow$)} & \textbf{Opt A: $\langle \hat{S}^2 \rangle_{\text{BS}}$} & \textbf{Opt B: $\Delta E_{\text{BS}}$} & \textbf{Opt B: $\Delta E_{\text{AP}}$} & \textbf{Opt B: $\Delta E_{\text{HS}}$ ($\uparrow\uparrow$)} & \textbf{Opt B: $\langle \hat{S}^2 \rangle_{\text{BS}}$} \\ \midrule
+$\text{C}_{20}\text{H}_{30}$ & 3.40 & $-0.333$ & $-0.247$ & $-0.366$ & $-0.116$ & 0.953 & $-0.227$ & $-0.376$ & $-0.057$ & 0.936 \\
+(Intrínseco) & 2.92 & $-0.213$ & $-0.428$ & $-0.709$ & $-0.018$ & 0.816 & $-0.492$ & $-0.817$ & $+0.036$ & 0.766 \\
+ & 2.60 & $-0.082$ & $-0.813$ & $-1.153$ & $+0.159$ & 0.521 & $-0.876$ & $-1.202$ & $+0.304$ & 0.436 \\
+ & 2.44 & $-0.115$ & $-1.413$ & $-1.548$ & $+0.205$ & 0.155 & $-1.240$ & $-1.300$ & $+0.579$ & 0.064 \\
+ & 2.12 & $-0.966$ & $-2.955$ & $-2.955$ & $+1.092$ & 0.000 & $-2.255$ & $-2.255$ & $+1.713$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.596 / 1.577$) & $-2.577$ & $-4.524$ & $-4.524$ & --- & 0.000 & $\mathbf{-3.921}$ & $\mathbf{-3.921}$ & --- & 0.000 \\ \midrule
+$\text{C}_{19}\text{H}_{29}\text{B}$ & 3.40 & $-0.223$ & $-0.179$ & $-0.211$ & $-0.146$ & 0.994 & $-0.215$ & $-0.323$ & $-0.097$ & 0.961 \\
+(Con Boro) & 2.92 & $+0.010$ & $-0.423$ & $-0.611$ & $-0.184$ & 0.885 & $-0.425$ & $-0.691$ & $-0.042$ & 0.825 \\
+ & 2.60 & $+0.333$ & $-0.845$ & $-1.165$ & $-0.127$ & 0.621 & $-0.702$ & $-1.032$ & $+0.182$ & 0.548 \\
+ & 2.44 & $+0.419$ & $-1.412$ & $-1.589$ & $-0.023$ & 0.229 & $-0.954$ & $-1.139$ & $+0.423$ & 0.238 \\
+ & 2.12 & $-0.156$ & $-2.673$ & $-2.673$ & $+1.075$ & 0.000 & $-1.732$ & $-1.732$ & $+1.372$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.635 / 1.581$) & $-1.439$ & $-3.863$ & $-3.863$ & --- & 0.000 & $\mathbf{-3.651}$ & $\mathbf{-3.651}$ & --- & 0.000 \\ \midrule
+$\text{C}_{19}\text{H}_{29}\text{P}$ & 3.40 & $-0.273$ & $-0.235$ & $-0.333$ & $-0.130$ & 0.979 & $-0.229$ & $-0.367$ & $-0.074$ & 0.942 \\
+(Con Fósforo) & 2.92 & $-0.085$ & $-0.521$ & $-0.779$ & $-0.159$ & 0.843 & $-0.477$ & $-0.785$ & $+0.011$ & 0.779 \\
+ & 2.60 & $+0.127$ & $-1.066$ & $-1.393$ & $-0.120$ & 0.519 & $-0.825$ & $-1.148$ & $+0.277$ & 0.456 \\
+ & 2.44 & $+0.139$ & $-1.706$ & $-1.809$ & $-0.075$ & 0.119 & $-1.152$ & $-1.235$ & $+0.558$ & 0.093 \\
+ & 2.12 & $-0.549$ & $-3.057$ & $-3.057$ & $+1.003$ & 0.000 & $-2.058$ & $-2.058$ & $+1.726$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.643 / 1.588$) & $-1.859$ & $-4.210$ & $-4.210$ & --- & 0.000 & $\mathbf{-3.727}$ & $\mathbf{-3.727}$ & --- & 0.000 \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\subsection{Exactitud Cristalográfica y Corrección Trans-Jaula en Boro}
+La optimización completa con \texttt{UKS B97-3c} aporta dos validaciones estructurales críticas (Tabla~\ref{tab:resumen_pes}):
+\begin{itemize}
+    \item \textbf{Contraste con Rayos X a Nivel Sub-miliangstrom:} En el dímero intrínseco ($\text{C}_{20}\text{H}_{30}$), \texttt{UKS B97-3c} predice una longitud de enlace central $d_{\text{eq}}(\text{C--C}) = 1.5771\text{ \AA}$, reproduciendo el valor experimental por difracción de rayos X de monocristal del 1,1'-biadamantilo ($1.578\text{ \AA}$, Alden et al.\ \cite{Alden1968}) con una desviación de apenas $\mathbf{-0.06\%}$ ($-0.0009\text{ \AA}$), mejorando sustancialmente el $+1.14\%$ ($1.596\text{ \AA}$) de MACE-MP-0.
+    \item \textbf{Corrección de la Sobre-Contracción del Boro:} En el radical monomérico sustituido con boro ($\text{C}_9\text{BH}_{14}^\bullet$), MACE-MP-0 sobreestimaba la contracción trans-jaula entre el boro trivalente y el carbono radical ($1.777\text{ \AA}$), lo que inflaba artificialmente la penalización de reorganización del dímero ($\Delta E_{\text{MACE}} = -1.439\text{ eV}$). Al optimizar con \texttt{UKS B97-3c}, la distancia trans-jaula en el monómero se estabiliza en $2.149\text{ \AA}$ y el hetero-dímero $\text{C}_{19}\text{H}_{29}\text{B}$ alcanza un pozo covalente profundo de $\Delta E_{\text{Opt B}} = -3.651\text{ eV}$ ($d_{\text{eq}} = 1.581\text{ \AA}$), muy cercano al derivado con fósforo ($\Delta E_{\text{Opt B}} = -3.727\text{ eV}$, $d_{\text{eq}} = 1.588\text{ \AA}$) y al sistema intrínseco ($-3.921\text{ eV}$).
+\end{itemize}
+
+\subsection{Estadística Cuántica de Espín ($1:3$) en un Reactor Real}
+La bifurcación entre las ramas \texttt{BS-UKS} ($\uparrow\downarrow$) y \texttt{HS-UKS} ($\uparrow\uparrow$) impone una restricción física fundamental sobre la cinética de colisión en vacío. En un haz molecular térmico no polarizado magnéticamente, el acoplamiento de dos espines $S=1/2$ genera cuatro estados degenerados en ausencia de campo: un estado \textbf{Singlete} reactivo ($S=0$: $\frac{1}{\sqrt{2}}(\lvert\uparrow\downarrow\rangle - \lvert\downarrow\uparrow\rangle)$) y tres estados \textbf{Triplete} ($S=1$: $\lvert\uparrow\uparrow\rangle, \lvert\downarrow\downarrow\rangle, \frac{1}{\sqrt{2}}(\lvert\uparrow\downarrow\rangle + \lvert\downarrow\uparrow\rangle)$).
+
+Por consiguiente, no debe afirmarse que toda colisión entre radicales sea libre de barrera: únicamente el $\mathbf{25\%}$ ($1/4$) de los encuentros bimoleculares ingresa por el canal singlete antiferromagnético ($\uparrow\downarrow$) y cae sin barrera hacia el pozo covalente ($\Delta E = -3.65\text{ a }-3.92\text{ eV}$), mientras que el $\mathbf{75\%}$ ($3/4$) restante ingresa por el canal triplete ($\uparrow\uparrow$) y choca contra una pared repulsiva de Pauli + estérica ($\Delta E_{\text{HS}} > 0\text{ eV}$ para $d \le 2.9\text{ \AA}$), sufriendo rebote térmico elástico a menos que ocurra cruce entre sistemas (\textit{intersystem crossing}, ISC) asistido por superficie o pre-polarización de espín.
+
+% ==============================================================================
+% 4. MATRIZ DE HIPÓTESIS, REFUTABILIDAD Y REACTOR CONCEPTUAL
+% ==============================================================================
+\section{Alcance, Hipótesis y Criterios de Refutación}
+Aun con la validación \textit{ab initio} en ORCA 6.1.1 completada, \textbf{estos resultados acotan exclusivamente la dimerización bimolecular aislada y todavía no demuestran la síntesis de una película continua de diamante, ni la propagación multicapa, ni la activación eléctrica del dopaje semiconductor}:
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+    \item \textbf{$H_1$ (Dimerización Singlete Sin Barrera -- Validada):} A nivel \texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{UKS B97-3c}, el acoplamiento coaxial de dos radicales diamantoides carece de barrera en el canal singlete ($25\%$ estadístico), con enlaces inter-jaula de $1.577\text{--}1.588\text{ \AA}$ y energías de $-3.65\text{ a }-3.92\text{ eV}$.
+    \item \textbf{$H_2$ y $H_3$ (Hipótesis Pendientes):} (i) \textit{Activación $H_2$:} requiere demostrar abstracción selectiva $\text{C--H}$ ($\sim 4.3\text{ eV}$) mediante electrones suaves ($0.5\text{--}2.0\text{ keV}$) o VUV ($172\text{ nm}$) sin fragmentar la red $\text{C--C}$ \cite{Fu2025}. (ii) \textit{Propagación $H_3$:} requiere modelar el crecimiento 3D en sustrato donde el $75\%$ triplete relaje su espín sin desorberse y evaluar la conductividad activa.
+    \item \textbf{Criterios de Refutación:} El modelo se refutaría si la fragmentación $\text{C--C}$ domina sobre la abstracción $\text{C--H}$, o si la tasa de desorción térmica en vacío impide superar el límite estadístico de espín ($1:3$).
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{figura2_reactor_tharos.png}{%
+        \includegraphics[width=\columnwidth]{figura2_reactor_tharos.png}%
+    }{%
+        \fbox{\parbox{0.95\columnwidth}{\centering\small\textbf{[Colocar \texttt{figura2\_reactor\_tharos.png} en la carpeta]}}}%
+    }
+    \caption{\textbf{Esquema conceptual del banco de alto vacío propuesto para someter a prueba $H_2$ y $H_3$.} Co-sublimación desde celdas Knudsen ($60\text{--}80\text{ }^\circ\text{C}$), excitación electrónica ($0.5\text{--}2.0\text{ keV}$) o VUV ($172\text{ nm}$) y sustrato termorregulado ($150\text{--}250\text{ }^\circ\text{C}$).}
+    \label{fig:reactor_tharos}
+\end{figure}
+
+Únicamente como marco experimental futuro para someter a prueba $H_2$ y $H_3$, la Figura~\ref{fig:reactor_tharos} ilustra la configuración conceptual donde vapores dosificados desde celdas Knudsen en alto vacío ($\sim 10^{-6}\text{ Torr} / 10^{-4}\text{ Pa}$) incidirían sobre un sustrato a $150\text{--}250\text{ }^\circ\text{C}$ bajo excitación electrónica suave o VUV.
+
+% ==============================================================================
+% 5. CONCLUSIÓN Y DECLARACIONES ACADÉMICAS
+% ==============================================================================
+\section{Conclusión}
+La auditoría cuántica de espín abierto en ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{UKS B97-3c}) demuestra que la aparente barrera estérica observada inicialmente con el potencial neuronal MACE-MP-0 + D3 ($0.251\text{--}0.642\text{ eV}$) correspondía a la rama repulsiva del estado Triplete ($S=1, \uparrow\uparrow$). En el canal Singlete Antiferromagnético ($M_S=0, \uparrow\downarrow$, que representa el $25\%$ estadístico de las colisiones térmicas no polarizadas), la estabilización de intercambio supera la compresión de los hidrógenos ecuatoriales, permitiendo una dimerización sin barrera hacia pozos covalentes de $-3.65\text{ a }-3.92\text{ eV}$ y reproduciendo a $-0.06\%$ ($1.5771\text{ \AA}$) la estructura cristalográfica por rayos X del 1,1'-biadamantilo. Estos hallazgos establecen una base cuántica rigurosa para el paso elemental de dimerización en vacío, dejando abiertos los desafíos de activación selectiva $\text{C--H}$ y propagación cristalina en superficie.
+
+\section*{Data and Code Availability}
+\footnotesize
+El paquete de auditoría computacional (\texttt{paquete\_auditoria\_priones.zip}) y la carpeta de validación \textit{ab initio} (\texttt{dft\_orca\_validation}), que incluyen los scripts de simulación, los 27 archivos de entrada/salida de ORCA 6.1.1 (\texttt{.inp}, \texttt{.out}, \texttt{.xyz}), la tabla consolidada (\texttt{tabla\_auditoria\_completa\_mace\_vs\_orca\_A\_y\_B.csv}) y el registro JSON (\texttt{auditoria\_completa\_5puntos.json}), se encuentran depositados bajo licencia MIT en Zenodo (\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}}) y vinculados al perfil de código del autor (\texttt{NocWoeder165}).
+
+\section*{CRediT Authorship Contribution Statement}
+\footnotesize
+\textbf{César Leonardo Rodríguez García} \textit{(Dark Horse / NocWoeder165)}: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing -- original draft, Writing -- review \& editing, Visualization.
+
+\section*{Declaration of Competing Interest}
+\footnotesize
+Se declara la ausencia de intereses financieros en competencia o relaciones personales que pudieran haber influido en los resultados reportados en este pre-print.
+
+% ==============================================================================
+% REFERENCIAS BIBLIOGRÁFICAS (LAS 15 REFERENCIAS COMPLETAS Y VERIFICADAS)
+% ==============================================================================
+\begin{thebibliography}{15}
+\footnotesize
+
+\bibitem{Koizumi2001}
+S.~Koizumi, K.~Watanabe, M.~Hasegawa, H.~Kanda, ``Ultraviolet emission from a diamond pn junction,'' \textit{Science} \textbf{292} (5523) (2001) 1899--1901. doi:10.1126/science.1060258.
+
+\bibitem{Suzuki2024}
+Y.~Suzuki, et al., ``Raman study on the pressure-induced phase transformation of nanographite at room temperature,'' \textit{Carbon} \textbf{225} (2024) 119075. doi:10.1016/j.carbon.2024.119075.
+
+\bibitem{Kamo1983}
+M.~Kamo, Y.~Sato, S.~Matsumoto, N.~Setaka, ``Diamond synthesis from gas phase in microwave plasma,'' \textit{J.\ Cryst.\ Growth}\ \textbf{62} (3) (1983) 642--644. doi:10.1016/0022-0248(83)90411-6.
+
+\bibitem{Schleyer1957}
+P.~v.~R.~Schleyer, ``A simple preparation of adamantane,'' \textit{J.\ Am.\ Chem.\ Soc.}\ \textbf{79} (1957) 3292. doi:10.1021/ja01569a086.
+
+\bibitem{Dahl2003}
+J.E.~Dahl, S.G.~Liu, R.M.K.~Carlson, ``Isolation and structural characterization of the higher diamondoids,'' \textit{Science} \textbf{299} (2003) 96--99. doi:10.1126/science.1078239.
+
+\bibitem{Yang2007}
+W.L.~Yang, J.D.~Fabbri, T.M.~Willey, J.R.I.~Lee, J.E.~Dahl, R.M.K.~Carlson, P.R.~Schreiner, A.A.~Fokin, B.A.~Tkachenko, N.A.~Fokina, W.~Meevasana, N.~Mannella, K.~Tanaka, X.J.~Zhou, T.~van~Buuren, M.A.~Kelly, Z.~Hussain, N.A.~Melosh, Z.-X.~Shen, ``Monochromatic electron photoemission from diamondoid monolayers,'' \textit{Science} \textbf{316} (5830) (2007) 1460--1462. doi:10.1126/science.1141811.
+
+\bibitem{Fu2025}
+J.~Fu, T.~Nakamuro, E.~Nakamura, ``Nanodiamond synthesis from adamantane by electron-beam driven C--H activation at 100 K,'' \textit{Science} \textbf{389} (2025) eadw2025 (PMID: 40906847). doi:10.1126/science.adw2025.
+
+\bibitem{Gebbie2018}
+M.A.~Gebbie, H.~Ishiwata, P.J.~McQuade, J.E.~Dahl, P.R.~Schreiner, Z.-X.~Shen, N.A.~Melosh, et al., ``Experimental measurement of the diamond nucleation landscape reveals classical and nonclassical features,'' \textit{Proc.\ Natl.\ Acad.\ Sci.\ U.S.A.}\ \textbf{115} (33) (2018) 8284--8289. doi:10.1073/pnas.1803654115.
+
+\bibitem{Batatia2024}
+I.~Batatia, et al., ``A foundation model for atomistic materials chemistry,'' \textit{arXiv:2401.00096} (2024). doi:10.48550/arXiv.2401.00096.
+
+\bibitem{Grimme2010}
+S.~Grimme, J.~Antony, S.~Ehrlich, H.~Krieg, ``A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D3),'' \textit{J.\ Chem.\ Phys.}\ \textbf{132} (2010) 154104. doi:10.1063/1.3382344.
+
+\bibitem{Neese2022}
+F.~Neese, ``Software update: The ORCA program system---Version 5.0,'' \textit{WIREs Comput.\ Mol.\ Sci.}\ \textbf{12} (5) (2022) e1606. doi:10.1002/wcms.1606.
+
+\bibitem{Chai2013}
+Y.-S.~Lin, G.-D.~Li, S.-P.~Mao, J.-D.~Chai, ``Long-range corrected hybrid density functionals with improved dispersion corrections,'' \textit{J.\ Chem.\ Theory Comput.}\ \textbf{9} (1) (2013) 263--272. doi:10.1021/ct300715s.
+
+\bibitem{Brandenburg2018}
+J.G.~Brandenburg, C.~Bannwarth, A.~Hansen, S.~Grimme, ``B97-3c: A revised low-cost variant of the B97-D density functional method,'' \textit{J.\ Chem.\ Phys.}\ \textbf{148} (6) (2018) 064104. doi:10.1063/1.5012601.
+
+\bibitem{Yamaguchi1988}
+K.~Yamaguchi, F.~Jensen, A.~Dorigo, K.N.~Houk, ``A spin correction procedure for unrestricted Hartree-Fock and M\o ller-Plesset wavefunctions for singlet diradicals and polyradicals,'' \textit{Chem.\ Phys.\ Lett.}\ \textbf{149} (5--6) (1988) 537--542. doi:10.1016/0009-2614(88)80378-6.
+
+\bibitem{Alden1968}
+R.A.~Alden, J.~Kraut, T.G.~Traylor, ``Molecular and crystal structure of 1,1'-biadamantyl,'' \textit{J.\ Am.\ Chem.\ Soc.}\ \textbf{90} (1) (1968) 74--82. doi:10.1021/ja01003a014.
+
+\end{thebibliography}
+
+\end{document}

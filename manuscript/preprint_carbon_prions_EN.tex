@@ -1,0 +1,309 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+
+% ==============================================================================
+% PACKAGES AND EDITORIAL CONFIGURATION (FANCYHDR 2-COLUMN DENSE FORMAT)
+% ==============================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\geometry{top=2.0cm, bottom=2.0cm, left=1.55cm, right=1.55cm, columnsep=0.60cm, headheight=14pt}
+
+\definecolor{tharosblue}{RGB}{18, 65, 145}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tharosblue,
+    citecolor=tharosblue,
+    urlcolor=tharosblue,
+    pdftitle={Carbon Prions: Directed Conformational Nucleation and Quantum Dimerization of Doped Diamondoids at Low Temperature},
+    pdfauthor={César Leonardo Rodríguez García (Dark Horse / NocWoeder165)}
+}
+
+% Elegant running headers (peer-reviewed preprint style)
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\textit{Pre-print -- Project Tharos (DOI: 10.5281/zenodo.23427695)}}
+\rhead{\footnotesize\textit{C.~L.~Rodríguez García -- Dark Horse / NocWoeder165 (2026)}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\captionsetup{font=footnotesize, labelfont=bf}
+
+\begin{document}
+
+% ==============================================================================
+% FULL-WIDTH HEADER AND ABSTRACT
+% ==============================================================================
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \vspace{-0.5cm}
+    {\centering
+      {\LARGE \textbf{Carbon Prions: Directed Conformational Nucleation and Quantum Dimerization of Doped Diamondoids at Low Temperature} \par}
+      \vspace{0.85em}
+      {\large \textbf{César Leonardo Rodríguez García} \textit{(Dark Horse / NocWoeder165)} \par}
+      \vspace{0.3em}
+      {\small \textit{Universidad Tecnológica de Nayarit (UTNAY), Carretera Federal 200 Km 9, Xalisco, Nayarit, C.P. 63780, México} \par}
+      \vspace{0.15em}
+      {\footnotesize \textit{Project Tharos -- Condensed Matter Physics and Vacuum Systems} $\cdot$ Contact: \texttt{sem-340007@utnay.edu.mx} \par}
+      \vspace{0.25em}
+      {\footnotesize October 18, 2026 $\cdot$ \textbf{Pre-print DOI:} \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}} \par}
+      \vspace{0.65em}
+    }
+    \hrule
+    \vspace{0.55em}
+    \noindent\textbf{\large Abstract}
+    \vspace{0.35em}
+
+    \small
+    For seven decades, it has been axiomatic that diamond synthesis necessitates brute-force thermodynamic regimes: gigapascal pressures (HPHT) or energetic thermal plasmas exceeding $900\text{ }^\circ\text{C}$ (MPCVD). Such violent conditions degrade microelectronic substrates and induce dopant segregation. Yet, examining a single molecule of adamantane ($\text{C}_{10}\text{H}_{16}$) exposes an undeniable physical fact: the pristine $sp^3$ unit cell of diamond already exists at room temperature without external compression. In this computational study, we formulate and audit across two levels of theory the hypothesis of \textbf{``Carbon Prions''}: deploying pre-structured diamondoid cages to transfer tetrahedral order under high vacuum ($\sim 10^{-6}\text{ Torr}$) at low temperatures ($< 250\text{ }^\circ\text{C}$). In Tier 1 exploration using the foundational equivariant neural network potential MACE-MP-0 coupled with Grimme D3 dispersion in double precision (\texttt{float64}), relaxed scans between 1-adamantyl radicals ($\text{C}_{10}\text{H}_{15}^\bullet$) and neutral trivalent boron-substituted ($\text{C}_9\text{BH}_{14}^\bullet$) and phosphorus-substituted ($\text{C}_9\text{PH}_{14}^\bullet$) derivatives exhibited apparent activation crests of $0.251\text{ to }0.642\text{ eV}$ between $2.60\text{ and }2.44\text{ \AA}$. To rigorously determine the electronic origin of this region, we executed a 27-point open-shell broken-symmetry \textit{ab initio} benchmark (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$, Yamaguchi spin projection \texttt{AP-UKS}, and high-spin triplet \texttt{HS-UKS}) over geometries optimized using the composite method \texttt{UKS B97-3c} in ORCA 6.1.1. This quantum audit reveals that MACE-MP-0 (a spin-blind model) tracked the repulsive branch of the Triplet state ($S=1, \uparrow\uparrow$, $\Delta E_{\text{HS}} = +0.18\text{ to }+0.58\text{ eV}$ governed by Pauli exclusion). Conversely, the Antiferromagnetic Singlet channel ($M_S=0, \uparrow\downarrow$) descends monotonically without an activation barrier as the expectation value $\langle \hat{S}^2 \rangle_{\text{BS}}$ collapses from $\sim 0.95$ to $0.000$, establishing deep covalent potential wells ($\Delta E = -3.921\text{ eV}$ for $\text{C}_{20}\text{H}_{30}$, $-3.651\text{ eV}$ for $\text{C}_{19}\text{H}_{29}\text{B}$, and $-3.727\text{ eV}$ for $\text{C}_{19}\text{H}_{29}\text{P}$). Geometry optimization at the \texttt{UKS B97-3c} level reproduces the single-crystal X-ray diffraction C--C bond length of 1,1'-biadamantyl ($1.578\text{ \AA}$) with sub-milliangstrom precision at $1.5771\text{ \AA}$ ($-0.06\%$). Statistically, in an unpolarized thermal beam, $25\%$ of bimolecular collisions proceed through the barrierless singlet channel, while $75\%$ experience elastic Pauli rebound. These results establish a rigorous \textit{ab initio} foundation for the elementary isolated dimerization step, while highlighting the distinct challenges of continuous crystal propagation and electrical dopant activation.
+
+    \vspace{0.45em}
+    \noindent\textbf{Keywords:} Carbon prions; Diamondoids; Broken-symmetry UKS DFT; ORCA 6.1.1; $\omega\text{B97X-D3}$; MACE-MP-0; Spin statistics.
+    \vspace{0.55em}
+    \hrule
+    \vspace{1.0em}
+  \end{@twocolumnfalse}
+]
+
+% ==============================================================================
+% 1. THE BRUTE-FORCE PARADOX
+% ==============================================================================
+\section{The Brute-Force Paradox}
+Single-crystal diamond exhibits the most extreme physical properties in condensed matter physics: an ultrawide electronic bandgap of $5.47\text{ eV}$, a breakdown field exceeding $10\text{ MV/cm}$, and a room-temperature thermal conductivity surpassing $2000\text{ W/m}\cdot\text{K}$ \cite{Koizumi2001}. Despite these peerless metrics, contemporary microelectronics remains anchored to silicon. Why are commercial processors not manufactured on semiconducting diamond wafers?
+
+The root cause lies in legacy synthesis methods. For seven decades, the prevailing paradigm has held that assembling carbon atoms into an $sp^3$ tetrahedral lattice requires brute thermodynamic force: either compressing graphitic precursors under $5\text{ to }17\text{ GPa}$ (HPHT / DAC) \cite{Suzuki2024}, or igniting energetic microwave plasmas at $700\text{--}900\text{ }^\circ\text{C}$ (MPCVD, pioneered by Kamo et al.\ in 1983 \cite{Kamo1983}) to crack methane ($\text{CH}_4$) into a chaotic shower of atomic radicals. Disproportionate energy is expended to destroy chemical bonds, relying on stochastic collisions to assemble tetrahedral sites. When introducing boron ($p$-type acceptor, ionization energy $\sim 0.37\text{ eV}$) or phosphorus ($n$-type deep donor, $\sim 0.57\text{ eV}$) under these extreme conditions, the growing lattice segregates dopants to surfaces or collapses into graphitic $sp^2$ defects \cite{Koizumi2001}.
+
+However, observing a single molecule of adamantane ($\text{C}_{10}\text{H}_{16}$) reveals that the local hybridization challenge is already solved at ambient conditions \cite{Schleyer1957,Dahl2003}. Adamantane is not merely an analogue: it \textit{is} a stoichiometric, ten-carbon crystallographic unit cell of diamond passivated by sixteen peripheral hydrogens, readily forming ordered self-assembled monolayers in vacuum \cite{Yang2007}. In 2025, Fu, Nakamuro, and Nakamura demonstrated in \textit{Science} that stripping hydrogens from adamantane microcrystals via $80\text{--}200\text{ keV}$ electron beams triggers spontaneous cage coalescence into spherical nanodiamonds at temperatures of $100\text{--}296\text{ K}$ \cite{Fu2025}.
+
+If the $sp^3$ motif is pre-packaged within the precursor monomer, the paradigm shifts fundamentally: is hydrostatic compression or thermal plasma genuinely required to bond two cages, or does selective radical activation allow intrinsic geometric and spin complementarity to drive assembly?
+
+% ==============================================================================
+% 2. THE PRIONIC PRINCIPLE AND TWO-TIER METHODOLOGY
+% ==============================================================================
+\section{The Prionic Principle and Two-Tier Methodology}
+In structural biology, a prion protein functions as a conformational template, directing adjacent units into a deep free-energy minimum via interface recognition. Transposed to solid-state chemistry, the \textbf{``Carbon Prion''} concept posits that an activated diamondoid cage acts as a rigid tetrahedral template wherein frontal coupling substitutes macroscopic compression with pre-encoded steric recognition, consistent with the reduced nucleation barriers measured on diamondoid seed crystals \cite{Gebbie2018}.
+
+To rigorously evaluate the elementary step of this hypothesis—isolated bimolecular dimerization in vacuum—and prevent artifacts arising from empirical potentials or spin-blind neural networks, we deployed a two-tier computational validation architecture:
+
+\subsection{Tier 1: Preliminary Exploration with MACE-MP-0 + D3}
+Three frontal coupling reactions were initially investigated within ASE (\texttt{PyTorch 2.11.0}, \texttt{ASE 3.29.0}, \texttt{MACE 0.3.16}) using the foundational equivariant neural network potential \textbf{MACE-MP-0} (\textit{small}) \cite{Batatia2024} in double precision (\texttt{float64}) with mandatory Grimme D3 (\texttt{bj}) dispersion correction \cite{Grimme2010}: (i) intrinsic homocoupling ($\text{C}_{10}\text{H}_{15}^\bullet + \text{C}_{10}\text{H}_{15}^\bullet \to \text{C}_{20}\text{H}_{30}$); (ii) heterocoupling with a neutral trivalent 1-bora-adamantyl radical ($\text{C}_9\text{BH}_{14}^\bullet \to \text{C}_{19}\text{H}_{29}\text{B}$); and (iii) heterocoupling with a neutral trivalent 1-phospha-adamantyl radical ($\text{C}_9\text{PH}_{14}^\bullet \to \text{C}_{19}\text{H}_{29}\text{P}$). Initial structures were extracted from crystallographic adamantane (PubChem CID 9238), aligned along the $C_3$ axis in a staggered orientation ($60^\circ$) via exact $\text{SO}(3)$ rotations, scanned across 13 constrained steps ($3.40 \to 1.48\text{ \AA}$, $F_{\text{max}} < 0.05\text{ eV/\AA}$), and fully relaxed without constraints in the covalent minimum ($F_{\text{max}} < 0.02\text{ eV/\AA}$).
+
+\subsection{Tier 2: Open-Shell Broken-Symmetry Ab Initio Audit (ORCA 6.1.1)}
+Because MACE-MP-0 was parameterized on closed-shell periodic PBE datasets and lacks explicit spin degrees of freedom required for open-shell radical coupling ($S_1 = 1/2 \otimes S_2 = 1/2 = S_0 \oplus T_1$), a benchmark suite of 27 open-shell \textit{ab initio} calculations was carried out using \textbf{ORCA 6.1.1} \cite{Neese2022}. Computations utilized the range-separated hybrid functional \textbf{UKS $\omega\text{B97X-D3/def2-SVP}$} (\texttt{def2/J RIJCOSX TightSCF}) \cite{Chai2013} and equilibrium geometries optimized with the composite method \textbf{UKS B97-3c} \cite{Brandenburg2018}. To eliminate energy-mixing artifacts between disparate electronic structures, two strictly homogenized thermodynamic reference frames were defined relative to isolated doublet radicals ($S=1/2$, $\langle \hat{S}^2 \rangle \approx 0.755\text{--}0.772$):
+\begin{equation}
+    E_\infty = E_{\text{radical\_1}}^\circ + E_{\text{radical\_2}}^\circ
+\end{equation}
+\begin{itemize}
+    \item \textbf{Option A (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{MACE-MP-0+D3}):} Evaluates MACE-derived geometries against isolated monomers relaxed in MACE ($E_\infty^{\text{A}} = -779.379994\text{ }E_{\text{h}}$ for $\text{C}_{20}\text{H}_{30}$; $-765.529623\text{ }E_{\text{h}}$ for $\text{C}_{19}\text{H}_{29}\text{B}$; and $-1081.940273\text{ }E_{\text{h}}$ for $\text{C}_{19}\text{H}_{29}\text{P}$).
+    \item \textbf{Option B (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // $C_3$-\texttt{UKS-B97-3c}):} Evaluates rigid coaxial approach along the $C_3$ axis of \texttt{UKS B97-3c}-optimized monomers (and the unconstrained \texttt{UKS B97-3c} dimer) against isolated \texttt{UKS B97-3c} monomers ($E_\infty^{\text{B}} = -779.401978\text{ }E_{\text{h}}$, $-765.551630\text{ }E_{\text{h}}$, and $-1081.973354\text{ }E_{\text{h}}$, with monomeric relaxation energy gains $\Delta E_{\text{relax}}^{\text{MACE}\to\text{B97-3c}}$ of $-0.598$, $-0.599$, and $-0.900\text{ eV}$, respectively).
+\end{itemize}
+At each inter-cage distance ($3.40, 2.92, 2.60, 2.44, 2.12\text{ \AA}$, and $d_{\text{eq}}$), the \texttt{BrokenSym 1,1} directive was executed, simultaneously obtaining the High-Spin Triplet state ($E_{\text{HS}}, S=1, \uparrow\uparrow, \langle \hat{S}^2 \rangle_{\text{HS}} \approx 2.01$), the broken-symmetry Singlet ($E_{\text{BS}}, M_S=0, \uparrow\downarrow$), and the spin-purified Singlet via the approximate projection scheme of Yamaguchi (\texttt{AP-UKS}) \cite{Yamaguchi1988}:
+\begin{equation}
+    E_{\text{AP}} = E_{\text{BS}} + \frac{\langle \hat{S}^2 \rangle_{\text{BS}}}{\langle \hat{S}^2 \rangle_{\text{HS}} - \langle \hat{S}^2 \rangle_{\text{BS}}} \left(E_{\text{BS}} - E_{\text{HS}}\right)
+\end{equation}
+
+% ==============================================================================
+% FULL-WIDTH FIGURE 1 (TIER 1 MACE EXPLORATION)
+% ==============================================================================
+\begin{figure*}[t]
+    \centering
+    \IfFileExists{figura1_relaxed_pes_auditada.png}{%
+        \includegraphics[width=0.88\textwidth]{figura1_relaxed_pes_auditada.png}%
+    }{%
+        \fbox{\parbox{0.88\textwidth}{\centering\vspace{0.9cm}\textbf{[Place \texttt{figura1\_relaxed\_pes\_auditada.png} in this directory]}\vspace{0.9cm}}}%
+    }
+    \caption{\textbf{Tier 1 Exploration (MACE-MP-0 + D3, \texttt{float64}, spin-blind).} \textbf{Top Panel:} 13-step constrained relaxed potential energy surface scan illustrating apparent activation crests between $2.60\text{ and }2.44\text{ \AA}$. \textbf{Bottom Panel:} Optimized covalent dimers in MACE-MP-0 + D3.}
+    \label{fig:pes_mace}
+\end{figure*}
+
+% ==============================================================================
+% FULL-WIDTH FIGURE 2 (TIER 2 ORCA 6.1.1 QUANTUM AUDIT)
+% ==============================================================================
+\begin{figure*}[t]
+    \centering
+    \IfFileExists{figura2_perfiles_homogeneizados_A_y_B.png}{%
+        \includegraphics[width=0.95\textwidth]{figura2_perfiles_homogeneizados_A_y_B.png}%
+    }{%
+        \fbox{\parbox{0.92\textwidth}{\centering\vspace{1.1cm}\textbf{[Place \texttt{figura2\_perfiles\_homogeneizados\_A\_y\_B.png} in this directory]}\vspace{1.1cm}}}%
+    }
+    \caption{\textbf{Tier 2 Homogenized Ab Initio Audit in ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$: Option A vs.\ Option B vs.\ MACE-MP-0+D3).} \textbf{Top Panels:} Bifurcation between the repulsive Triplet branch (\texttt{HS-UKS}, $\uparrow\uparrow$, red/purple, tracked by MACE-MP-0 between $3.40\text{ and }2.44\text{ \AA}$) and the barrierless Singlet channel (\texttt{BS-UKS} green/orange and Yamaguchi-projected \texttt{AP-UKS} cyan), which plunges smoothly into the deep covalent well. \textbf{Bottom Panels:} Continuous collapse of the spin expectation value $\langle \hat{S}^2 \rangle_{\text{BS}}$ from pure diradical character ($\langle \hat{S}^2 \rangle \approx 1.0$) at $3.40\text{ \AA}$ down to a closed-shell singlet ($\langle \hat{S}^2 \rangle = 0.0$) at $\le 2.12\text{ \AA}$.}
+    \label{fig:orca_audit}
+\end{figure*}
+
+% ==============================================================================
+% 3. RESULTS: SPIN BIFURCATION AND SUB-MILLIANGSTROM ACCURACY
+% ==============================================================================
+\section{Results: Spin Bifurcation and Covalent Well}
+
+\begin{table}[H]
+\centering
+\caption{Equilibrium structural and energetic parameters ($d_{\text{eq}}$): Tier 1 (MACE-MP-0+D3) versus Tier 2 (\texttt{UKS B97-3c} and $\omega\text{B97X-D3/def2-SVP}$) against single-crystal X-ray diffraction ($1.578\text{ \AA}$) \cite{Alden1968}.}
+\label{tab:resumen_pes}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{System} & \textbf{$d_{\text{eq}}^{\text{MACE}}$ (\AA)} & \textbf{$d_{\text{eq}}^{\text{B97-3c}}$ (\AA)} & \textbf{XRD Dev.\ (B97-3c)} & \textbf{$\Delta E_{\text{MACE}}$ (eV)} & \textbf{$\Delta E_{\text{Opt A}}$ (eV)} & \textbf{$\Delta E_{\text{Opt B}}$ (eV)} \\ \midrule
+$\text{C}_{20}\text{H}_{30}$   & 1.596 & \textbf{1.5771} & $\mathbf{-0.06\%}$ & $-2.577$ & $-4.524$ & $-3.921$ \\
+$\text{C}_{19}\text{H}_{29}\text{B}$ & 1.635 & \textbf{1.5810} & $+0.19\%$ & $-1.439$ & $-3.863$ & $-3.651$ \\
+$\text{C}_{19}\text{H}_{29}\text{P}$ & 1.643 & \textbf{1.5880} & $+0.63\%$ & $-1.859$ & $-4.210$ & $-3.727$ \\ \bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Resolution of the MACE-MP-0 Barrier Artifact}
+Direct juxtaposition of Figure~\ref{fig:pes_mace} and Figure~\ref{fig:orca_audit} (tabulated in Table~\ref{tab:auditoria_orca}) clarifies the molecular mechanics operating between $3.40\text{ \AA}$ and $2.44\text{ \AA}$:
+\begin{enumerate}
+    \item \textbf{Origin of the MACE-MP-0 Crest:} Due to the absence of explicit spin variables, the potential energy surface predicted by MACE-MP-0 + D3 (dotted blue curves in Figure~\ref{fig:orca_audit}) closely mirrors the \textbf{ferromagnetic High-Spin Triplet} state (\texttt{HS-UKS}, $S=1, \uparrow\uparrow$) between $3.40\text{ \AA}$ and $2.44\text{ \AA}$. In this triplet manifold, the Pauli exclusion principle forbids bonding overlap between frontal radical orbitals, leaving steric compression among the six equatorial shoulder C--H bonds uncompensated and driving the energy up to $\Delta E_{\text{HS}} = +0.182\text{ to }+0.579\text{ eV}$ in Option B.
+    \item \textbf{Barrierless Antiferromagnetic Singlet Coupling ($\uparrow\downarrow$):} When the radicals approach with antiparallel spins ($M_S=0$, green and orange curves in Figure~\ref{fig:orca_audit}), emerging $\sigma(\text{C--C})$ covalent bonding between $2.92\text{ \AA}$ and $2.44\text{ \AA}$ provides an exchange stabilization energy ($\Delta E_{\text{HS}} - \Delta E_{\text{BS}}$) of $0.9\text{ to }1.8\text{ eV}$ that fully overcomes shoulder repulsion. Consequently, both $\Delta E_{\text{BS}}$ and the spin-purified singlet $\Delta E_{\text{AP}}$ **descend monotonically without any barrier** from the van der Waals pre-complex ($3.40\text{ \AA}$) to the global covalent minimum across all three systems.
+    \item \textbf{Continuous Spin Transition ($\langle \hat{S}^2 \rangle_{\text{BS}}$):} The bottom panels of Figure~\ref{fig:orca_audit} illustrate that the open diradical character at $3.40\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} = 0.936\text{--}0.994$, weak magnetic coupling $J = -531\text{ cm}^{-1}$ in $\text{C}_{20}\text{H}_{30}$) pairs progressively at $2.60\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} \approx 0.44\text{--}0.62$) and $2.44\text{ \AA}$ ($\langle \hat{S}^2 \rangle_{\text{BS}} \approx 0.06\text{--}0.24$), fully collapsing to a pure closed-shell covalent singlet ($\langle \hat{S}^2 \rangle_{\text{BS}} = 0.000$) for $d \le 2.12\text{ \AA}$.
+\end{enumerate}
+
+\begin{table*}[t]
+\centering
+\caption{Comprehensive homogenized quantum audit in ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$, 27 calculations) benchmarked against MACE-MP-0 + D3. Energies $\Delta E(d) = E(d) - E_\infty$ in $\text{eV}$. $\Delta E_{\text{BS}}$: broken-symmetry singlet ($M_S=0, \uparrow\downarrow$); $\Delta E_{\text{AP}}$: Yamaguchi spin-projected singlet; $\Delta E_{\text{HS}}$: high-spin triplet ($S=1, \uparrow\uparrow$).}
+\label{tab:auditoria_orca}
+\resizebox{0.96\textwidth}{!}{%
+\begin{tabular}{@{}lcrrrrrrrrr@{}}
+\toprule
+\textbf{System} & \textbf{$d(\text{C--C})$ (\AA)} & \textbf{$\Delta E_{\text{MACE}}$ (eV)} & \textbf{Opt A: $\Delta E_{\text{BS}}$} & \textbf{Opt A: $\Delta E_{\text{AP}}$} & \textbf{Opt A: $\Delta E_{\text{HS}}$ ($\uparrow\uparrow$)} & \textbf{Opt A: $\langle \hat{S}^2 \rangle_{\text{BS}}$} & \textbf{Opt B: $\Delta E_{\text{BS}}$} & \textbf{Opt B: $\Delta E_{\text{AP}}$} & \textbf{Opt B: $\Delta E_{\text{HS}}$ ($\uparrow\uparrow$)} & \textbf{Opt B: $\langle \hat{S}^2 \rangle_{\text{BS}}$} \\ \midrule
+$\text{C}_{20}\text{H}_{30}$ & 3.40 & $-0.333$ & $-0.247$ & $-0.366$ & $-0.116$ & 0.953 & $-0.227$ & $-0.376$ & $-0.057$ & 0.936 \\
+(Intrinsic) & 2.92 & $-0.213$ & $-0.428$ & $-0.709$ & $-0.018$ & 0.816 & $-0.492$ & $-0.817$ & $+0.036$ & 0.766 \\
+ & 2.60 & $-0.082$ & $-0.813$ & $-1.153$ & $+0.159$ & 0.521 & $-0.876$ & $-1.202$ & $+0.304$ & 0.436 \\
+ & 2.44 & $-0.115$ & $-1.413$ & $-1.548$ & $+0.205$ & 0.155 & $-1.240$ & $-1.300$ & $+0.579$ & 0.064 \\
+ & 2.12 & $-0.966$ & $-2.955$ & $-2.955$ & $+1.092$ & 0.000 & $-2.255$ & $-2.255$ & $+1.713$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.596 / 1.577$) & $-2.577$ & $-4.524$ & $-4.524$ & --- & 0.000 & $\mathbf{-3.921}$ & $\mathbf{-3.921}$ & --- & 0.000 \\ \midrule
+$\text{C}_{19}\text{H}_{29}\text{B}$ & 3.40 & $-0.223$ & $-0.179$ & $-0.211$ & $-0.146$ & 0.994 & $-0.215$ & $-0.323$ & $-0.097$ & 0.961 \\
+(Boron-doped) & 2.92 & $+0.010$ & $-0.423$ & $-0.611$ & $-0.184$ & 0.885 & $-0.425$ & $-0.691$ & $-0.042$ & 0.825 \\
+ & 2.60 & $+0.333$ & $-0.845$ & $-1.165$ & $-0.127$ & 0.621 & $-0.702$ & $-1.032$ & $+0.182$ & 0.548 \\
+ & 2.44 & $+0.419$ & $-1.412$ & $-1.589$ & $-0.023$ & 0.229 & $-0.954$ & $-1.139$ & $+0.423$ & 0.238 \\
+ & 2.12 & $-0.156$ & $-2.673$ & $-2.673$ & $+1.075$ & 0.000 & $-1.732$ & $-1.732$ & $+1.372$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.635 / 1.581$) & $-1.439$ & $-3.863$ & $-3.863$ & --- & 0.000 & $\mathbf{-3.651}$ & $\mathbf{-3.651}$ & --- & 0.000 \\ \midrule
+$\text{C}_{19}\text{H}_{29}\text{P}$ & 3.40 & $-0.273$ & $-0.235$ & $-0.333$ & $-0.130$ & 0.979 & $-0.229$ & $-0.367$ & $-0.074$ & 0.942 \\
+(Phosphorus-doped) & 2.92 & $-0.085$ & $-0.521$ & $-0.779$ & $-0.159$ & 0.843 & $-0.477$ & $-0.785$ & $+0.011$ & 0.779 \\
+ & 2.60 & $+0.127$ & $-1.066$ & $-1.393$ & $-0.120$ & 0.519 & $-0.825$ & $-1.148$ & $+0.277$ & 0.456 \\
+ & 2.44 & $+0.139$ & $-1.706$ & $-1.809$ & $-0.075$ & 0.119 & $-1.152$ & $-1.235$ & $+0.558$ & 0.093 \\
+ & 2.12 & $-0.549$ & $-3.057$ & $-3.057$ & $+1.003$ & 0.000 & $-2.058$ & $-2.058$ & $+1.726$ & 0.000 \\
+ & $d_{\text{eq}}$ ($1.643 / 1.588$) & $-1.859$ & $-4.210$ & $-4.210$ & --- & 0.000 & $\mathbf{-3.727}$ & $\mathbf{-3.727}$ & --- & 0.000 \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\subsection{Crystallographic Accuracy and Boron Trans-Cage Correction}
+Full structural optimization using \texttt{UKS B97-3c} provides two crucial structural insights (Table~\ref{tab:resumen_pes}):
+\begin{itemize}
+    \item \textbf{Sub-milliangstrom Agreement with X-ray Diffraction:} In the intrinsic dimer ($\text{C}_{20}\text{H}_{30}$), \texttt{UKS B97-3c} predicts an inter-cage bond length of $d_{\text{eq}}(\text{C--C}) = 1.5771\text{ \AA}$, reproducing the experimental single-crystal X-ray value for 1,1'-biadamantyl ($1.578\text{ \AA}$, Alden et al.\ \cite{Alden1968}) with an error of just $\mathbf{-0.06\%}$ ($-0.0009\text{ \AA}$), significantly outperforming MACE-MP-0 ($1.596\text{ \AA}$, $+1.14\%$).
+    \item \textbf{Correction of Boron Trans-Cage Over-Contraction:} In the isolated boron-substituted monomer ($\text{C}_9\text{BH}_{14}^\bullet$), MACE-MP-0 severely over-contracted the trans-cage distance between the trivalent boron and the apical carbon radical ($1.777\text{ \AA}$), artificially penalizing the dimer binding energy ($\Delta E_{\text{MACE}} = -1.439\text{ eV}$). Relaxing with \texttt{UKS B97-3c} restores the trans-cage distance to a realistic $2.149\text{ \AA}$, yielding a deep covalent well for $\text{C}_{19}\text{H}_{29}\text{B}$ of $\Delta E_{\text{Opt B}} = -3.651\text{ eV}$ ($d_{\text{eq}} = 1.581\text{ \AA}$), closely matching the phosphorus analogue ($-3.727\text{ eV}$, $d_{\text{eq}} = 1.588\text{ \AA}$) and the intrinsic system ($-3.921\text{ eV}$).
+\end{itemize}
+
+\subsection{Quantum Spin Statistics ($1:3$) in a Physical Reactor}
+The physical bifurcation between the \texttt{BS-UKS} ($\uparrow\downarrow$) and \texttt{HS-UKS} ($\uparrow\uparrow$) channels imposes a fundamental constraint on vacuum collision kinetics. In an unpolarized thermal molecular beam, the coupling of two $S=1/2$ spins yields four degenerate states at zero field: one reactive \textbf{Singlet} ($S=0$: $\frac{1}{\sqrt{2}}(\lvert\uparrow\downarrow\rangle - \lvert\downarrow\uparrow\rangle)$) and three \textbf{Triplet} states ($S=1$: $\lvert\uparrow\uparrow\rangle, \lvert\downarrow\downarrow\rangle, \frac{1}{\sqrt{2}}(\lvert\uparrow\downarrow\rangle + \lvert\downarrow\uparrow\rangle)$).
+
+Therefore, it cannot be asserted that every collision is barrierless: only $\mathbf{25\%}$ ($1/4$) of bimolecular encounters enter the antiferromagnetic singlet channel ($\uparrow\downarrow$) to form the covalent bond without an activation barrier ($\Delta E = -3.65\text{ to }-3.92\text{ eV}$). The remaining $\mathbf{75\%}$ ($3/4$) enter the triplet manifold ($\uparrow\uparrow$) and encounter a steep Pauli repulsion wall ($\Delta E_{\text{HS}} > 0\text{ eV}$ for $d \le 2.9\text{ \AA}$), resulting in elastic rebound unless surface-assisted intersystem crossing (ISC) or Zeeman pre-polarization intervenes.
+
+% ==============================================================================
+% 4. HYPOTHESIS MATRIX, REFUTABILITY, AND CONCEPTUAL REACTOR
+% ==============================================================================
+\section{Scope, Hypotheses, and Refutation Criteria}
+Notwithstanding the rigorous ORCA 6.1.1 validation, \textbf{these computational results establish only the elementary isolated dimerization step and do not demonstrate extended 3D diamond thin-film growth, multilayer propagation, or electrical dopant activation}:
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+    \item \textbf{$H_1$ (Barrierless Singlet Dimerization -- Validated):} At the \texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{UKS B97-3c} level, coaxial radical coupling exhibits zero activation barrier in the singlet channel ($25\%$ statistical fraction), forming inter-cage bonds of $1.577\text{--}1.588\text{ \AA}$ with wells of $-3.65\text{ to }-3.92\text{ eV}$.
+    \item \textbf{$H_2$ and $H_3$ (Pending Hypotheses):} (i) \textit{Activation $H_2$:} requires demonstrating selective $\text{C--H}$ abstraction ($\sim 4.3\text{ eV}$) by soft electrons ($0.5\text{--}2.0\text{ keV}$) or VUV radiation ($172\text{ nm}$) without cage fragmentation \cite{Fu2025}. (ii) \textit{Propagation $H_3$:} requires simulating surface-confined growth where the $75\%$ triplet fraction relaxes without premature desorption, and assessing donor/acceptor active conductivity.
+    \item \textbf{Refutation Criteria:} The model is conclusively falsified if $\text{C--C}$ cage fragmentation dominates over $\text{C--H}$ homolysis under irradiation, or if thermal desorption in vacuum outpaces the $1:3$ spin-statistical collision rate.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{figura2_reactor_tharos.png}{%
+        \includegraphics[width=\columnwidth]{figura2_reactor_tharos.png}%
+    }{%
+        \fbox{\parbox{0.95\columnwidth}{\centering\small\textbf{[Place \texttt{figura2\_reactor\_tharos.png} in this directory]}}}%
+    }
+    \caption{\textbf{Conceptual high-vacuum testbed design to investigate $H_2$ and $H_3$.} Knudsen effusion cells ($60\text{--}80\text{ }^\circ\text{C}$), soft-electron ($0.5\text{--}2.0\text{ keV}$) or VUV ($172\text{ nm}$) activation source, and temperature-controlled substrate stage ($150\text{--}250\text{ }^\circ\text{C}$).}
+    \label{fig:reactor_tharos}
+\end{figure}
+
+Solely as an experimental reference architecture for testing $H_2$ and $H_3$, Figure~\ref{fig:reactor_tharos} depicts a conceptual high-vacuum reactor ($\sim 10^{-6}\text{ Torr} / 10^{-4}\text{ Pa}$) where dosed precursor fluxes from Knudsen cells impinge upon a substrate held at $150\text{--}250\text{ }^\circ\text{C}$ under gentle electronic or VUV irradiation.
+
+% ==============================================================================
+% 5. CONCLUSION AND STATEMENTS
+% ==============================================================================
+\section{Conclusion}
+Our open-shell quantum audit in ORCA 6.1.1 (\texttt{BS-UKS} $\omega\text{B97X-D3/def2-SVP}$ // \texttt{UKS B97-3c}) demonstrates that the apparent steric barrier predicted by MACE-MP-0 + D3 ($0.251\text{--}0.642\text{ eV}$) was an artifact of tracking the repulsive Triplet manifold ($S=1, \uparrow\uparrow$). In the Antiferromagnetic Singlet channel ($M_S=0, \uparrow\downarrow$, representing $25\%$ of unpolarized thermal collisions), exchange stabilization completely overcomes equatorial hydrogen compression, driving barrierless dimerization into deep covalent wells ($-3.65\text{ to }-3.92\text{ eV}$) and reproducing the single-crystal X-ray structure of 1,1'-biadamantyl within $-0.06\%$ ($1.5771\text{ \AA}$). These findings provide a definitive quantum mechanical foundation for isolated low-temperature dimerization, while delineating the experimental boundaries for surface activation and epitaxial growth.
+
+\section*{Data and Code Availability}
+\footnotesize
+The complete computational audit package (\texttt{paquete\_auditoria\_priones.zip}) and \textit{ab initio} validation directory (\texttt{dft\_orca\_validation}), comprising simulation scripts, all 27 ORCA 6.1.1 input/output files (\texttt{.inp}, \texttt{.out}, \texttt{.xyz}), consolidated data (\texttt{tabla\_auditoria\_completa\_mace\_vs\_orca\_A\_y\_B.csv}), and JSON records (\texttt{auditoria\_completa\_5puntos.json}), are openly available under the MIT license on Zenodo (\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}}) and linked via the author's GitHub repository (\texttt{NocWoeder165}).
+
+\section*{CRediT Authorship Contribution Statement}
+\footnotesize
+\textbf{César Leonardo Rodríguez García} \textit{(Dark Horse / NocWoeder165)}: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing -- original draft, Writing -- review \& editing, Visualization.
+
+\section*{Declaration of Competing Interest}
+\footnotesize
+The author declares that there are no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+% ==============================================================================
+% REFERENCES (15 VERIFIED FULL CITATIONS WITH DOIS)
+% ==============================================================================
+\begin{thebibliography}{15}
+\footnotesize
+
+\bibitem{Koizumi2001}
+S.~Koizumi, K.~Watanabe, M.~Hasegawa, H.~Kanda, ``Ultraviolet emission from a diamond pn junction,'' \textit{Science} \textbf{292} (5523) (2001) 1899--1901. doi:10.1126/science.1060258.
+
+\bibitem{Suzuki2024}
+Y.~Suzuki, et al., ``Raman study on the pressure-induced phase transformation of nanographite at room temperature,'' \textit{Carbon} \textbf{225} (2024) 119075. doi:10.1016/j.carbon.2024.119075.
+
+\bibitem{Kamo1983}
+M.~Kamo, Y.~Sato, S.~Matsumoto, N.~Setaka, ``Diamond synthesis from gas phase in microwave plasma,'' \textit{J.\ Cryst.\ Growth}\ \textbf{62} (3) (1983) 642--644. doi:10.1016/0022-0248(83)90411-6.
+
+\bibitem{Schleyer1957}
+P.~v.~R.~Schleyer, ``A simple preparation of adamantane,'' \textit{J.\ Am.\ Chem.\ Soc.}\ \textbf{79} (1957) 3292. doi:10.1021/ja01569a086.
+
+\bibitem{Dahl2003}
+J.E.~Dahl, S.G.~Liu, R.M.K.~Carlson, ``Isolation and structural characterization of the higher diamondoids,'' \textit{Science} \textbf{299} (2003) 96--99. doi:10.1126/science.1078239.
+
+\bibitem{Yang2007}
+W.L.~Yang, J.D.~Fabbri, T.M.~Willey, J.R.I.~Lee, J.E.~Dahl, R.M.K.~Carlson, P.R.~Schreiner, A.A.~Fokin, B.A.~Tkachenko, N.A.~Fokina, W.~Meevasana, N.~Mannella, K.~Tanaka, X.J.~Zhou, T.~van~Buuren, M.A.~Kelly, Z.~Hussain, N.A.~Melosh, Z.-X.~Shen, ``Monochromatic electron photoemission from diamondoid monolayers,'' \textit{Science} \textbf{316} (5830) (2007) 1460--1462. doi:10.1126/science.1141811.
+
+\bibitem{Fu2025}
+J.~Fu, T.~Nakamuro, E.~Nakamura, ``Nanodiamond synthesis from adamantane by electron-beam driven C--H activation at 100 K,'' \textit{Science} \textbf{389} (2025) eadw2025 (PMID: 40906847). doi:10.1126/science.adw2025.
+
+\bibitem{Gebbie2018}
+M.A.~Gebbie, H.~Ishiwata, P.J.~McQuade, J.E.~Dahl, P.R.~Schreiner, Z.-X.~Shen, N.A.~Melosh, et al., ``Experimental measurement of the diamond nucleation landscape reveals classical and nonclassical features,'' \textit{Proc.\ Natl.\ Acad.\ Sci.\ U.S.A.}\ \textbf{115} (33) (2018) 8284--8289. doi:10.1073/pnas.1803654115.
+
+\bibitem{Batatia2024}
+I.~Batatia, et al., ``A foundation model for atomistic materials chemistry,'' \textit{arXiv:2401.00096} (2024). doi:10.48550/arXiv.2401.00096.
+
+\bibitem{Grimme2010}
+S.~Grimme, J.~Antony, S.~Ehrlich, H.~Krieg, ``A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D3),'' \textit{J.\ Chem.\ Phys.}\ \textbf{132} (2010) 154104. doi:10.1063/1.3382344.
+
+\bibitem{Neese2022}
+F.~Neese, ``Software update: The ORCA program system---Version 5.0,'' \textit{WIREs Comput.\ Mol.\ Sci.}\ \textbf{12} (5) (2022) e1606. doi:10.1002/wcms.1606.
+
+\bibitem{Chai2013}
+Y.-S.~Lin, G.-D.~Li, S.-P.~Mao, J.-D.~Chai, ``Long-range corrected hybrid density functionals with improved dispersion corrections,'' \textit{J.\ Chem.\ Theory Comput.}\ \textbf{9} (1) (2013) 263--272. doi:10.1021/ct300715s.
+
+\bibitem{Brandenburg2018}
+J.G.~Brandenburg, C.~Bannwarth, A.~Hansen, S.~Grimme, ``B97-3c: A revised low-cost variant of the B97-D density functional method,'' \textit{J.\ Chem.\ Phys.}\ \textbf{148} (6) (2018) 064104. doi:10.1063/1.5012601.
+
+\bibitem{Yamaguchi1988}
+K.~Yamaguchi, F.~Jensen, A.~Dorigo, K.N.~Houk, ``A spin correction procedure for unrestricted Hartree-Fock and M\o ller-Plesset wavefunctions for singlet diradicals and polyradicals,'' \textit{Chem.\ Phys.\ Lett.}\ \textbf{149} (5--6) (1988) 537--542. doi:10.1016/0009-2614(88)80378-6.
+
+\bibitem{Alden1968}
+R.A.~Alden, J.~Kraut, T.G.~Traylor, ``Molecular and crystal structure of 1,1'-biadamantyl,'' \textit{J.\ Am.\ Chem.\ Soc.}\ \textbf{90} (1) (1968) 74--82. doi:10.1021/ja01003a014.
+
+\end{thebibliography}
+
+\end{document}

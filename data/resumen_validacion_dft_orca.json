@@ -1,0 +1,115 @@
+{
+  "software": "ORCA 6.1.1 (Win64 MS-MPI, 8 cores)",
+  "method_sp": "UKS wB97X-D3/def2-SVP def2/J TightSCF",
+  "method_crest_opt": "UKS B97-3c TightSCF Opt + BrokenSym 1,1 (Constrained C0-C25)",
+  "monomers_doublet": {
+    "C10H15_radical": {
+      "E_Eh": -389.689996864333,
+      "E_eV": -10604.004407,
+      "S2": 0.754978,
+      "S2_ideal": 0.75
+    },
+    "C9BH14_radical": {
+      "E_Eh": -375.839626342472,
+      "E_eV": -10227.116667,
+      "S2": 0.75655,
+      "S2_ideal": 0.75
+    },
+    "C9PH14_radical": {
+      "E_Eh": -692.250276237187,
+      "E_eV": -18837.090624,
+      "S2": 0.772096,
+      "S2_ideal": 0.75
+    }
+  },
+  "dimerization_benchmark": {
+    "C20H30": {
+      "E_inf_Eh": -779.379993728666,
+      "vdw_3.40A": {
+        "E_BS_Eh": -779.38908324233,
+        "dE_BS_eV": -0.247338,
+        "dE_MACE_eV": -0.333435,
+        "S2_BS": 0.953408,
+        "S2_HS": 2.010315,
+        "dE_HS_minus_BS_eV": 0.1318,
+        "J_cm-1": -531.31
+      },
+      "crest_2.60A": {
+        "E_BS_Eh": -779.43462610804,
+        "dE_BS_eV": -1.486623,
+        "dE_HS_eV": -0.283723,
+        "dE_MACE_eV": -0.082379,
+        "S2_BS": 0.427132,
+        "S2_HS": 2.009244,
+        "dE_HS_minus_BS_eV": 1.2029,
+        "opt_converged": true,
+        "opt_steps": 10
+      },
+      "equilibrium_well": {
+        "d_eq_A": 1.596129,
+        "E_singlet_Eh": -779.546260033709,
+        "dE_UKS_wB97XD3_eV": -4.524337,
+        "dE_MACE_eV": -2.576938,
+        "S2": 0.0
+      }
+    },
+    "C19H29B": {
+      "E_inf_Eh": -765.529623206805,
+      "vdw_3.40A": {
+        "E_BS_Eh": -765.536194607813,
+        "dE_BS_eV": -0.178817,
+        "dE_MACE_eV": -0.223027,
+        "S2_BS": 0.993753,
+        "S2_HS": 2.011668,
+        "dE_HS_minus_BS_eV": 0.0333
+      },
+      "crest_2.44A": {
+        "E_BS_Eh": -765.591979816937,
+        "dE_BS_eV": -1.69681,
+        "dE_HS_eV": -0.00321,
+        "dE_MACE_eV": 0.418918,
+        "S2_BS": 0.092944,
+        "S2_HS": 2.012557,
+        "dE_HS_minus_BS_eV": 1.6936,
+        "opt_converged": true,
+        "opt_steps": 17
+      },
+      "equilibrium_well": {
+        "d_eq_A": 1.634602,
+        "E_singlet_Eh": -765.671575743742,
+        "dE_UKS_wB97XD3_eV": -3.862726,
+        "dE_MACE_eV": -1.439126,
+        "S2": 0.0
+      }
+    },
+    "C19H29P": {
+      "E_inf_Eh": -1081.94027310152,
+      "vdw_3.40A": {
+        "E_BS_Eh": -1081.948908271409,
+        "dE_BS_eV": -0.234975,
+        "dE_MACE_eV": -0.273418,
+        "S2_BS": 0.978645,
+        "S2_HS": 2.027435,
+        "dE_HS_minus_BS_eV": 0.1054
+      },
+      "crest_2.44A": {
+        "E_BS_Eh": -1082.018461891885,
+        "dE_BS_eV": -2.127625,
+        "dE_HS_eV": -0.330025,
+        "dE_MACE_eV": 0.139341,
+        "S2_BS": 0.058189,
+        "S2_HS": 2.010828,
+        "dE_HS_minus_BS_eV": 1.7976,
+        "opt_converged": true,
+        "opt_steps": 33
+      },
+      "equilibrium_well": {
+        "d_eq_A": 1.642584,
+        "E_singlet_Eh": -1082.094987717876,
+        "dE_UKS_wB97XD3_eV": -4.210001,
+        "dE_MACE_eV": -1.858583,
+        "S2": 0.0
+      }
+    }
+  }
+}

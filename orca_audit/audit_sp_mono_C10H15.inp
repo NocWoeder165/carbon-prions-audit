@@ -1,0 +1,9 @@
+! UKS wB97X-D3 def2-SVP def2/J TightSCF
+
+%pal
+  nprocs 8
+end
+
+%maxcore 2000
+
+* xyzfile 0 2 audit_opt_mono_C10H15.xyz
