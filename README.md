@@ -17,32 +17,32 @@ Computational chemistry dataset, open-shell broken-symmetry DFT benchmark, and e
 
 ## 🔬 Scientific Overview
 
-For seven decades, diamond synthesis has relied on brute-force thermodynamic regimes (HPHT at gigapascal pressures or thermal plasma MPCVD at >900 °C). However, the *sp*³ unit cell of diamond already exists at ambient conditions inside adamantane (C₁₀H₁₆).
+For seven decades, diamond synthesis has relied on brute-force thermodynamic regimes (HPHT at gigapascal pressures or thermal plasma MPCVD at &gt;900 °C). However, the *sp*<sup>3</sup> unit cell of diamond already exists at ambient conditions inside adamantane (C<sub>10</sub>H<sub>16</sub>).
 
 This repository provides the complete computational audit demonstrating that:
 
-1. **Resolution of Neural Network Artifact:** An apparent steric barrier of 0.251 to 0.642 eV between 2.60 and 2.44 Å observed with the foundational equivariant neural network potential **MACE-MP-0 + D3** was an artifact of the spin-blind potential tracking the repulsive **Triplet manifold (S = 1, ↑↑)** dominated by Pauli exclusion.
-2. **Barrierless Singlet Dimerization:** In the **Antiferromagnetic Singlet channel (M_S = 0, ↑↓)**, audited via 27 open-shell broken-symmetry calculations in **ORCA 6.1.1** (`BS-UKS` ωB97X-D3/def2-SVP with Yamaguchi spin projection `AP-UKS`), exchange stabilization overcomes equatorial shoulder repulsion, resulting in **zero activation barrier** and deep covalent potential wells (ΔE = -3.65 to -3.92 eV).
-3. **Quantum Spin Statistics (1:3):** In an unpolarized thermal molecular beam in vacuum, only **25%** of collisions enter through the barrierless singlet channel (↑↓), while **75%** collide in the repulsive triplet manifold (↑↑) and suffer elastic Pauli rebound unless surface-assisted spin relaxation occurs.
+1. **Resolution of Neural Network Artifact:** An apparent steric barrier of 0.251 to 0.642 eV between 2.60 and 2.44 Å observed with the foundational equivariant neural network potential **MACE-MP-0 + D3** was an artifact of the spin-blind potential tracking the repulsive **Triplet manifold (S = 1, &uarr;&uarr;)** dominated by Pauli exclusion.
+2. **Barrierless Singlet Dimerization:** In the **Antiferromagnetic Singlet channel (M<sub>S</sub> = 0, &uarr;&darr;)**, audited via 27 open-shell broken-symmetry calculations in **ORCA 6.1.1** (`BS-UKS` &omega;B97X-D3/def2-SVP with Yamaguchi spin projection `AP-UKS`), exchange stabilization overcomes equatorial shoulder repulsion, resulting in **zero activation barrier** and deep covalent potential wells (&Delta;E = -3.65 to -3.92 eV).
+3. **Quantum Spin Statistics (1:3):** In an unpolarized thermal molecular beam in vacuum, only **25%** of collisions enter through the barrierless singlet channel (&uarr;&darr;), while **75%** collide in the repulsive triplet manifold (&uarr;&uarr;) and suffer elastic Pauli rebound unless surface-assisted spin relaxation occurs.
 4. **Crystallographic Accuracy:** Structural optimization with `UKS B97-3c` reproduces the single-crystal X-ray diffraction central bond length of 1,1'-biadamantyl (1.578 Å, Alden et al., 1968) to within **-0.06%** (1.5771 Å, -0.0009 Å deviation).
 
 <p align="center">
   <img src="figures/figura2_perfiles_homogeneizados_A_y_B.png" width="96%" alt="Homogenized Ab Initio Audit in ORCA 6.1.1">
   <br>
-  <em>Figure: Homogenized Ab Initio Audit in ORCA 6.1.1 (Option A vs Option B vs MACE-MP-0). Top: Triplet repulsion wall vs barrierless Singlet covalent well. Bottom: Continuous collapse of the spin expectation value &lang;S²&rang;.</em>
+  <em>Figure: Homogenized Ab Initio Audit in ORCA 6.1.1 (Option A vs Option B vs MACE-MP-0). Top: Triplet repulsion wall vs barrierless Singlet covalent well. Bottom: Continuous collapse of the spin expectation value &lang;S&sup2;&rang;.</em>
 </p>
 
 ---
 
 ## 📊 Summary Results Table
 
-### Table 1: Structural and Energetic Parameters in Equilibrium (d_eq)
+### Table 1: Structural and Energetic Parameters in Equilibrium (d<sub>eq</sub>)
 
-| System | Chemical Formula | d_eq (MACE) [Å] | d_eq (B97-3c) [Å] | XRD Dev. (B97-3c) | ΔE (MACE) [eV] | ΔE (Option A) [eV] | ΔE (Option B) [eV] |
+| System | Chemical Formula | d<sub>eq</sub> (MACE) [Å] | d<sub>eq</sub> (B97-3c) [Å] | XRD Dev. (B97-3c) | &Delta;E (MACE) [eV] | &Delta;E (Option A) [eV] | &Delta;E (Option B) [eV] |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Intrinsic** | C₂₀H₃₀ | 1.596 | **1.5771** | **-0.06%** | -2.577 | -4.524 | **-3.921** |
-| **Boron-Doped** | C₁₉H₂₉B | 1.635 | **1.5810** | +0.19% | -1.439 | -3.863 | **-3.651** |
-| **Phosphorus-Doped** | C₁₉H₂₉P | 1.643 | **1.5880** | +0.63% | -1.859 | -4.210 | **-3.727** |
+| **Intrinsic** | C<sub>20</sub>H<sub>30</sub> | 1.596 | **1.5771** | **-0.06%** | -2.577 | -4.524 | **-3.921** |
+| **Boron-Doped** | C<sub>19</sub>H<sub>29</sub>B | 1.635 | **1.5810** | +0.19% | -1.439 | -3.863 | **-3.651** |
+| **Phosphorus-Doped** | C<sub>19</sub>H<sub>29</sub>P | 1.643 | **1.5880** | +0.63% | -1.859 | -4.210 | **-3.727** |
 
 *Note: Option A evaluates MACE geometries against isolated MACE monomers; Option B evaluates UKS B97-3c geometries against isolated UKS B97-3c monomers.*
 
