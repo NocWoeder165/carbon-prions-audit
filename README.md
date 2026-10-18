@@ -10,7 +10,7 @@ Computational chemistry dataset, open-shell broken-symmetry DFT benchmark, and e
 > **"Carbon Prions: Directed Conformational Nucleation and Quantum Dimerization of Doped Diamondoids at Low Temperature"**  
 > **Author:** César Leonardo Rodríguez García (*Dark Horse / NocWoeder165*)  
 > **Affiliation:** Universidad Tecnológica de Nayarit (UTNAY), Xalisco, Nayarit, México  
-> **Laboratory:** Project Tharos -- Condensed Matter Physics and Vacuum Systems  
+> **Project:** Project Tharos $\cdot$ Contact: sem-340007@utnay.edu.mx  
 > **Pre-print DOI:** [10.5281/zenodo.23427695](https://doi.org/10.5281/zenodo.23427695)
 
 ---
