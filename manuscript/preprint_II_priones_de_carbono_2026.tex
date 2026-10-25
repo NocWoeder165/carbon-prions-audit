@@ -1,0 +1,552 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+
+% ==============================================================================
+% PAQUETES Y CONFIGURACIÓN EDITORIAL (PRE-PRINT II INTEGRAL DEFINITIVO)
+% ==============================================================================
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{array}
+\usepackage{enumitem}
+
+\geometry{top=2.0cm, bottom=2.0cm, left=1.55cm, right=1.55cm, columnsep=0.60cm, headheight=14pt}
+
+% Evitar desbordamientos horizontales en texto y ecuaciones
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+
+% Eliminar estiramiento vertical elástico entre párrafos e ítems (evita huecos en blanco en doble columna)
+\raggedbottom
+\setlength{\parskip}{2pt}
+\setlist[enumerate]{itemsep=2.5pt, topsep=4pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+\setlist[itemize]{itemsep=2.5pt, topsep=4pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+
+\definecolor{tharosblue}{RGB}{18, 65, 145}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=tharosblue,
+    citecolor=tharosblue,
+    urlcolor=tharosblue,
+    pdftitle={Priones de Carbono II: Modelo Teorico, Cuantico y Cinetico de la Epitaxia Monocristalina de Diamante a 173 C mediante Autolimitacion de Monocapa, Auditoria DFT de Triada C3, Exclusion Esterica de H2 y Activacion DIET Progresiva por Pincel VUV Sincronizado},
+    pdfauthor={César Leonardo Rodríguez García (UTNAY / Proyecto Tharos)}
+}
+
+% Cabezales de página elegantes
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\footnotesize\textit{Proyecto Tharos -- Serie Priones de Carbono (Parte II Integral)}}
+\rhead{\footnotesize\textit{C.~L.~Rodríguez García -- DOI: 10.5281/zenodo.23521740 (2026)}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\captionsetup{font=footnotesize, labelfont=bf}
+
+% Control de flotantes de simple y doble columna
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{dbltopnumber}{2}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\dblfloatpagefraction}{0.85}
+
+\begin{document}
+
+% ==============================================================================
+% ENCABEZADO Y RESUMEN SEGUIDO A ANCHO COMPLETO (CALIBRADO PARA DOBLE COLUMNA EN PÁG. 1)
+% ==============================================================================
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \vspace{-0.65cm}
+    {\centering
+      {\Large \textbf{Priones de Carbono II: Modelo Teórico, Cuántico y Cinético de la Epitaxia Monocristalina de Diamante a $173\ ^\circ\text{C}$ mediante Autolimitación de Monocapa, Auditoría DFT de la Tríada $C_3$, Exclusión Estérica de $\text{H}_2$ y Activación DIET Progresiva por Pincel VUV Sincronizado en Geometría Piramidal Invertida} \par}
+      \vspace{0.50em}
+      {\normalsize \textbf{César Leonardo Rodríguez García} \par}
+      \vspace{0.18em}
+      {\footnotesize \textit{Universidad Tecnológica de Nayarit (UTNAY), Xalisco, Nayarit, México} $\cdot$ \textit{Proyecto Tharos} \par}
+      \vspace{0.15em}
+      {\footnotesize Correspondencia: \href{mailto:sem-340007@utnay.edu.mx}{\texttt{sem-340007@utnay.edu.mx}} $\mid$ \href{mailto:keepwalk165@gmail.com}{\texttt{keepwalk165@gmail.com}} $\cdot$ GitHub: \href{https://github.com/NocWoeder165}{\texttt{NocWoeder165}} \par}
+      \vspace{0.18em}
+      {\footnotesize \textbf{24 de octubre de 2026} $\cdot$ \textbf{Pre-print Serie Priones de Carbono (Parte II Integral)} $\cdot$ \textbf{DOI:} \href{https://doi.org/10.5281/zenodo.23521740}{\texttt{10.5281/zenodo.23521740}} $\cdot$ \textbf{Parte I:} \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}} \par}
+      \vspace{0.40em}
+    }
+    \hrule height 0.6pt
+    \vspace{0.35em}
+    \noindent\textbf{\normalsize Resumen}
+    \vspace{0.20em}
+
+    {\footnotesize\linespread{1.02}\selectfont\setlength{\parskip}{0.25em}
+    Tras el modelado computacional en el primer pre-print de esta serie (DOI: \texttt{10.5281/zenodo.23427695}) donde el paso elemental de dimerización frontal entre radicales diamantoides ($\text{C}_{10}\text{H}_{15}^\bullet$) y sus derivados dopados con boro y fósforo procede hacia un pozo covalente profundo ($\Delta E = -2.58\text{ eV}$ en MACE-MP-0 + D3; $-3.92\text{ eV}$ en DFT de simetría rota BS-UKS $\omega\text{B97X-D3}$, y $-3.56\text{ eV}$ en la calibración ORCA B97-3c del dímero 1,1'-biadamantilo), la extrapolación desde un dímero aislado hacia una oblea monocristalina enfrentaba el trilema de la síntesis de diamante a baja temperatura: (i) la inversión termoquímica de disociación homolítica donde el esqueleto $\text{C--C}$ ($3.6\text{--}3.8\text{ eV}$) es más débil que la periferia $\text{C--H}$ ($4.1\text{--}4.3\text{ eV}$); (ii) la tensión estérica de cierre $1\text{D} \to 3\text{D}$, la permeación de $\text{H}_2$ y la reconstrucción grafítica de Pandey $(2\times 1)$; y (iii) la paradoja entre el congelamiento criogénico a $-173\ ^\circ\text{C}$ ($100\text{ K}$) y la pérdida evaporativa masiva ($>99.998\%$) bajo irradiación por inundación a temperaturas moderadas. En este segundo pre-print se presenta el marco teórico, cuántico y de ingeniería que integra las fases posteriores al Pre-print I junto con una clasificación explícita del estado de verificación de cada módulo:
+
+    \noindent\textbf{(1) Termodinámica DFT de la Tríada $C_3$, Quiebre de Pandey e Ingeniería UHV:} La auditoría cuántica en ORCA 6.1.1 (B97-3c/def2-mSVP) sobre tres moléculas de adamantano sin enlaces entre sí posicionadas sobre el registro del diamante $\{111\}$ ($\text{C}_{30}\text{H}_{48}$, separación $d = 5.044\text{ \AA}$) determina una energía de confinamiento de $+1.31\text{ eV}$ ($\Delta E_{\text{disp}} = -0.88\text{ eV}$), mientras que la condensación deshidrogenativa de capa cerrada hacia la tríada cosida $\text{C}_{30}\text{H}_{42} + 3\,\text{H}_2$ (anillo central de metilenos $\text{C}_8\text{--C}_{16}\text{--C}_{24}$, Modelo A) resulta endotérmica en $\mathbf{+10.03\text{ eV}}$ con anclajes basales ($+3.34\text{ eV/enlace}$) y $\mathbf{+3.25\text{ eV}}$ libre sin anclajes respecto a tres adamantanos aislados ($+1.08\text{ eV/enlace}$; frente a $+15.26\text{ eV}$ en cabezas de puente forzadas, Modelo B). En contraste, la quimisorción de un radical 1-adamantilo ($\text{C}_{10}\text{H}_{15}^\bullet$) sobre una terraza $\{111\}$ con centro radical es exotérmica en $\mathbf{-1.81\text{ eV}}$ ($\Delta E_{\text{disp}} = -1.02\text{ eV}$) y en un escalón $\{111\}/(11\bar{1})$ en $\mathbf{-1.72\text{ eV}}$ ($\Delta E_{\text{disp}} = -1.10\text{ eV}$), demostrando que el crecimiento requiere activación electrónica radicalaria. Se reportan asimismo las simulaciones exploratorias heredadas (pendientes de recálculo \textit{ab initio}) en LAMMPS AIREBO ($\theta_* \le 12\text{--}15\%$ contra Pandey y apilamiento $N=1\dots5$), Molflow+ CERN ($S_{\text{total}} = 2350\text{ L/s}$, $P_{\text{bg}} = 4.88 \times 10^{-6}\text{ Torr}$) y CalculiX ($Bi = 4.69 \times 10^{-6}$).
+
+    \noindent\textbf{(2) Barrera Cuántica de $\text{H}_2$ a través del Poro de $\text{C}_{30}\text{H}_{48}$ (Datasets 3 y 4 Auditados en ORCA 6.1.1):} En el cúmulo no cosido $\text{C}_{30}\text{H}_{48}$ (tres adamantanos sin enlaces entre sí), los tres hidrógenos ecuatoriales internos ($\text{H}_{43}, \text{H}_{55}, \text{H}_{67}$) delimitan un radio geométrico libre negativo $r_{\text{pore}} = d - 1.10\text{ \AA} = \mathbf{-0.13\text{ \AA}}$. Los escaneos secuenciales densos en B97-3c con \texttt{MaxIter 80} —Dataset 3 longitudinal ($20$ puntos, $18/20$ estrictamente convergidos) y Dataset 4 perpendicular ($20/20$ convergidos)— localizan el máximo de la barrera en $\mathbf{Z = +0.25\text{ \AA}}$ con $\Delta E_{\text{int}} = \mathbf{+1.7256\text{ eV}}$ ($16$ ciclos, rama descendente) y $\mathbf{+1.7146\text{ eV}}$ ($19$ ciclos, ascendente, histéresis de $0.011\text{ eV}$), $\mathbf{+1.669\text{ eV}}$ con $\omega\text{B97X-D3}$/def2-TZVP, y $\mathbf{+1.769 / +1.767\text{ eV}}$ en orientación perpendicular ($21$ y $10$ ciclos). A $173\ ^\circ\text{C}$ ($k_B T = 0.0384\text{ eV}$), estas barreras equivalen a $\mathbf{\sim 45\,k_B T}$ ($43.5\text{--}46.1\,k_B T$), con factores de Boltzmann de $\mathbf{3 \times 10^{-20}\text{ a }1.4 \times 10^{-19}}$.
+
+    \noindent\textbf{(3) Autolimitación de Monocapa a $+173\ ^\circ\text{C}$ ($446.15\text{ K}$) y Excitación VUV del Adamantano ($6.49\text{--}10.0\text{ eV}$):} A $+173\ ^\circ\text{C}$ ($P_{\text{sat}} = 4332.2\text{ Pa} = 32.49\text{ Torr}$, $Z_{\text{evap}} = 4.630 \times 10^{21}\text{ molec}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$), cualquier fase 3D condensada se sublima en $t_{\text{ML}} = 39.44\text{ ns}$, autolimitando el precursor a una sub-monocapa o monocapa fisisorbida (bajo los supuestos paramétricos $E_{\text{des}} = 0.65\text{--}0.80\text{ eV}$, $\tau_{\text{res}} = 2.20\text{--}108.87\ \mu\text{s}$, $\lambda_{\text{diff}} = 38.91\text{--}273.72\text{ nm}$). La excitación DIET mediante fotones VUV acoplada a las bandas electrónicas de Rydberg del adamantano en fase gas ($6.49\text{ eV}$ $\text{HOMO}\to\text{LUMO}$, $7.13\text{ eV}$ $\text{HOMO}\to\text{LUMO}+1$ accesible con excímero $\text{Xe}_2^*$, y $8.23\text{ eV}$ $\text{HOMO}\to\text{LUMO}+2$ con $\sigma_{\text{abs}} \approx 46\text{ Mb}$) y a la ventana sobre-umbral suave ($9.25\text{--}10.0\text{ eV}$, $\sigma_{\text{DIET}}^{\text{act}} \approx 40\text{ Mb}$ supuesto) evita las cascadas colisionales y la carga de huecos del haz electrónico de $1.0\text{ keV}$ ($R_{\text{KO}} = 19.12\text{ nm}$).
+
+    \noindent\textbf{(4) Pincel Sincronizado ($\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$), Cota de Rendimiento ($\lesssim 4 \times 10^{-4}\ \mu\text{m/h}$) y Arquitectura Piramidal $300\times\text{VUV}$:} Frente al modo de inundación ($\tau_{\text{act,flood}} = 0.83\text{--}3.57\text{ s}$, $\text{Da}_{\text{DIET,flood}} \approx 3.8 \times 10^{-6}\text{ a }1.6 \times 10^{-5}$), focalizar el haz VUV en un pincel ($w_b \approx 50\text{ nm}$) con duración de pulso/exposición igualada a la residencia ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$ nominal; $J_{\text{brush}} = 2.94\text{--}7.18 \times 10^{21}\text{ fotones}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$, $\tau_{\text{act,brush}} = 3.48\text{--}8.50\ \mu\text{s}$) sitúa $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ ($\eta_{\text{pin}} = 80\%\text{--}98\%$; o $0.5\text{--}5.0 \implies 39\%\text{--}99\%$). Como hipótesis de ingeniería y publicación defensiva (\textit{Open Science Prior Art}), se presenta la arquitectura de \textit{soldadura laminar} en pirámide invertida con pincel coaxial tipo ``muñecas rusas'' y matriz modular $300\times\text{VUV}$, incluyendo la estimación explícita de cobertura estacionaria a $10^{-6}\text{ Torr}$ ($\theta_{\text{eq}} \sim 10^{-5}\text{ ML}$) y la cota analítica de crecimiento vertical de $\lesssim 4 \times 10^{-4}\ \mu\text{m/h}$ por cavidad individual.
+
+    \vspace{0.25em}
+    \noindent\textbf{Estatus del documento e invitación a la comunidad:} Este pre-print se difunde como una propuesta teórica, computacional y arquitectónica (\textit{Open Science Prior Art}) sujeta a escrutinio abierto y falsación experimental. El autor invita cordialmente a la comunidad académica a remitir observaciones críticas, sugerencias de replicación o iniciativas de colaboración para su desarrollo experimental a \href{mailto:sem-340007@utnay.edu.mx}{\texttt{sem-340007@utnay.edu.mx}} y \href{mailto:keepwalk165@gmail.com}{\texttt{keepwalk165@gmail.com}}.
+
+    \vspace{0.30em}
+    \noindent\textbf{Palabras clave:} Priones de carbono; Tríada $\text{C}_{30}\text{H}_{48}$ y Modelo A $\text{C}_{30}\text{H}_{42}$; Barrera de $\text{H}_2$ en $Z=+0.25\text{ \AA}$; Autolimitación de monocapa a $173\ ^\circ\text{C}$; Mecanismo DIET; Fotólisis VUV de adamantano; Pincel sincronizado; Pirámide invertida 300-VUV.
+    }
+    \vspace{0.35em}
+    \hrule height 0.6pt
+    \vspace{0.65em}
+  \end{@twocolumnfalse}
+]
+
+% ==============================================================================
+% 1. INTRODUCCIÓN Y LA RUTA DE INVESTIGACIÓN DESDE EL PRE-PRINT I
+% ==============================================================================
+\section{Introducción y Ruta de Investigación Posterior al Pre-print I}
+
+Durante más de setenta años —desde las primeras síntesis de diamante a alta presión y alta temperatura (HPHT, $>5\text{ GPa}$, $>1400\ ^\circ\text{C}$) en la década de 1950 y el desarrollo posterior de la deposición química en fase vapor asistida por plasma de microondas (MPCVD, $800\text{--}1100\ ^\circ\text{C}$) \cite{Asmussen2002,Silva2009}—, la fabricación de diamante monocristalino ($Fd\bar{3}m$) a baja temperatura a partir de jaulas moleculares pre-organizadas ha estado bloqueada por una paradoja termoquímica fundamental. El adamantano ($\text{Ad}$, $\text{C}_{10}\text{H}_{16}$, triciclo$[3.3.1.1^{3,7}]$decano) posee exactamente el esqueleto tetraédrico $sp^3$ y la simetría puntual $T_d$ de la celda unidad del diamante cúbico \cite{Dahl2003}. Aunque su condensación deshidrogenativa hacia diamante con liberación estequiométrica de $\text{H}_2$ es altamente exotérmica ($\sim 3000\text{ kJ}\cdot\text{mol}^{-1}$), todo enfoque puramente térmico o pirolítico fracasa porque la energía de disociación homolítica de los enlaces $\text{C--C}$ del armazón ($3.6\text{--}3.8\text{ eV}$) es menor que la de los enlaces periféricos $\text{C--H}$ ($4.1\text{--}4.3\text{ eV}$), induciendo apertura de anillo y grafitización ($sp^2$) antes de lograr la unión intermolecular.
+
+En el primer pre-print publicado de esta investigación (DOI: \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}}) \cite{RodriguezGarcia2026_Part1}, se formuló el concepto de \textbf{«Priones de Carbono»} (adoptado como analogía conformacional mecano-cuántica donde la jaula diamantoide actúa como plantilla tetraédrica pre-codificada para propagar orden $sp^3$ sin compresión hidrostática), modelando mediante el potencial equivariante MACE-MP-0 + D3 (\texttt{float64}) y cálculos \textit{ab initio} de simetría rota en ORCA 6.1.1 (BS-UKS $\omega\text{B97X-D3/def2-SVP}$) que dos radicales 1-adamantilo ($\text{C}_{10}\text{H}_{15}^\bullet$) y sus análogos sustituidos con boro ($\text{C}_9\text{BH}_{14}^\bullet$) y fósforo ($\text{C}_9\text{PH}_{14}^\bullet$) se enlazan en un pozo covalente profundo ($\Delta E = -2.577\text{ eV}$ en MACE; $-3.921\text{ eV}$ en DFT UKS) con una distancia de equilibrio de $1.577\text{--}1.596\text{ \AA}$ que reproduce la estructura por rayos X del 1,1'-biadamantilo ($1.578\text{ \AA}$) \cite{Alden1968}.
+
+Sin embargo, el Pre-print I resolvía únicamente la unión bimolecular en una dimensión (1D). Para construir un modelo matemático y físico integral de crecimiento epitaxial monocristalino, la investigación siguió una ruta secuencial de cinco etapas cuyos hallazgos se unifican en este documento:
+
+\begin{enumerate}
+    \item \textbf{Etapa 1 — Del Dímero 1D a la Auditoría Cuántica de la Tríada $C_3$, Adsorción Radicalaria y Supresión de Pandey:} Al evaluar en ORCA 6.1.1 (B97-3c/def2-mSVP) tres moléculas de adamantano sin enlaces entre sí posicionadas sobre la red $\{111\}$ ($\text{C}_{30}\text{H}_{48}$), se determinó una energía de confinamiento de $+1.31\text{ eV}$ ($\Delta E_{\text{disp}} = -0.88\text{ eV}$). A su vez, el balance termoquímico de capa cerrada para la tríada cosida $\text{C}_{30}\text{H}_{42} + 3\,\text{H}_2$ (anillo central $\text{C}_8\text{--C}_{16}\text{--C}_{24}$, Modelo A) arrojó $\mathbf{+10.03\text{ eV}}$ con anclajes basales y $\mathbf{+3.25\text{ eV}}$ libre frente a tres adamantanos aislados (reemplazando las cifras exploratorias previas de MACE), mientras que la adsorción de un radical 1-adamantilo ($\text{C}_{10}\text{H}_{15}^\bullet$) sobre una terraza $\{111\}$ con centro radical es exotérmica en $\mathbf{-1.809\text{ eV}}$ y en un escalón $\{111\}/(11\bar{1})$ en $\mathbf{-1.716\text{ eV}}$. Adicionalmente, en dinámica molecular exploratoria (LAMMPS AIREBO, pendiente de recálculo \textit{ab initio}) se observó que deshidrogenar el $80\%$ de la terraza induce el colapso grafítico de Pandey $(2\times 1)$ ($\Delta\text{PE} = -15.09\text{ eV}$), delimitando una ventana sub-crítica en $\theta_* \le 12\text{--}15\%$.
+    \item \textbf{Etapa 2 — El Poro de $\text{C}_{30}\text{H}_{48}$ ($r_{\text{pore}} = -0.13\text{ \AA}$) y los Escaneos Cuánticos Densos (Datasets 3 y 4):} En el cúmulo de tres adamantanos sin enlaces entre sí ($\text{C}_{30}\text{H}_{48}$), los tres hidrógenos ecuatoriales internos ($\text{H}_{43}, \text{H}_{55}, \text{H}_{67}$, a $d \approx 0.97\text{ \AA}$ del centro) definen un radio geométrico libre negativo $r_{\text{pore}} = d - 1.10\text{ \AA} = \mathbf{-0.13\text{ \AA}}$. Mediante dos escaneos adiabáticos secuenciales densos en ORCA 6.1.1 con \texttt{MaxIter 80} —Dataset 3 longitudinal ($\theta_Z = 5.82^\circ$, $20$ puntos, $18/20$ convergidos) y Dataset 4 perpendicular ($\theta_Z = 95.60^\circ$, $20/20$ convergidos)— se resolvió el máximo de la barrera de $\text{H}_2$ en $\mathbf{Z = +0.25\text{ \AA}}$: $\mathbf{+1.7256\text{ eV}}$ ($16$ ciclos, rama descendente) y $\mathbf{+1.7146\text{ eV}}$ ($19$ ciclos, ascendente) en B97-3c, $\mathbf{+1.669\text{ eV}}$ en $\omega\text{B97X-D3}$/def2-TZVP y $\mathbf{+1.769 / +1.767\text{ eV}}$ en orientación perpendicular ($\sim 45\,k_B T$ a $173\ ^\circ\text{C}$, factores de Boltzmann de $3 \times 10^{-20}\text{ a }1.4 \times 10^{-19}$).
+    \item \textbf{Etapa 3 — De $180\ ^\circ\text{C}$ y $346\ ^\circ\text{C}$ a las Referencias Térmicas de $\pm 173\ ^\circ\text{C}$ y los Antecedentes Japoneses:} El valor inicial de $180\ ^\circ\text{C}$ ($453.15\text{ K}$) había surgido de un cálculo rápido de la energía del adamantano apenas sublimando a $\sim 10^{-6}\text{ Torr}$ expresado en $\text{eV}$ respecto a una referencia energética de epitaxia. Al analizar por qué la mitad de $346\ ^\circ\text{C}$ en negativo ($-173\ ^\circ\text{C} \approx 100\text{ K}$) coincidía con el régimen criogénico japonés de transformación de adamantano a nanodiamantes por irradiación electrónica (Fu, Nakamuro y Nakamura, \textit{Science} 2025 \cite{Fu2025}) —manteniendo separado este antecedente del desarrollo de dispositivos de diamante dopado con fósforo del NIMS en Japón \cite{Koizumi2001}—, se evaluó su contraparte positiva $+173\ ^\circ\text{C}$ ($446.15\text{ K}$), situada a solo $7\ ^\circ\text{C}$ de los $180\ ^\circ\text{C}$ calculados originalmente. Esto permitió formular el mecanismo de \textbf{autolimitación de monocapa a $+173\ ^\circ\text{C}$}.
+    \item \textbf{Etapa 4 — La Malla Ondulatoria, la Soldadura Laminar y el Crecimiento Lateral sin Colisión:} A partir de la analogía visual de una malla fina de líneas onduladas (semejante a una función periódica de corriente alterna de baja amplitud o al flujo continuo visto a $90^\circ$ en un andador), surgió la propuesta de organizar espacialmente el precursor o su activación de forma progresiva a lo largo de un contorno cerrado, generando una \textbf{soldadura laminar} continua que evita el choque frontal de dos frentes cristalinos independientes.
+    \item \textbf{Etapa 5 — Contraste Cuantitativo DIET y Propuesta Conceptual de la Arquitectura Pincel--VUV--Pirámide Invertida (Muñecas Rusas y Escalado $300\times\text{VUV}$):} El contraste cuantitativo entre haz de electrones ($1.0\text{ keV}$) y fotones VUV ($6.49\text{--}10.0\text{ eV}$) bajo modos simultáneo (inundación) y progresivo (pincel sincronizado) cerró el sistema de ecuaciones en derivadas parciales mediante los números de Damköhler ($\text{Da}_{\text{DIET}}$) y de Péclet ($\text{Pe}_{\text{scan}}$). A partir de la restricción matemática de que $\text{Da}_{\text{DIET}} \ge 1$ prohíbe ensanchar un único haz hacia el modo de inundación, se propuso a nivel de diseño conceptual e hipótesis de ingeniería materializar la soldadura laminar dentro de una \textbf{pirámide invertida (mitad inferior de un octaedro)} cuyo centro es ocupado físicamente por un \textbf{pincel coaxial} (tipo ``muñecas rusas''), acoplado a un \textbf{haz VUV ($7.13\text{--}10.0\text{ eV}$) apuntando exactamente donde el pincel va pintando} en un wafer vertical rotatorio paralelizado en una matriz modular de referencia de $N_{\text{cav}} = 300$ cavidades con $300$ canales VUV independientes.
+\end{enumerate}
+
+% ==============================================================================
+% 2. CIERRE DIMENSIONAL 1D -> 3D, TRÍADA C3, PANDEY E INGENIERÍA UHV
+% ==============================================================================
+\section{Cierre Dimensional $1\text{D} \to 3\text{D}$, Auditoría DFT de la Tríada $C_3$, Quiebre de Pandey e Ingeniería UHV}
+
+\subsection{Apilamiento Multicapa Exploratorio ($N=1\dots5$) y Calibración DFT de Adsorción Radicalaria}
+En la fase exploratoria inicial con MACE-MP-0 + D3 (\texttt{float64}, fuerzas $F_{\text{max}} \le 0.00997\text{ eV/\AA}$, tomando $E(\text{C}_{10}\text{H}_{16}) = -152.0004\text{ eV}$ y $E(\text{H}_2) = -6.5270\text{ eV}$ \cite{Batatia2024,Grimme2010}, catalogada como heredada y pendiente de recálculo DFT en la Sección~7.3), la condensación neutra en fase gas ($N\,\text{C}_{10}\text{H}_{16} \to \text{C}_{10N}\text{H}_{14N+2} + (N-1)\,\text{H}_2$) resultó endotérmica ($\Delta E_{\text{cond}} = +4.342\text{ eV}$ para $N=2$ hasta $+13.837\text{ eV}$ para $N=5$), mientras que el acoplamiento radicalario apical ($\text{C}_{10N-10}\text{H}_{14N-12}^\bullet + \text{C}_{10}\text{H}_{15}^\bullet \to \text{C}_{10N}\text{H}_{14N+2}$) resultó exotérmico ($\Delta E_{\text{rxn}} = -3.108\text{ eV}$ en $N=2$ hasta $-15.963\text{ eV}$ en $N=5$). En el lote de calibración rigurosa ejecutado con \textbf{ORCA 6.1.1} (B97-3c/def2-mSVP + D3BJ, archivos \texttt{cal\_a\_dimero\_eclipsado.out} y \texttt{cal\_a\_dimero\_alternado.out}, convergidos en $9$ y $14$ ciclos), la formación del dímero 1,1'-biadamantilo ($\text{C}_{20}\text{H}_{30}$, $E_{\text{tot}} = -779.865884\text{ E}_\text{h}$) a partir de dos radicales adamantilo libres ($\text{C}_{10}\text{H}_{15}^\bullet$, $E_{\text{tot}} = -389.867489\text{ E}_\text{h}$, \texttt{00\_adamantyl\_radical.out}) confirma una unión fuertemente exotérmica de $\mathbf{\Delta E_{\text{ads}} = -3.5621\text{ eV}}$ ($\Delta E_{\text{disp}} = -0.5696\text{ eV}$, contribución covalente no dispersiva de $-2.9925\text{ eV}$).
+
+Por su parte, en las simulaciones exploratorias de sobrecrecimiento anclado sobre diamante $\{111\}$ en LAMMPS AIREBO \cite{Stuart2000} ($E_{\text{epi}}^{\text{LAMMPS}}(N) = -99.08\,N - 52.93\text{ eV}$, Tabla~\ref{tab:metricas_multicapa}), el modelo favorece el politipo cúbico $3\text{C}$ ($Fd\bar{3}m$) frente al hexagonal $2\text{H}$ a $N=4$ ($+11.668\text{ eV}$) y $N=5$ ($\mathbf{+29.724\text{ eV}}$), presentando en $N=3$ una inversión ($\Delta E_{2\text{H}-3\text{C}} = -11.060\text{ eV}$) asociada a la relajación del oligómero en el potencial empírico AIREBO (cuyo recálculo DFT periódico se lista como trabajo futuro en la Tabla~\ref{tab:estado_verificacion}).
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Métricas exploratorias heredadas de apilamiento multicapa ($N=1\dots5$) en MACE-MP-0 + D3 (\texttt{float64}) y sobrecrecimiento sobre diamante $\{111\}$ en LAMMPS AIREBO (catalogadas en la categoría ``Heredado, pendiente de recálculo DFT'' en la Tabla~\ref{tab:estado_verificacion}; en $N=2$, la calibración auditada ORCA B97-3c del dímero $\text{C}_{20}\text{H}_{30}$ da $\Delta E_{\text{rxn}} = -3.5621\text{ eV}$).}}
+\label{tab:metricas_multicapa}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccccc@{}}
+\toprule
+\textbf{Capas ($N$)} & \textbf{Fórmula} & \textbf{$E_{\text{total}}$ MACE $3\text{C}$ (eV)} & \textbf{$E_{\text{total}}$ MACE $2\text{H}$ (eV)} & \textbf{$\Delta E_{\text{cond}}$ Neutra (eV)} & \textbf{$\Delta E_{\text{rxn}}$ Radical (eV)} & \textbf{$\Delta\theta_{\text{RMS}}$ ($3\text{C}$ vs $2\text{H}$)} & \textbf{$\Delta E_{2\text{H}-3\text{C}}$ LAMMPS (eV)} \\ \midrule
+$N=1$ & $\text{C}_{10}\text{H}_{16}$ & $-152.0004$ & $-152.0004$ & $0.000$ & $0.000$ & $0.01^\circ$ vs $0.01^\circ$ & $0.000$ \\
+$N=2$ & $\text{C}_{20}\text{H}_{30}$ & $-293.1317$ & $-294.0006$ & $+4.342$ & $\mathbf{-3.108}$ ($-3.562$ DFT) & $4.84^\circ$ vs $2.97^\circ$ & $+3.795$ \\
+$N=3$ & $\text{C}_{30}\text{H}_{44}$ & $-436.1820$ & $-436.1358$ & $+6.765$ & $-8.135$ & $13.13^\circ$ vs $13.12^\circ$ & $-11.060$ \\
+$N=4$ & $\text{C}_{40}\text{H}_{58}$ & $-578.5133$ & $-580.2623$ & $+9.907$ & $-12.443$ & $15.43^\circ$ vs $11.16^\circ$ & $+11.668$ \\
+$N=5$ & $\text{C}_{50}\text{H}_{72}$ & $-720.0569$ & $-720.8228$ & $+13.837$ & $-15.963$ & $13.70^\circ$ vs $16.52^\circ$ & $+29.724$ \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\subsection{Auditoría Cuántica DFT de la Tríada ($\text{C}_{30}\text{H}_{48}$ y $\text{C}_{30}\text{H}_{42}$), Quimisorción en Escalón $\{111\}$ y Ventana de Pandey}
+En etapas exploratorias preliminares con potenciales empíricos y de aprendizaje automático se habían estimado valores nominales para una costura lateral exotérmica en tríada ($-10.83\text{ eV}$ en MACE y $-5.66\text{ eV}$ con $\theta = 109.44^\circ$ sobre geometrías con valencias incompletas); dichos valores quedan formalmente descartados y sustituidos por la auditoría cuántica de primeros principios en \textbf{ORCA 6.1.1} (B97-3c/def2-mSVP + D3BJ, verificada con archivos fuente en disco):
+\begin{enumerate}
+    \item \textbf{Tríada No Cosida $\text{C}_{30}\text{H}_{48}$ (tres adamantanos sin enlaces entre sí):} El sistema de referencia $\text{C}_{30}\text{H}_{48}$ (\texttt{01\_orca\_quantum/test\_c30h48/dft\_opt.out}, $78$ átomos, $228$ electrones, singlete de capa cerrada $S=0$, $E_{\text{tot}} = -1171.55372640\text{ E}_\text{h}$) consiste en \textbf{tres moléculas de adamantano intactas sin enlaces covalentes entre sí}, colocadas a la separación epitaxial del diamante $\{111\}$ ($d = 5.044\text{ \AA}$) con $6$ carbonos basales anclados. Frente a tres adamantanos aislados relajados ($3 \times E(\text{C}_{10}\text{H}_{16}) = 3 \times (-390.53392989\text{ E}_\text{h})$, \texttt{opt\_adamantane.out}), el confinamiento epitaxial presenta $\Delta E_{\text{conf}} = \mathbf{+1.3079\text{ eV}}$ ($+30.16\text{ kcal/mol}$), resultado de una atracción dispersiva London D3BJ estabilizante de $\Delta E_{\text{disp}} = \mathbf{-0.8848\text{ eV}}$ ($-20.40\text{ kcal/mol}$) y una repulsión estérica no dispersiva de $+2.1927\text{ eV}$.
+    \item \textbf{Tríada Cosida $\text{C}_{30}\text{H}_{42}$ (Modelo A Central vs.\ Modelo B Cabezas de Puente):} Para la reacción formal de capa cerrada $\text{C}_{30}\text{H}_{48} \to \text{C}_{30}\text{H}_{42} + 3\,\text{H}_2$ ($E(\text{H}_2) = -1.17914025\text{ E}_\text{h}$, \texttt{opt\_H2.out}), el \textbf{Modelo 1A con anclajes basales} (fusión central de metilenos $\text{C}_8\text{--C}_{16}\text{--C}_{24}$ en un anillo $\text{C}_3$ cerrado con distancias $1.528, 1.533$ y $1.357\text{ \AA}$, \texttt{opt\_c30h42\_model1A\_free.out}, $25$ ciclos, $E_{\text{tot}} = -1167.64772956\text{ E}_\text{h}$) arroja $\Delta E_{\text{rxn}} = \mathbf{+10.03\text{ eV}}$ ($+10.0295\text{ eV} \equiv +231.29\text{ kcal/mol}$, $+3.34\text{ eV/enlace}$ frente a $\text{C}_{30}\text{H}_{48}$ anclado; con corrección UKS de simetría rota \texttt{sp\_c30h42\_model1A\_bs.out} en $+9.32\text{ eV}$). Al liberar los anclajes basales (\textbf{Modelo 1A libre}, \texttt{opt\_c30h42\_model1A\_no\_anchors.out}, $26$ ciclos, y \texttt{opt\_c30h42\_model1A\_unbiased.out}, $31$ ciclos, $\langle S^2\rangle = 0.0000$, $E_{\text{tot}} = -1167.945125\text{ E}_\text{h}$, anillo equilátero $C_{3v}$ de $1.532\text{ \AA}$), la base se contrae a $3.124\text{ \AA}$ y la energía de reacción cae a $\mathbf{+3.25\text{ eV}}$ ($+3.245\text{ eV} \equiv +74.83\text{ kcal/mol}$, $+1.08\text{ eV/enlace}$) \textbf{frente a tres adamantanos libres $+ 3\,\text{H}_2$} (y $+1.94\text{ eV}$ frente a $\text{C}_{30}\text{H}_{48}$ anclado). En cambio, cuando se mantienen los anclajes sin forzar el cierre (\texttt{opt\_c30h42\_model1A\_anch\_unbiased.out}, $18$ ciclos, $+11.70\text{ eV}$ vs.\ anclado y $+13.01\text{ eV}$ vs.\ libre), las jaulas permanecen abiertas a $\sim 2.92\text{ \AA}$, y el \textbf{Modelo 2B} de cabezas de puente forzadas (\texttt{opt\_c30h42\_forced\_covalent.out}, $25$ ciclos) asciende a $\mathbf{+15.26\text{ eV}}$ ($+5.09\text{ eV/enlace}$).
+    \item \textbf{Quimisorción Radicalaria Exotérmica en Terraza $\{111\}$ y Escalón $\{111\}/(11\bar{1})$:} El carácter endotérmico de la deshidrogenación de capa cerrada ($+3.25\text{ a }+10.03\text{ eV}$) demuestra que las jaulas neutras no se cosen térmicamente por sí solas, sino que requieren la generación previa de centros radicales mediante activación electrónica DIET. En efecto, la optimización UKS B97-3c de simetría rota (\texttt{BrokenSym 1,1}, que colapsa limpiamente a singlete covalente $\langle S^2\rangle = 0.0000$, verificado con \texttt{cal\_c\_complejo\_RKS\_SP.out}) demuestra que el acoplamiento de un radical 1-adamantilo ($\text{C}_{10}\text{H}_{15}^\bullet$) sobre una \textbf{terraza $\{111\}$ plana con centro radical} ($81$ átomos, \texttt{02\_flat\_terrace\_plus\_adamantyl\_BS.out}, $28$ ciclos) es fuertemente exotérmico con $\mathbf{\Delta E_{\text{ads}}^{\text{tot}} = -1.8090\text{ eV}}$ ($-41.72\text{ kcal/mol}$, integrado por $\Delta E_{\text{disp}} = -1.0186\text{ eV}$ y $\Delta E_{\text{ads}}^{\text{no-disp}} = -0.7904\text{ eV}$), y sobre un \textbf{escalón $\{111\}$ con cara $(1,1,\bar{1})$} ($102$ átomos, ángulo diedro reentrante exacto $\arccos(1/3) = 70.5288^\circ$, \texttt{02B\_step\_plus\_adamantyl\_BS.out}, $72$ ciclos) alcanza $\mathbf{\Delta E_{\text{ads}}^{\text{tot}} = -1.7155\text{ eV}}$ ($-39.56\text{ kcal/mol}$, con mayor estabilización dispersiva $\Delta E_{\text{disp}} = -1.1021\text{ eV}$, diferencia escalón$-$terraza de $+0.0934\text{ eV}$).
+\end{enumerate}
+
+De forma complementaria, la dinámica molecular exploratoria en LAMMPS AIREBO sobre una losa $\{111\}$ indicó que una deshidrogenación superficial masiva ($\theta_* = 80\%$) induce la reconstrucción grafítica de Pandey $(2\times 1)$ \cite{Pandey1981} ($\Delta\text{PE}_{\text{grafitización}} = -15.09\text{ eV}$, $7$ dímeros $\pi$), mientras que mantener una cobertura radicalaria sub-crítica \textbf{$\theta_*^{\text{crit}} \le 12.0\%$--$15.0\%$} ($\langle d_{\text{rad--rad}}\rangle \ge 3.8\text{ \AA}$) evita la dimerización $\pi$ lateral en el potencial empírico.
+
+\subsection{Vacío UHV Híbrido Turbo-NEG (Molflow+ CERN), Biot y Clivaje Ortogonal $\{110\}$ (CalculiX)}
+Para evacuar la carga estequiométrica real no atenuada de hidrógeno ($F_{\text{net}} = 1.00$, $Q_{\text{H}_2} = 1.15 \times 10^{-2}\text{ Torr}\cdot\text{L/s}$ sobre $10\text{ cm}^2$, dado que el $\text{H}_2$ hierve a $20.28\text{ K}$ y no condensa en trampas de hielo seco o $\text{LN}_2$), las simulaciones Monte Carlo 3D en \textbf{Molflow+ 2.11 (CERN)} \cite{Kersevan2009} mostraron que una turbobomba DN 160 sola ($S_{\text{turbo}} = 550\text{ L/s}$) entra en sobrepresión ($2.09 \times 10^{-5}\text{ Torr}$). La integración de un anillo perimetral de cartuchos Getter No Evaporables (\textbf{NEG $\text{Zr-V-Fe}$}, $S_{\text{NEG}} = 1800\text{ L/s}$) eleva la velocidad combinada a $S_{\text{híbrido}} = 2350\text{ L/s}$, abatiendo la presión de fondo a \textbf{$P_{\text{bg}} = 4.88 \times 10^{-6}$ Torr} en régimen molecular libre (\textbf{$Kn = 111.4 \gg 10$}, $\lambda_{\text{H}_2} = 30.04\text{ m}$, transmisión balística del haz de $99.95\%$), mientras un arreglo compensado de $3$ toberas ($1.36 : 1.00 : 1.36$) produce una uniformidad de espesor de $\pm 3.14\%$ ($\sigma = 1.42\%$).
+
+Asimismo, el modelado por elementos finitos en \textbf{CalculiX 2.13} \cite{Dhondt2018} indicó que la conductividad fonónica del diamante ($\kappa = 1314\text{ W}\cdot\text{m}^{-1}\cdot\text{K}^{-1}$) mantiene un número de Biot infinitesimal (\textbf{$Bi = 4.69 \times 10^{-6} \ll 0.1$}) con un gradiente interno $\Delta T_z = 0.0309\text{ K}$ ($\sigma_{\text{th}} = 0.065\text{ MPa}$, $\text{FS}_{\text{térmico}} > 38\,000\times$), y que la singulación mecánica de dados cuadrados debe ejecutarse sobre los planos dodecaédricos ortogonales $(1\bar{1}0) \perp (11\bar{2})$ a \textbf{$90.00^\circ$} ($K_{Ic} = 3.90\text{ MPa}\sqrt{\text{m}}$, $F_{\text{crit}} = 712.5\text{ N}$ para entalla de $0.5\text{ mm}$) o mediante grabado anisotrópico por plasma reactivo (\textbf{ICP-RIE} $\text{O}_2/\text{CF}_4$, $R_a < 5\text{ nm}$), corrigiendo el error diedro de $19.47^\circ$ del clivaje $\{111\}$ ($70.53^\circ$).
+
+% ==============================================================================
+% 3. PAISAJE CUÁNTICO DEL PORO DE C30H48: DATASETS 3 Y 4 AUDITADOS
+% ==============================================================================
+\section{Barrera Cuántica de Exclusión de $\text{H}_2$ en $\text{C}_{30}\text{H}_{48}$: Datasets 3 y 4 Auditados (ORCA 6.1.1)}
+
+En el sistema de referencia $\text{C}_{30}\text{H}_{48}$ —constituido por \textbf{tres moléculas de adamantano sin enlaces entre sí} ancladas sobre el registro del diamante $\{111\}$ ($d = 5.044\text{ \AA}$)—, el canal central queda estrechado por tres átomos de hidrógeno ecuatoriales internos ($\text{H}_{43}, \text{H}_{55}$ y $\text{H}_{67}$) situados a una distancia media $d \approx 0.97\text{ \AA}$ del eje de simetría. Restando el radio de van der Waals del hidrógeno ($r_{\text{vdW}}(\text{H}) = 1.10\text{ \AA}$), el radio libre geométrico del poro es:
+\begin{equation}
+r_{\text{pore}} = d - r_{\text{vdW}}(\text{H}) \approx 0.97\text{ \AA} - 1.10\text{ \AA} = \mathbf{-0.13\text{ \AA}}
+\end{equation}
+lo que implica que las nubes electrónicas de los tres hidrógenos internos se solapan estéricamente en reposo (y una vez que la tríada se cose según el Modelo A hacia $\text{C}_{30}\text{H}_{42}$, los hidrógenos $\text{H}_{43}, \text{H}_{55}, \text{H}_{67}$ se desprenden y el anillo $\text{C}_8\text{--C}_{16}\text{--C}_{24}$ cierra por completo el canal).
+
+Para cuantificar sin artefactos de truncamiento la barrera que enfrenta una molécula de $\text{H}_2$ al cruzar el poro de $\text{C}_{30}\text{H}_{48}$ (frente a la asíntota desligada $\text{C}_{30}\text{H}_{48} + \text{H}_2$ de $-1172.73286665\text{ E}_\text{h}$ en B97-3c y $-1173.44365969\text{ E}_\text{h}$ en $\omega\text{B97X-D3}$/def2-TZVP), se ejecutaron en \textbf{ORCA 6.1.1} (RKS B97-3c/def2-mSVP \texttt{TightSCF} con \texttt{MaxIter 80}) dos escaneos adiabáticos secuenciales densos de $20$ puntos cada uno ($10$ en rama descendente $+1.50 \to -1.00\text{ \AA}$ y $10$ en rama ascendente $-1.00 \to +1.50\text{ \AA}$): el \textbf{Dataset 3 longitudinal} ($\theta_Z = 5.82^\circ$, $18/20$ puntos estrictamente convergidos con $g_{\max} \le 1.60 \times 10^{-4}\text{ E}_\text{h}/\text{bohr}$) y el \textbf{Dataset 4 perpendicular} (vector $\text{H--H}$ en el plano del poro, $\theta_Z = 95.60^\circ$, $20/20$ puntos estrictamente convergidos). La Tabla~\ref{tab:orca_z_scan} reporta los valores completos y sus ciclos reales de convergencia.
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Auditoría completa de los escaneos secuenciales densos de $\text{H}_2$ a través del poro de $\text{C}_{30}\text{H}_{48}$ ($r_{\text{pore}} = -0.13\text{ \AA}$) en ORCA 6.1.1 (B97-3c/def2-mSVP, \texttt{MaxIter 80}): Dataset 3 longitudinal ($\theta_Z = 5.82^\circ$, $18/20$ convergidos) y Dataset 4 perpendicular ($\theta_Z = 95.60^\circ$, $20/20$ convergidos), con refinamiento $\omega\text{B97X-D3}$/def2-TZVP en el máximo ($Z = +0.25\text{ \AA}$: $+1.6690\text{ eV}$).}}
+\label{tab:orca_z_scan}
+\setlength{\tabcolsep}{3.6pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cc|ccccc|cccc@{}}
+\toprule
+ & & \multicolumn{5}{c|}{\textbf{Dataset 3: Longitudinal ($\theta_Z = 5.82^\circ$, \texttt{dense\_scan/})}} & \multicolumn{4}{c}{\textbf{Dataset 4: Perpendicular ($\theta_Z = 95.60^\circ$, \texttt{dense\_scan\_perp/})}} \\
+\textbf{Rama} & \textbf{$Z$ (\AA)} & \textbf{$E_{\text{tot}}$ ($\text{E}_\text{h}$)} & \textbf{$\Delta E_{\text{int}}$ (eV)} & \textbf{$\Delta E_{\text{int}}$ (kcal/mol)} & \textbf{Conv.} & \textbf{Ciclos} & \textbf{$E_{\text{tot}}$ ($\text{E}_\text{h}$)} & \textbf{$\Delta E_{\text{int}}$ (eV)} & \textbf{$\Delta E_{\text{int}}$ (kcal/mol)} & \textbf{Conv. (Ciclos)} \\ \midrule
+Desc. & $+1.50$ & $-1172.70001919$ & $+0.8938$ & $+20.61$ & NO & $80$ & $-1172.69947588$ & $+0.9082$ & $+20.94$ & SÍ ($80+1$) \\
+Desc. & $+1.00$ & $-1172.68719994$ & $+1.2427$ & $+28.66$ & SÍ & $38$ & $-1172.68708614$ & $+1.2453$ & $+28.72$ & SÍ ($46$) \\
+Desc. & $+0.75$ & $-1172.68061564$ & $+1.4218$ & $+32.79$ & SÍ & $23$ & $-1172.68040144$ & $+1.4272$ & $+32.91$ & SÍ ($22$) \\
+Desc. & $+0.50$ & $-1172.67442917$ & $+1.5902$ & $+36.67$ & SÍ & $20$ & $-1172.67357790$ & $+1.6129$ & $+37.19$ & SÍ ($21$) \\
+\textbf{Desc.} & $\mathbf{+0.25}$ & $\mathbf{-1172.66945047}$ & $\mathbf{+1.7256}$ & $\mathbf{+39.79}$ & \textbf{SÍ} & $\mathbf{16}$ & $\mathbf{-1172.66784803}$ & $\mathbf{+1.7688}$ & $\mathbf{+40.79}$ & \textbf{SÍ ($\mathbf{21}$)} \\
+Desc. & $0.00$ & $-1172.67231852$ & $+1.6476$ & $+37.99$ & SÍ & $50$ & $-1172.67009235$ & $+1.7077$ & $+39.38$ & SÍ ($80+1$) \\
+Desc. & $-0.25$ & $-1172.67665257$ & $+1.5297$ & $+35.27$ & SÍ & $11$ & $-1172.67464395$ & $+1.5839$ & $+36.52$ & SÍ ($42$) \\
+Desc. & $-0.50$ & $-1172.68297137$ & $+1.3577$ & $+31.31$ & SÍ & $17$ & $-1172.68123208$ & $+1.4046$ & $+32.39$ & SÍ ($16$) \\
+Desc. & $-0.75$ & $-1172.69114733$ & $+1.1352$ & $+26.18$ & SÍ & $22$ & $-1172.68999488$ & $+1.1661$ & $+26.89$ & SÍ ($37$) \\
+Desc. & $-1.00$ & $-1172.70049359$ & $+0.8809$ & $+20.31$ & SÍ & $37$ & $-1172.70008927$ & $+0.8915$ & $+20.56$ & SÍ ($45$) \\ \midrule
+Asc. & $-1.00$ & $-1172.70048572$ & $+0.8811$ & $+20.32$ & NO & $80$ & $-1172.70007636$ & $+0.8918$ & $+20.57$ & SÍ ($80+68$) \\
+Asc. & $-0.75$ & $-1172.69114149$ & $+1.1354$ & $+26.18$ & SÍ & $15$ & $-1172.68991141$ & $+1.1684$ & $+26.94$ & SÍ ($20$) \\
+Asc. & $-0.50$ & $-1172.68295994$ & $+1.3580$ & $+31.32$ & SÍ & $23$ & $-1172.68111722$ & $+1.4077$ & $+32.46$ & SÍ ($29$) \\
+Asc. & $-0.25$ & $-1172.67640984$ & $+1.5363$ & $+35.43$ & SÍ & $13$ & $-1172.67460884$ & $+1.5848$ & $+36.55$ & SÍ ($46$) \\
+Asc. & $0.00$ & $-1172.67202109$ & $+1.6557$ & $+38.18$ & SÍ & $13$ & $-1172.67019373$ & $+1.7050$ & $+39.32$ & SÍ ($17$) \\
+\textbf{Asc.} & $\mathbf{+0.25}$ & $\mathbf{-1172.66985626}$ & $\mathbf{+1.7146}$ & $\mathbf{+39.54}$ & \textbf{SÍ} & $\mathbf{19}$ & $\mathbf{-1172.66790186}$ & $\mathbf{+1.7673}$ & $\mathbf{+40.76}$ & \textbf{SÍ ($\mathbf{10}$)} \\
+Asc. & $+0.50$ & $-1172.67445826$ & $+1.5894$ & $+36.65$ & SÍ & $71$ & $-1172.67361222$ & $+1.6119$ & $+37.17$ & SÍ ($70$) \\
+Asc. & $+0.75$ & $-1172.68061662$ & $+1.4218$ & $+32.79$ & SÍ & $18$ & $-1172.68042774$ & $+1.4265$ & $+32.90$ & SÍ ($28$) \\
+Asc. & $+1.00$ & $-1172.68715061$ & $+1.2440$ & $+28.69$ & SÍ & $25$ & $-1172.68709393$ & $+1.2451$ & $+28.71$ & SÍ ($25$) \\
+Asc. & $+1.50$ & $-1172.70003745$ & $+0.8933$ & $+20.60$ & SÍ & $41$ & $-1172.69947038$ & $+0.9083$ & $+20.95$ & SÍ ($53$) \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+Los resultados auditados de los Datasets 3 y 4 establecen tres conclusiones cuantitativas directas (Figura~\ref{fig:termo_poro}b):
+\begin{enumerate}
+    \item \textbf{Ubicación del máximo en $Z = +0.25\text{ \AA}$ y eliminación de la histéresis:} El pico de la barrera no se ubica en $Z = 0.00\text{ \AA}$, sino ligeramente desplazado hacia el exterior en $\mathbf{Z = +0.25\text{ \AA}}$. En el Dataset 3 longitudinal (B97-3c), la barrera máxima alcanza $\mathbf{+1.7256\text{ eV}}$ ($+39.79\text{ kcal/mol}$, $16$ ciclos, \texttt{opt\_down\_Zp0.25.out}) en la rama descendente y $\mathbf{+1.7146\text{ eV}}$ ($+39.54\text{ kcal/mol}$, $19$ ciclos, \texttt{opt\_up\_Zp0.25.out}) en la rama ascendente, reduciendo la histéresis entre ambas ramas a tan solo $\Delta E_{\text{hist}} = \mathbf{0.0110\text{ eV}}$ ($0.25\text{ kcal/mol}$).
+    \item \textbf{Barrera perpendicular (Dataset 4) y refinamiento $\omega\text{B97X-D3}$/def2-TZVP:} Cuando el eje $\text{H--H}$ se orienta perpendicularmente en el plano del poro (Dataset 4, $20/20$ convergidos), el máximo en $Z = +0.25\text{ \AA}$ asciende a $\mathbf{+1.7688\text{ eV}}$ ($+40.79\text{ kcal/mol}$, $21$ ciclos, \texttt{opt\_down\_Zp0p25.out}) y $\mathbf{+1.7673\text{ eV}}$ ($+40.76\text{ kcal/mol}$, $10$ ciclos, \texttt{opt\_up\_Zp0p25.out}), con una histéresis casi nula de $0.0015\text{ eV}$ y una anisotropía rotacional de $+0.0432\text{ eV}$ ($1.00\text{ kcal/mol}$). A su vez, el cálculo de punto único con el funcional híbrido de rango separado $\omega\text{B97X-D3}$/def2-TZVP sobre la geometría convergida del pico (\texttt{sp\_peak\_wb97x.out}, $E_{\text{tot}} = -1173.38232395\text{ E}_\text{h}$) arroja una barrera refinada de $\mathbf{+1.6690\text{ eV}}$ ($+38.49\text{ kcal/mol}$, corrección de $-3.3\%$).
+    \item \textbf{Exclusión térmica a $173\ ^\circ\text{C}$ ($446.15\text{ K}$):} Con $k_B T = 0.0384\text{ eV}$, las barreras auditadas ($1.669\text{--}1.769\text{ eV}$) equivalen a $\mathbf{\sim 45\,k_B T}$ ($43.5\text{--}46.1\,k_B T$), lo que arroja factores de Boltzmann para el cruce térmico desde la asíntota desligada de:
+    \begin{equation}
+    \exp\!\left(-\frac{\Delta E_{\text{int}}^{\max}}{k_B T}\right) = \mathbf{3.1 \times 10^{-20}\text{ a }1.4 \times 10^{-19}}
+    \end{equation}
+    ($1.0 \times 10^{-20}$ en orientación perpendicular; tiempos característicos de entrada por teoría del estado de transición de $4.5\text{ a }19.1\text{ días}$ a $453.15\text{ K}$). En consecuencia, el $\text{H}_2$ gaseoso del reactor no puede penetrar a través del poro de $\text{C}_{30}\text{H}_{48}$, y el $\text{H}_2$ liberado durante la activación superficial debe evacuarse lateralmente hacia el vacío antes del cierre del anillo central.
+\end{enumerate}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figura1_paper4_termodinamica_residencia_173C.png}
+    \caption{\textbf{Física de autolimitación superficial a $173\ ^\circ\text{C}$ y barrera cuántica auditada del poro de $\text{C}_{30}\text{H}_{48}$ (Datasets 3 y 4).} (a) Tiempo de residencia de Frenkel-Arrhenius $\tau_{\text{res}}$ y longitud de difusión $\lambda_{\text{diff}}$ en función de la energía de desorción van der Waals estimada $E_{\text{des}}$ a $446.15\text{ K}$, contrastados con la evaporación en $39.44\text{ ns}$ de la fase 3D libre y la ventana del pulso VUV ($\tau_{\text{pulso}} = 2.20\text{--}13.59\ \mu\text{s}$). (b) Perfiles adiabáticos secuenciales densos de interacción $\Delta E_{\text{int}}(Z)$ de $\text{H}_2$ a través del poro de tres adamantanos sin enlaces entre sí ($\text{C}_{30}\text{H}_{48}$, $r_{\text{pore}} = -0.13\text{ \AA}$) en ORCA 6.1.1: Dataset 3 longitudinal ($\theta_Z = 5.82^\circ$, máximo en $Z = +0.25\text{ \AA}$ de $+1.7256\text{ eV}$ en $16$ ciclos desc. y $+1.7146\text{ eV}$ en $19$ ciclos asc.), Dataset 4 perpendicular ($\theta_Z = 95.60^\circ$, $+1.769 / +1.767\text{ eV}$) y refinamiento $\omega\text{B97X-D3}$/def2-TZVP ($+1.669\text{ eV}$).}
+    \label{fig:termo_poro}
+\end{figure*}
+
+% ==============================================================================
+% 4. TERMODINÁMICA Y AUTOLIMITACIÓN DE MONOCAPA A 173 °C
+% ==============================================================================
+\section{Termodinámica del Adamantano y Autolimitación de Monocapa a $173\ ^\circ\text{C}$ ($446.15\text{ K}$)}
+
+Mientras que los experimentos pioneros de irradiación en vacío se ejecutaron a temperaturas criogénicas ($100\text{ K} = -173\ ^\circ\text{C}$) \cite{Fu2025} para inmovilizar microcristales sólidos de adamantano, la operación a $\mathbf{+173\ ^\circ\text{C}}$ ($\mathbf{446.15\text{ K}}$) traslada el sistema desde una reacción en estado sólido amorfo hacia un régimen de epitaxia superficial controlada por adsorción, difusión y desorción. El adamantano experimenta una transición sólido-sólido desde su fase tetragonal ($\text{crII}$) hacia su fase cristalina plástica cúbica centrada en las caras ($\text{crI}$, $Fm\bar{3}m$) entre $169.31\text{ K}$ y $217.82\text{ K}$ ($\Delta_{\text{trs}}H^\circ_m = 3276 \pm 12\text{ J}\cdot\text{mol}^{-1}$) y funde a $T_{\text{fus}} = 543.2\text{ K}$ ($270.05\ ^\circ\text{C}$, $\Delta_{\text{fus}}H^\circ_m = 13.96 \pm 0.28\text{ kJ}\cdot\text{mol}^{-1}$) \cite{Bazyleva2011}. A $446.15\text{ K}$, la capacidad calorífica molar de la fase plástica $\text{crI}$, gobernada por:
+\begin{equation}
+\begin{split}
+C_{p,m}(\text{crI}) &= 50.80 + 0.1527\left(\frac{T}{\text{K}}\right) \\
+&\quad + 1.052 \times 10^{-3}\left(\frac{T}{\text{K}}\right)^2\ \text{J}\cdot\text{K}^{-1}\cdot\text{mol}^{-1}
+\end{split}
+\end{equation}
+alcanza $C_{p,m} = 328.3\text{ J}\cdot\text{K}^{-1}\cdot\text{mol}^{-1}$, reflejando una intensa rotación molecular isotrópica libre en la red.
+
+Aplicando la ecuación de Clausius-Clapeyron ($\Delta_{\text{sub}}H_T \approx 59.8\text{--}60.0\text{ kJ}\cdot\text{mol}^{-1}$, $P_{\text{sat}}(298.15\text{ K}) \approx 1.3\text{--}1.5\text{ Pa}$), la presión de vapor saturado a $446.15\text{ K}$ asciende a $P_{\text{sat}} = 4332.2\text{ Pa}$ ($32.49\text{ Torr}$, rango $3991.2\text{--}4481.6\text{ Pa}$). Sustituyendo $M_{\text{Ad}} = 136.23\text{ g}\cdot\text{mol}^{-1}$ ($m_{\text{Ad}} = 2.262 \times 10^{-25}\text{ kg}$) y $k_B T = 0.0384\text{ eV}$ en la formulación cinética de Hertz-Knudsen:
+\begin{equation}
+\begin{split}
+Z_{\text{evap}} &= \frac{P_{\text{sat}}}{\sqrt{2\pi m_{\text{Ad}} k_B T}} \\
+&= 4.630 \times 10^{21}\ \text{moléculas}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}
+\end{split}
+\end{equation}
+Para una monocapa compacta (ML) de adamantano ($d_{\text{mol}} \approx 0.74\text{ nm}$, huella $A_{\text{mol}} \approx 0.548\text{ nm}^2$, $\sigma_{\text{ML}} \approx 1.83 \times 10^{14}\text{ molec}\cdot\text{cm}^{-2}$), el tiempo de vida de una monocapa condensada no confinada a $173\ ^\circ\text{C}$ es de apenas:
+\begin{equation}
+t_{\text{ML}} = \frac{\sigma_{\text{ML}}}{Z_{\text{evap}}} = 39.44\text{ ns}\ (0.04\ \mu\text{s})
+\end{equation}
+
+Esta inestabilidad extrema de la fase sólida volumétrica a $173\ ^\circ\text{C}$ posee una implicación mecanística de segundo orden sumamente favorable: \textbf{impide la condensación tridimensional de multicapas amorfas de adamantano sobre el sustrato}. El crecimiento queda autolimitado a una población fisisorbida en sub-monocapa o monocapa, cuya interacción de dispersión de van der Waals con la superficie densa del diamante eleva la energía de desorción hasta $E_{\text{des}} = 0.65\text{--}0.80\text{ eV}$ ($63\text{--}77\text{ kJ}\cdot\text{mol}^{-1}$). Según la ley de Frenkel-Arrhenius ($\tau_{\text{res}} = \tau_0 \exp(E_{\text{des}}/k_B T)$ con $\tau_0 \approx 1.0 \times 10^{-13}\text{ s}$), el tiempo de residencia a $173\ ^\circ\text{C}$ alcanza $\tau_{\text{res}} = 2.20\ \mu\text{s}$ en terrazas ($0.65\text{ eV}$), $13.59\ \mu\text{s}$ en sitios nominales ($0.72\text{ eV}$), $29.66\ \mu\text{s}$ para $0.75\text{ eV}$ y $108.87\ \mu\text{s}$ en bordes de escalón ($0.80\text{ eV}$). Con $a_{\text{hop}} = 0.5\text{ nm}$, $\nu_0 = 1.0 \times 10^{12}\text{ s}^{-1}$ y $E_{\text{diff}} = 0.20\text{ eV}$, la difusividad es $D_s = \frac{1}{4}a_{\text{hop}}^2 \nu_0 \exp(-E_{\text{diff}}/k_B T) = 3.441 \times 10^{-6}\text{ cm}^2\cdot\text{s}^{-1}$ y la longitud media de difusión antes de la desorción ($\lambda_{\text{diff}} = \sqrt{2 D_s \tau_{\text{res}}}$) se sitúa entre $38.91\text{ nm}$ y $273.72\text{ nm}$ ($96.71\text{ nm}$ nominal, Figura~\ref{fig:termo_poro}a y Tabla~\ref{tab:termo_173C}).
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Parámetros termodinámicos y cinéticos del adamantano sobre diamante a $173\ ^\circ\text{C}$ ($446.15\text{ K}$).}}
+\label{tab:termo_173C}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llcll@{}}
+\toprule
+\textbf{Parámetro Termodinámico / Cinético} & \textbf{Símbolo} & \textbf{Valor a $173\ ^\circ\text{C}$ ($446.15\text{ K}$)} & \textbf{Unidades} & \textbf{Implicación Física en el Proceso DIET} \\ \midrule
+Energía térmica del sustrato & $k_B T$ & $0.0384$ & $\text{eV}$ & Acoplamiento rotacional sin romper enlaces $\text{C--C}$ \\
+Capacidad calorífica molar ($\text{crI}$) & $C_{p,m}$ & $328.3$ & $\text{J}\cdot\text{K}^{-1}\cdot\text{mol}^{-1}$ & Fase plástica FCC con libre rotación isotrópica \\
+Entalpía de sublimación estándar & $\Delta_{\text{sub}}H$ & $59.8\text{--}60.0$ & $\text{kJ}\cdot\text{mol}^{-1}$ & Baja cohesión intermolecular van der Waals \\
+Presión de vapor saturado & $P_{\text{sat}}$ & $4332.2\ (32.49)$ & $\text{Pa}\ (\text{Torr})$ & Alta volatilidad; previene acumulación 3D \\
+Flujo evaporativo de Hertz-Knudsen & $Z_{\text{evap}}$ & $4.630 \times 10^{21}$ & $\text{molec}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$ & Desorción instantánea de sólido no enlazado \\
+Densidad de monocapa compacta & $\sigma_{\text{ML}}$ & $1.83 \times 10^{14}$ & $\text{molec}\cdot\text{cm}^{-2}$ & Empaquetamiento con huella $A_{\text{mol}} = 0.548\text{ nm}^2$ \\
+Tiempo de vida de $1\text{ ML}$ libre & $t_{\text{ML}}$ & $39.44$ & $\text{ns}$ & Suprime formación de matriz 3D amorfa a $173\ ^\circ\text{C}$ \\
+Tiempo de residencia mínimo ($0.65\text{ eV}$) & $\tau_{\text{res,min}}$ & $2.20$ & $\mu\text{s}$ & Límite inferior en terrazas $(100)\text{-}(2\times 1):\text{H}$ y $\{111\}\text{-}(1\times 1):\text{H}$ \\
+Tiempo de residencia nominal ($0.72\text{ eV}$) & $\tau_{\text{res,nom}}$ & $13.59$ & $\mu\text{s}$ & Ventana temporal nominal para captura por pincel \\
+Tiempo de residencia máximo ($0.80\text{ eV}$) & $\tau_{\text{res,max}}$ & $108.87$ & $\mu\text{s}$ & Retención prolongada en escalones y sitios activos \\
+Coeficiente de difusión superficial & $D_s$ & $3.441 \times 10^{-6}$ & $\text{cm}^2\cdot\text{s}^{-1}$ & Alta movilidad lateral de jaulas fisisorbidas \\
+Longitud de difusión ($0.65\text{--}0.80\text{ eV}$) & $\lambda_{\text{diff}}$ & $38.91\text{--}273.72$ & $\text{nm}$ & Alimentación centrípeta hacia el frente de escalón \\
+Efecto isotópico cinético ($\text{Ad-}h_{16}/\text{Ad-}d_{16}$) & $\text{KIE}$ & $2.0$ & Adimensional & Confirma escisión $\text{C--H}$ como paso limitante (RDS) \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+% ==============================================================================
+% 5. FÍSICA DEL MECANISMO DIET: E-BEAM (1.0 keV) VS FOTONES VUV (6.49-10 eV)
+% ==============================================================================
+\section{Física Cuántica del Mecanismo DIET: Haz de Electrones ($1.0\text{ keV}$) frente a Fotones VUV ($6.49\text{--}10.0\text{ eV}$)}
+
+La activación de enlaces $\text{C--H}$ opera mediante transiciones electrónicas (DIET) a través de tres canales cuánticos \cite{Menzel1964,Avouris1984}: (i) \textbf{Menzel-Gomer-Redhead (MGR)}, por promoción $\sigma(\text{C--H}) \to \sigma^*(\text{C--H})$ o Rydberg repulsivo expulsando $\text{H}^\bullet$; (ii) \textbf{Knotek-Feibelman (KF)}, por ionización de valencia interna y decaimiento Auger hacia estados $2h/3h$ que expulsan $\text{H}^+$; y (iii) \textbf{Captura Electrónica Disociativa (DEA)} de electrones lentos ($1\text{--}20\text{ eV}$) en $\sigma^*(\text{C--H})$ formando un ion negativo transitorio ($\text{TNI}$, $[\text{Ad}]^{\bullet-}$) que se relaja hacia $\text{Ad}^\bullet + \text{H}^-/\text{H}^\bullet$.
+
+\subsection{Transporte Inelástico y Cascadas Secundarias bajo Haz de Electrones de $1.0\text{ keV}$}
+En el sustrato de diamante ($\rho = 3.52\text{ g}\cdot\text{cm}^{-3}, Z=6, A=12.011\text{ g}\cdot\text{mol}^{-1}$), la relación de Kanaya-Okayama \cite{Kanaya1972}:
+\begin{equation}
+R_{\text{KO}} = \frac{0.0276\,A}{\rho\,Z^{0.89}} E_0^{1.67}\quad [\mu\text{m}]
+\end{equation}
+establece a $E_0 = 1.0\text{ keV}$ una penetración de $R_{\text{KO,diam}} = 19.12\text{ nm}$ (frente a $R_{\text{KO,Ad}} = 51.55\text{ nm}$ en adamantano condensado), mientras que la energía máxima transferible por colisión elástica relativista a un núcleo de carbono es de apenas $T_{\text{max}} = 2 E_0 (E_0 + 2 m_e c^2)/(M_{\text{C}} c^2) = 0.1829\text{ eV}$, situándose $191.4\times$ por debajo del umbral de desplazamiento de vacancias del diamante ($E_d = 35.0\text{ eV}$). El poder de frenado electrónico colisional de Bethe-Joy-Luo ($I = 88.5 \pm 2.0\text{ eV}$) alcanza $-\left.dE/ds\right|_{\text{diam}} = 3653.38\text{ eV}\cdot\text{nm}^{-1}$ ($365.34\text{ eV}\cdot\text{\AA}^{-1}$) frente a $-\left.dE/ds\right|_{\text{Ad}} = 1389.34\text{ eV}\cdot\text{nm}^{-1}$, con un recorrido libre medio inelástico $\lambda_{\text{IMFP}} \approx 2.0\text{ nm}$ ($\sim 14.7$ colisiones). Como a $173\ ^\circ\text{C}$ el espesor de la monocapa fisisorbida es de solo $\sim 0.74\text{ nm}$ ($1\text{ ML}$), el electrón primario deposita $<10\%$ de su energía en el adsorbato y $>90\%$ en los primeros $19.12\text{ nm}$ del diamante.
+
+En superficies de diamante hidrogenadas con afinidad electrónica negativa (NEA), el máximo absoluto del rendimiento de emisión secundaria ($\text{SEY}, \delta = I_{\text{SE}}/I_p$) se sitúa exactamente en $E_0 \approx 1.0\text{ keV}$, produciendo $\mathbf{\delta \approx 20}$ electrones secundarios por electrón primario ($\delta_{\text{max}} = 1.05$ en C amorfo). Así, la tasa total de activación DIET bajo haz electrónico es:
+\begin{equation}
+\begin{split}
+R_{\text{DIET,e}} &= J_e \Bigg[ \sigma_{\text{EII}}(1\text{ keV}) + \int_0^{50\text{ eV}} \frac{d\delta(E_s)}{dE_s} \\
+&\quad \times \left(\sigma_{\text{ESD}}(E_s) + \sigma_{\text{DEA}}(E_s) + \sigma_{\text{EII}}(E_s)\right) dE_s \Bigg]
+\end{split}
+\end{equation}
+donde $\sigma_{\text{EII}}(1\text{ keV}) \approx 1.5\text{--}2.5 \times 10^{-16}\text{ cm}^2$ (ápice $5.0\text{--}8.0 \times 10^{-16}\text{ cm}^2$ a $50\text{--}65\text{ eV}$) y $\sigma_{\text{ESD}}$ en diamante(100) hidrogenado escala desde $5.0\text{ Mb}$ ($5 \times 10^{-18}\text{ cm}^2$) a $5\text{ eV}$ hasta $35.0\text{ Mb}$ a $37\text{ eV}$ \cite{Hoffman2002}. No obstante, el haz de $1.0\text{ keV}$ presenta tres limitaciones críticas en el sitio de reacción (Figura~\ref{fig:diet_contraste}b): (1) los electrones primarios y secundarios de $>20\text{--}70\text{ eV}$ fracturan los enlaces $\text{C--C}$ del esqueleto ($m/z = 135 \to 93, 79, 67$), introduciendo defectos grafíticos $sp^2$ ($8\text{--}15\%$); (2) inducen desorción estimulada de adamantano fisisorbido intacto ($\sigma_{\text{des,phys}} \sim 10^{-16}\text{ cm}^2$); y (3) acumulan huecos positivos $Q_1 = I_p t_c (\delta - 1)$ que a dosis $D_{c1} = 0.2\text{ mC}\cdot\text{cm}^{-2}$ y $D_{c2} = 2.0\text{ mC}\cdot\text{cm}^{-2}$ colapsan el rendimiento secundario a $\delta = 1$ y extinguen la condición NEA.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figura2_paper4_contraste_DIET_ebeam_vs_VUV.png}
+    \caption{\textbf{Contraste físico-cuántico entre excitación por fotones VUV ($6.49\text{--}10.0\text{ eV}$) y haz de electrones ($1.0\text{ keV}$).} (a) Espectro de sección eficaz absoluta de fotoabsorción VUV $\sigma_{\text{abs}}(h\nu)$ del adamantano en fase gas ($\text{C}_{10}\text{H}_{16}$, Marder et al. 2023 \cite{Marder2023}), mostrando las transiciones electrónicas de Rydberg sub-umbral en $6.49\text{ eV}$ ($\text{HOMO}\to\text{LUMO}$), $7.13\text{ eV}$ ($\text{HOMO}\to\text{LUMO}+1$, acoplable con $\text{Xe}_2^*$ a $172\text{ nm}$) y $8.23\text{ eV}$ ($\text{HOMO}\to\text{LUMO}+2$, $\sim 46\text{ Mb}$), así como la ventana sobre-umbral suave ($9.25\text{--}10.0\text{ eV}$) por debajo del umbral de ruptura de jaula $\text{C--C}$ ($>11.5\text{ eV}$). (b) Distribución espacial de deposición energética subsuperficial en diamante: cascada de Kanaya-Okayama a $1.0\text{ keV}$ ($R_{\text{KO}} = 19.12\text{ nm}$) frente a la absorción óptica limpia de fotones VUV ($\delta_{\text{opt}} \approx 8\text{--}15\text{ nm}$: $10\text{--}15\text{ nm}$ en sub-umbral y $8\text{--}12\text{ nm}$ en sobre-umbral; perfil graficado para el valor nominal $\delta_{\text{opt}} = 10\text{ nm}$).}
+    \label{fig:diet_contraste}
+\end{figure*}
+
+\subsection{Excitación Resonante Selectiva del Adamantano mediante Fotones VUV ($6.49\text{--}10.0\text{ eV}$)}
+La radiación VUV en la ventana espectral de $6.49\text{--}10.0\text{ eV}$ ($\lambda = 191.0\text{--}124.0\text{ nm}$) elimina las cascadas colisionales de alta energía y se divide en dos sub-regímenes delimitados por el potencial de ionización adiabático del adamantano ($\text{IE}_{\text{ad}} = 9.25\text{ eV}$, vertical $9.56\text{ eV}$ \cite{Landt2009,Marder2023}, Figura~\ref{fig:diet_contraste}a y Tabla~\ref{tab:ebeam_vs_vuv}):
+\begin{enumerate}
+    \item \textbf{Régimen resonante sub-umbral de predisociación neutra ($6.49 \le h\nu < 9.25\text{ eV}$):} Con la fotoionización directa prohibida, la espectroscopía sincrotrón de alta resolución en fase gas de Marder et al. (2023) \cite{Marder2023} y Landt et al. (2009) \cite{Landt2009} demuestra que el adamantano ($\text{C}_{10}\text{H}_{16}$) presenta tres bandas electrónicas prominentes desde el orbital $\text{HOMO}$ ($2t_2$) hacia estados centrados en la jaula: el umbral óptico $\text{HOMO}\to\text{LUMO}$ ($3s \leftarrow 2t_2$) en $\mathbf{6.49\text{ eV}}$, la transición $\text{HOMO}\to\text{LUMO}+1$ ($3p \leftarrow 2t_2$) en $\mathbf{7.13\text{ eV}}$ ($\sigma_{\text{abs}} \approx 24\text{ Mb}$, directamente sintonizable mediante fuentes de excímero de xenón $\text{Xe}_2^*$ a $172\text{ nm} \equiv 7.21\text{ eV}$), y la intensa banda $\text{HOMO}\to\text{LUMO}+2$ ($3d/4s \leftarrow 2t_2$) en $\mathbf{8.23\text{ eV}}$ ($\sigma_{\text{abs}} \approx 46\text{ Mb} = 4.6 \times 10^{-17}\text{ cm}^2$). Conviene distinguir estas bandas propias de la jaula $T_d$ del adamantano respecto a la resonancia a $8.486\text{ eV}$ ($33.96\text{ Mb}$) de una subunidad aislada de ciclohexano ($\text{C}_6\text{H}_{12}$): la fusión de cuatro anillos silla en el adamantano desplaza el inicio de Rydberg hacia menores energías e incrementa la fuerza de oscilador integrada sobre sus $16$ enlaces $\text{C--H}$. El acoplamiento vibrónico de estos estados Rydberg con la coordenada repulsiva $\sigma^*(\text{C--H})$ impulsa la disociación homolítica MGR ($\text{Ad}^* \to \text{Ad}^\bullet + \text{H}^\bullet$) por debajo del umbral de escisión simultánea de dos enlaces $\text{C--C}$ ($>11.5\text{--}12.0\text{ eV}$), estimándose una selectividad teórica en el canal primario $>99.8\%\ sp^3$.
+    \item \textbf{Régimen de fotoionización suave y fotoemisión interna ($9.25 \le h\nu \le 10.0\text{ eV}$):} Abre la fotoionización directa ($\text{Ad} + h\nu \to \text{Ad}^{\bullet+} + e^-$, $\sigma_{\text{abs}} \approx 55\text{--}65\text{ Mb}$) dejando una energía interna máxima en el catión radical de apenas $\Delta E_{\text{int}} = h\nu - \text{IE}_{\text{ad}} \le 0.75\text{ eV}$, donde la distorsión Jahn-Teller del estado catiónico $T_d \to C_{3v}$ debilita selectivamente el enlace $\text{C--H}$ apical sin fragmentar la jaula. De forma simultánea, los fotones absorbidos en los primeros $\delta_{\text{opt}} \approx 8\text{--}15\text{ nm}$ del diamante ($10\text{--}15\text{ nm}$ en sub-umbral, $8\text{--}12\text{ nm}$ en sobre-umbral y $\delta_{\text{opt}} = 10\text{ nm}$ nominal, $E_g = 5.47\text{ eV}$) inyectan fotoelectrones internos lentos ($E_{\text{kin}} \approx 2\text{--}4.5\text{ eV}$) que activan los estados $\sigma^*(\text{C--H})$ superficiales ($\sigma_{\text{PSD}} \approx 5\text{ Mb}$) sin generar electrones calientes destructivos ni carga atrapada.
+\end{enumerate}
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Contraste físico y mecanístico entre Haz de Electrones ($1.0\text{ keV}$) y Fotones VUV en Adamantano ($6.49\text{--}10.0\text{ eV}$).}}
+\label{tab:ebeam_vs_vuv}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{3.6cm}p{4.3cm}p{4.3cm}p{4.3cm}@{}}
+\toprule
+\textbf{Parámetro Físico y Mecanístico} & \textbf{Haz de Electrones ($1.0\text{ keV}$)} & \textbf{Fotones VUV Sub-Umbral ($6.49\text{--}9.25\text{ eV}$)} & \textbf{Fotones VUV Sobre-Umbral ($9.25\text{--}10.0\text{ eV}$)} \\ \midrule
+Canal primario de excitación & Ionización de impacto + cascada SE ($1\text{--}50\text{ eV}$) & Bandas Rydberg de jaula $T_d$: $6.49\text{ eV}$ ($3s$), $7.13\text{ eV}$ ($3p$) y $8.23\text{ eV}$ ($3d/4s$) (MGR) & Fotoionización suave ($\text{Ad}^{\bullet+}$ Jahn-Teller) + fotoemisión interna \\ \midrule
+Sección eficaz en el adsorbato ($\sigma$) & $\sigma_{\text{EII}}(1\text{ keV}) \approx 1.5\text{--}2.5 \times 10^{-16}\text{ cm}^2$ (pico $5\text{--}8 \times 10^{-16}\text{ cm}^2$) & $\sigma_{\text{abs}} \approx 24\text{ Mb}$ ($7.13\text{ eV}$) hasta $\mathbf{\sim 46\text{ Mb}}$ ($8.23\text{ eV}$) \cite{Marder2023} & $\sigma_{\text{abs}} \approx 55\text{--}65\text{ Mb}$ ($\sigma_{\text{DIET}}^{\text{act}} = \sigma_{\text{abs}}\Phi_{\text{DIET}} \approx \mathbf{40\text{ Mb}}$) \\ \midrule
+Sección eficaz ESD/PSD sustrato $\text{C--H}$ & $\sigma_{\text{ESD}}(5\text{ eV}) = 5\text{ Mb}$; $\sigma_{\text{ESD}}(37\text{ eV}) = 35\text{ Mb}$ & Fotoemisión interna de $1.0\text{--}3.7\text{ eV}$ ($\sigma_{\text{PSD}} \sim 1\text{ Mb}$) & Fotoemisión interna hacia $\sigma^*(\text{C--H})$ ($\sigma_{\text{PSD}} \approx 5\text{ Mb}$) \\ \midrule
+Alcance de penetración en diamante & $R_{\text{KO}} = 19.12\text{ nm}$ ($\lambda_{\text{IMFP}} \approx 2.0\text{ nm}$) & Longitud de atenuación óptica $\delta_{\text{opt}} \approx 10\text{--}15\text{ nm}$ & Longitud de atenuación óptica $\delta_{\text{opt}} \approx 8\text{--}12\text{ nm}$ \\ \midrule
+Poder de frenado / deposición & $3653.4\text{ eV}\cdot\text{nm}^{-1}$ (diam.); $1389.3\text{ eV}\cdot\text{nm}^{-1}$ (Ad) & Deposición cuántica discreta ($6.49\text{--}9.25\text{ eV}$ por fotón) & Deposición cuántica discreta ($9.25\text{--}10.0\text{ eV}$ por fotón) \\ \midrule
+Rendimiento secundario ($\text{SEY}, \delta$) & $\delta \approx 20$ en diamante NEA ($\delta \approx 1.05$ en C amorfo) & $\delta \ll 0.1$ (electrones sub-vacío o cuasi-térmicos) & $\delta \approx 0.1\text{--}0.5$ (fotoelectrones lentos $<4.5\text{ eV}$) \\ \midrule
+Selectividad teórica ($\text{C--H}$ vs $\text{C--C}$) & Moderada-Alta ($85\text{--}92\%$); cola $>20\text{ eV}$ induce defectos $sp^2$ & \textbf{Ultra-alta estimada ($>99.8\%$)}; bajo el umbral de ruptura de jaula & \textbf{Muy alta estimada ($>99.0\%$)}; catión $\text{Ad}^{\bullet+}$ frío ($\Delta E_{\text{int}} \le 0.75\text{ eV}$) \\ \midrule
+Acumulación de carga y degradación & Alta; atrapamiento de huecos ($D_{c1}=0.2\text{ mC}\cdot\text{cm}^{-2}$) y pérdida NEA & \textbf{Nula a despreciable}; proceso predominantemente neutro & \textbf{Baja}; compensada sin esfuerzo en sustratos tipo-$p$ \\ \midrule
+Resolución espacial límite & Sub-nanométrica a nanométrica ($\sim 1\text{--}5\text{ nm}$) & Limitada por difracción ($80\text{--}150\text{ nm}$) o campo cercano & Limitada por difracción ($65\text{--}120\text{ nm}$) o máscara plasmónica \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+% ==============================================================================
+% 6. CINÉTICA ESPACIOTEMPORAL: PINCEL SINCRONIZADO VS INUNDACIÓN
+% ==============================================================================
+\section{Cinética Espaciotemporal: Pincel Sincronizado frente a Inundación}
+
+El acoplamiento entre la excitación DIET y la termodinámica superficial a $173\ ^\circ\text{C}$ ($446.15\text{ K}$) se formaliza mediante el sistema acoplado de ecuaciones en derivadas parciales de reacción-difusión-desorción para el recubrimiento de adamantano fisisorbido $\theta_{\text{Ad}}(\mathbf{r},t)$ y la densidad de radicales activados quimisorbidos $\theta_{\text{Ad}^\bullet}(\mathbf{r},t)$:
+\begin{equation}
+\begin{split}
+\frac{\partial \theta_{\text{Ad}}(\mathbf{r},t)}{\partial t} &= F_{\text{dos}}\left(1 - \theta_{\text{Ad}} - \theta_{\text{Ad}^\bullet}\right) - \frac{\theta_{\text{Ad}}}{\tau_{\text{res}}} \\
+&\quad + D_s \nabla^2 \theta_{\text{Ad}} - \left(\sigma_{\text{DIET}}^{\text{act}} + \sigma_{\text{DIET}}^{\text{des}}\right) J(\mathbf{r},t)\,\theta_{\text{Ad}}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\frac{\partial \theta_{\text{Ad}^\bullet}(\mathbf{r},t)}{\partial t} &= \sigma_{\text{DIET}}^{\text{act}}\,J(\mathbf{r},t)\,\theta_{\text{Ad}} - k_{\text{epi}}\,\theta_{\text{Ad}^\bullet} N_{\text{step}}(\mathbf{r}) \\
+&\quad - k_{\text{nuc}}\,\theta_{\text{Ad}^\bullet}^2 - \sigma_{\text{daño}}\,J(\mathbf{r},t)\,\theta_{\text{Ad}^\bullet}
+\end{split}
+\end{equation}
+donde $\sigma_{\text{DIET}}^{\text{act}} = \sigma_{\text{abs}}(h\nu)\,\Phi_{\text{DIET}}$ es la sección eficaz efectiva de activación disociativa $\text{C--H}$ (con un valor nominal de diseño de $\sigma_{\text{DIET}}^{\text{act}} = \mathbf{4.0 \times 10^{-17}\text{ cm}^2} \equiv 40\text{ Mb}$, resultante de $\sigma_{\text{abs}} \approx 46\text{--}65\text{ Mb}$ en la banda de $8.23\text{--}9.6\text{ eV}$ \cite{Marder2023} y un rendimiento cuántico disociativo $\Phi_{\text{DIET}} \approx 0.62\text{--}0.85$ asistido por el sustrato). El sistema está gobernado por el \textbf{Número de Damköhler DIET} ($\text{Da}_{\text{DIET}}$) y el \textbf{Número de Péclet de Barrido} ($\text{Pe}_{\text{scan}}$):
+\begin{equation}
+\begin{split}
+\text{Da}_{\text{DIET}} &= \frac{\tau_{\text{res}}}{\tau_{\text{act}}} = \sigma_{\text{DIET}}^{\text{act}}\,J(\mathbf{r},t)\,\tau_{\text{res}}, \\
+\text{Pe}_{\text{scan}} &= \frac{v_{\text{scan}}\,w_b}{D_s}
+\end{split}
+\end{equation}
+
+\subsection{Fracaso Cinético y Estructural del Modo Simultáneo (Inundación)}
+En el modo de activación simultánea (\textit{flood gun} con $I_p \approx 75\text{--}150\ \mu\text{A}$ sobre $5\text{ cm}^2$, $J_{\text{flood}} \approx 1.0\text{--}2.0 \times 10^{14}\text{ e}^-\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$, o lámpara VUV de inundación con $10\text{--}50\text{ mW}\cdot\text{cm}^{-2}$, $J_{\text{flood}} \approx 0.7\text{--}3.0 \times 10^{16}\text{ fotones}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$), el tiempo característico de activación con $\sigma_{\text{DIET}}^{\text{act}} = 4.0 \times 10^{-17}\text{ cm}^2$ es $\tau_{\text{act,flood}} = (\sigma_{\text{DIET}}^{\text{act}} J_{\text{flood}})^{-1} \approx \mathbf{0.83\text{--}3.57\text{ s}}$ ($\approx 0.83\text{--}3.6\text{ s}$) en VUV (y $\sim 0.1\text{--}10\text{ s}$ en haz electrónico). Contrastado con $\tau_{\text{res,nom}} = 13.59\ \mu\text{s}$ a $173\ ^\circ\text{C}$:
+\begin{equation}
+\begin{split}
+\text{Da}_{\text{DIET,flood}} = \frac{\tau_{\text{res,nom}}}{\tau_{\text{act,flood}}} &\approx 3.8 \times 10^{-6}\text{ a }1.6 \times 10^{-5}\text{ (VUV)} \\
+&\quad \left[\text{hasta }10^{-4}\text{ en E-Beam}\right] \ll 1
+\end{split}
+\end{equation}
+Más del $\mathbf{99.998\%}$ de las moléculas de adamantano se desorben térmicamente antes de experimentar una transición DIET (Figura~\ref{fig:pincel_piramide}a), sufriendo además cuatro patologías acopladas: (1) nucleación estocástica multi-sitio con orientaciones inconmensurables que coalicionan en cristales maclados de $8\text{--}20\text{ nm}$ (maclas quíntuples pentagonales); (2) agotamiento difusivo central ($\nabla\theta_{\text{Ad}} \approx 0$, anulando $D_s \nabla^2 \theta_{\text{Ad}}$); (3) re-irradiación continua y amorfización secundaria de los núcleos formados (alcanzando $D_{c1} = 0.2\text{ mC}\cdot\text{cm}^{-2}$ en $6.7\text{ s}$); y (4) liberación simultánea de $16$ átomos de $\text{H}$ por jaula en un frente cerrado que atrapa burbujas subsuperficiales de $\text{H}_2$ e induce exfoliación por ampollamiento (\textit{blistering}).
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figura3_paper4_cinetica_pincel_piramide_300VUV.png}
+    \caption{\textbf{Dinámica de Pincel Sincronizado y Arquitectura de Crecimiento en Pirámide Invertida.} (a) Eficiencia de fijación covalente por pasada ($\eta_{\text{pin}} = 1 - \exp(-\text{Da}_{\text{DIET}})$) en función del Número de Damköhler $\text{Da}_{\text{DIET}}$, contrastando el régimen de inundación ($\text{Da} \sim 10^{-7}\text{--}10^{-5}$ en VUV y $10^{-6}\text{--}10^{-4}$ en E-Beam, eficiencia $<0.05\%$) frente al régimen de pincel sincronizado (banda amplia $\text{Da} = 0.5\text{--}5.0$ correspondiente a $39\%\text{--}99\%$, y ventana objetivo nominal $\text{Da} = 1.6\text{--}3.9$ que alcanza una fijación del $80\%\text{--}98\%$ por pasada). (b) Esquema de la arquitectura Pincel--VUV--Pirámide Invertida: el pincel central ocupa el núcleo depositando trazos ondulatorios (\textit{soldadura laminar} sin colisión frontal) tipo ``muñecas rusas'' bajo irradiación VUV localizada en un wafer vertical rotatorio escalado a $300$ cavidades con $300$ canales VUV independientes.}
+    \label{fig:pincel_piramide}
+\end{figure*}
+
+\subsection{Dinámica de Flujo de Escalón Dirigido en el Modo Progresivo (Pincel Sincronizado)}
+Al concentrar una potencia óptica de apenas $P_{\text{canal}} \approx 80\text{--}200\text{ nW}$ por micro-haz VUV ($5.8 \times 10^{10}$ a $1.4 \times 10^{11}\text{ fotones}\cdot\text{s}^{-1}$) dentro de una huella nanométrica de anchura $w_b \approx 40\text{--}100\text{ nm}$ ($50\text{ nm}$ nominal, área focal $A_{\text{brush}} = \frac{\pi}{4}w_b^2 \approx 1.96 \times 10^{-11}\text{ cm}^2$), la densidad de flujo instantánea local alcanza $J_{\text{brush}} = \mathbf{2.94 \times 10^{21}\text{ a }7.18 \times 10^{21}\text{ fotones}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}}$ en la ventana objetivo (o $9.20 \times 10^{20}\text{ a }9.19 \times 10^{21}\text{ fotones}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$ en la banda amplia). Con $\sigma_{\text{DIET}}^{\text{act}} = 4.0 \times 10^{-17}\text{ cm}^2$, el tiempo característico de activación cae exactamente hasta $\tau_{\text{act,brush}} = (\sigma_{\text{DIET}}^{\text{act}} J_{\text{brush}})^{-1} = \mathbf{3.48\text{--}8.50\ \mu\text{s}}$ ($2.72\text{--}27.18\ \mu\text{s}$ en la banda amplia), habilitando tres acoplamientos cinéticos de precisión (Tabla~\ref{tab:cuatro_modos}):
+\begin{enumerate}
+    \item \textbf{Duración del pulso / exposición local VUV ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = \tau_{\text{res}}$) y acoplamiento temporal ($\text{Da}_{\text{DIET,brush}} \ge 1$):} Cada sitio superficial recibe una ventana o pulso de irradiación VUV cuya duración efectiva se iguala al tiempo de residencia superficial a $173\ ^\circ\text{C}$, esto es, $\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = w_b / v_{\text{scan}} = \mathbf{13.59\ \mu\text{s}}$ en sitios nominales ($0.72\text{ eV}$, abarcando el rango $\mathbf{2.20\text{--}13.59\ \mu\text{s}}$ desde terrazas a escalones), entregando una fluencia integrada por pulso/pasada de $F_{\text{pulso}} = J_{\text{brush}}\tau_{\text{pulso}} = \mathbf{4.00 \times 10^{16}\text{ a }9.76 \times 10^{16}\text{ fotones}\cdot\text{cm}^{-2}}$. De este modo, el número de Damköhler local ($\text{Da}_{\text{DIET,brush}} = \tau_{\text{pulso}}/\tau_{\text{act,brush}} = \sigma_{\text{DIET}}^{\text{act}} F_{\text{pulso}}$) se sitúa en el objetivo nominal \textbf{$\text{Da}_{\text{DIET,brush}} = 1.60$ a $3.91$}, lo que produce una eficiencia de fijación covalente por pasada ($\eta_{\text{pin}} = 1 - \exp(-\text{Da}_{\text{DIET,brush}})$) de exactamente el \textbf{$80.0\%$ al $98.0\%$} (abarcando del $39.3\%$ al $99.3\%$ en el intervalo extendido $\text{Da}_{\text{DIET,brush}} = 0.50\text{--}5.00$).
+    \item \textbf{Alimentación difusiva periférica centrípeta ($w_b \lesssim \lambda_{\text{diff}}$, $\text{Pe}_{\text{scan}} \approx 1$):} Dado que $A_{\text{brush}}/A_{\text{sub}} < 10^{-5}$ y $w_b = 50\text{ nm} \lesssim \lambda_{\text{diff}} = 96.71\text{ nm}$ ($v_{\text{diff}} \approx 2 D_s / w_b = 1.38\text{ cm}\cdot\text{s}^{-1}$), al barrer a $v_{\text{scan}} \approx 0.37\text{--}2.3\text{ cm}\cdot\text{s}^{-1}$ se alcanza \textbf{$\text{Pe}_{\text{scan}} = v_{\text{scan}} w_b / D_s \approx 0.54\text{--}3.3 \sim \mathcal{O}(1)$}. El término laplaciano $D_s \nabla^2 \theta_{\text{Ad}}$ inyecta un flujo centrípeto continuo de jaulas intactas desde los márgenes fríos no irradiados hacia los bordes de escalón $\langle 110 \rangle$ tanto sobre las facetas octaédricas $\{111\}\text{-}(1\times 1):\text{H}$ de la plantilla piramidal como sobre terrazas de referencia $(100)/(001)\text{-}(2\times 1):\text{H}$ (\textit{step-flow epitaxy}), previniendo la nucleación aislada en terraza y las maclas quíntuples.
+    \item \textbf{Periodo de repetición y ciclo regenerativo en oscuridad ($\tau_{\text{refresh}} \approx 1\text{--}50\text{ ms}$, deber de ciclo $\tau_{\text{pulso}}/\tau_{\text{refresh}} \le 10^{-3}$):} Entre dos pulsos/pasadas sucesivas sobre un mismo punto ($f_{\text{rep}} = 20\text{ Hz a }1\text{ kHz}$), la superficie permanece en oscuridad durante $\tau_{\text{refresh}} = 1\text{--}50\text{ ms}$: recupera su recubrimiento fisisorbido en $\sim 13.6\ \mu\text{s}$, el subproducto $\text{H}_2$ ($\text{C--H} + \text{H--C} \to \text{C--C} + \text{H}_2$) se desorbe limpiamente hacia el sistema UHV Turbo-NEG sin quedar atrapado como burbujas, y cualquier carga remanente se neutraliza lateralmente.
+\end{enumerate}
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Matriz comparativa de rendimiento teórico entre los cuatro regímenes espaciotemporales y de excitación DIET a $173\ ^\circ\text{C}$.}}
+\label{tab:cuatro_modos}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{2.9cm}p{3.3cm}p{3.3cm}p{3.5cm}p{3.5cm}@{}}
+\toprule
+\textbf{Dimensión de Rendimiento} & \textbf{Modo Simultáneo (Inundación) + E-Beam ($1.0\text{ keV}$)} & \textbf{Modo Simultáneo (Inundación) + VUV ($6.49\text{--}10\text{ eV}$)} & \textbf{Modo Progresivo (Pincel Sincronizado) + E-Beam ($1.0\text{ keV}$)} & \textbf{Modo Progresivo (Pincel Sincronizado) + VUV ($6.49\text{--}10\text{ eV}$)} \\ \midrule
+Número de Damköhler ($\text{Da}_{\text{DIET}}$) & $10^{-6}\text{--}10^{-4}$ (Dominado por desorción) & $10^{-7}\text{--}10^{-5}$ (Dominado por desorción) & $1.1\text{--}2.5$ (Captura focalizada con desorción colisional) & \textbf{$1.6\text{--}3.9$ objetivo} ($0.5\text{--}5.0$ rango amplio con focalización VUV) \\ \midrule
+Eficiencia de fijación ($\eta_{\text{pin}}$) & $< 0.05\%$ (Pérdida masiva por sublimación) & $< 0.01\%$ (Sublimación supera fotoactivación) & $65\%\text{--}92\%$ (Alimentado por difusión $\lambda_{\text{diff}}$) & $\mathbf{80\%\text{--}98\%\text{ objetivo}}$ ($39\%\text{--}99\%$ en rango $\text{Da}=0.5\text{--}5.0$) \\ \midrule
+Mecanismo de crecimiento & Nucleación 3D/2D aleatoria y fusión de islas & Nucleación 2D dispersa limitada por flujo & Epitaxia direccional por avance de escalón (\textit{step-flow}) & \textbf{Epitaxia coherente de flujo de escalón auto-limitada} \\ \midrule
+Morfología y defectos estimados & Policristalino nano-maclado (maclas 5-fold) + $sp^2$ & Nanocristalino con alta pureza $sp^3$ pero multi-dominio & Monocristalino / nanopatrones; trazas $sp^2$ ($<2\%$) & \textbf{Monocristalino ($>99.8\%\ sp^3$ estimado), libre de maclas} \\ \midrule
+Estabilidad electrostática y NEA & Colapso rápido de NEA ($\delta \to 1$) a $D > 0.2\text{ mC}\cdot\text{cm}^{-2}$ & Estable (sin carga atrapada significativa) & Alta estabilidad; disipación de huecos en $\tau_{\text{refresh}}$ & \textbf{Inmune a carga electrostática de haz cargado} \\ \midrule
+Evacuación de subproducto $\text{H}_2$ & Deficiente; riesgo severo de ampollamiento (\textit{blistering}) & Moderada; limitada por cobertura superficial & Óptima; desorción efusiva por el perímetro del pincel & \textbf{Óptima; liberación limpia en ventana oscura $\tau_{\text{refresh}}$} \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+% ==============================================================================
+% 7. HIPÓTESIS GEOMÉTRICA, COTA DE RENDIMIENTO Y ESTADO DE VERIFICACIÓN
+% ==============================================================================
+\section{Hipótesis Geométrica de Escalado, Cota Analítica de Rendimiento y Estado de Verificación}
+
+Con el propósito de mantener una estricta demarcación epistemológica en este pre-print, se distingue explícitamente entre los resultados verificados mediante archivo fuente en disco, los resultados heredados de fases exploratorias y las hipótesis de diseño mecánico-óptico formuladas como registro de prioridad intelectual (\textit{Defensive Publication / Open Science Prior Art}).
+
+\subsection{Malla Ondulatoria, Soldadura Laminar y Arquitectura Pincel--VUV--Pirámide Invertida ($300\times\text{VUV}$)}
+Cuando dos frentes de crecimiento cristalino independientes avanzan desde direcciones opuestas y colisionan frontalmente para cerrar una unión, cualquier inconmensurabilidad fraccional respecto al parámetro de red del diamante ($a_0 = 3.567\text{ \AA}$) introduce dislocaciones de borde o límites de grano. Es crucial distinguir entre \textit{continuidad geométrica macroscópica} (llenar un volumen) y \textit{continuidad cristalográfica} (preservar la fase de la red $Fd\bar{3}m$). Para evitar el choque frontal, se propone la hipótesis de \textbf{crecimiento lateral guiado por malla ondulatoria} (\textit{soldadura laminar}) dentro de la arquitectura conceptual \textbf{Pincel--VUV--Pirámide Invertida} (Figura~\ref{fig:pincel_piramide}b):
+\begin{enumerate}
+    \item \textbf{Plantilla de Pirámide Invertida (Mitad Inferior de un Octaedro) y Núcleo Ocupado por el Pincel (``Muñecas Rusas''):} Se propone disponer el sustrato como una cavidad piramidal invertida con facetas $\{111\}$ cuyo centro no permanece hueco como una cavidad libre, sino que está físicamente ocupado por el pincel central, el cual deposita trazos ondulatorios de adamantano construyendo las capas desde el interior hacia el exterior como ``muñecas rusas''.
+    \item \textbf{Activación VUV Coaxial In-Situ y Wafer Vertical Rotatorio:} Un micro-haz VUV ($7.13\text{--}8.23\text{ eV}$ sub-umbral o $9.25\text{--}10.0\text{ eV}$ sobre-umbral) apunta exactamente al punto donde el pincel va pintando con duración de pulso/exposición local igualada al tiempo de residencia ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$ nominal, rango $2.20\text{--}13.59\ \mu\text{s}$, fluencia $F_{\text{pulso}} = 4.00\text{--}9.76 \times 10^{16}\text{ fotones}\cdot\text{cm}^{-2}$, $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$) sobre un wafer vertical en rotación cuya profundidad axial ($Z$) se retrae según el espesor crecido.
+    \item \textbf{Paralelización $1:1$ ($N_{\text{cav}} = 300$ Cavidades $\times$ $300$ VUVs) y Cota Analítica de Cobertura y Rendimiento a $10^{-6}\text{ Torr}$:} Dado que ensanchar un único haz VUV ($A_{\text{haz}} \gg w_b^2$) colapsa la densidad de flujo local $J(\mathbf{r},t)$ hacia el régimen de inundación ($\text{Da}_{\text{DIET}} \ll 1$), la única vía consistente para escalar el área barrida conservando $\text{Da}_{\text{DIET,brush}} \ge 1$ es la paralelización $1:1$ de $N_{\text{cav}} = 300$ cavidades con $300$ canales VUV independientes. Conviene además explicitar la \textbf{estimación analítica de cobertura y cota de rendimiento por cavidad individual}: a una presión parcial de fondo de $P_{\text{Ad}} \sim 10^{-6}\text{ Torr}$ ($1.33 \times 10^{-4}\text{ Pa}$) a $446.15\text{ K}$, el flujo incidente de Hertz-Knudsen es $F_{\text{imp}} \approx 1.42 \times 10^{14}\text{ molec}\cdot\text{cm}^{-2}\cdot\text{s}^{-1}$ ($F_{\text{dos}} = F_{\text{imp}}/\sigma_{\text{ML}} \approx 0.78\text{ ML}\cdot\text{s}^{-1}$), lo que con $\tau_{\text{res}} = 2.20\text{--}108.87\ \mu\text{s}$ ($13.59\ \mu\text{s}$ nominal) arroja una cobertura estacionaria de equilibrio sin inyección localizada de apenas $\theta_{\text{eq}} \approx F_{\text{dos}}\,\tau_{\text{res}} \approx \mathbf{1.7 \times 10^{-6}\text{ a }8.5 \times 10^{-5}\text{ ML}}$ ($\sim 1.1 \times 10^{-5}\text{ ML}$ nominal). Bajo estos supuestos explícitos (suponiendo captura de las moléculas residentes e inyectadas por difusión periférica dentro de la huella del pincel de $w_b = 50\text{ nm}$ y espesor equivalente por bicapa $\{111\}$ de $h_{\text{ML}} \approx 0.206\text{ nm}$ sobre una micro-cavidad típica), la tasa efectiva de crecimiento vertical de un único pincel queda acotada en $\mathbf{G_{\text{cav}} \lesssim 4 \times 10^{-4}\ \mu\text{m/h}}$ ($\lesssim 0.4\text{ nm/h}$ por cavidad individual; nota: tanto $\theta_{\text{eq}}$ como $G_{\text{cav}}$ son estimaciones analíticas de orden de magnitud). Esta cota rigurosa explica por qué la arquitectura de un solo canal se orienta a heteroestructuras cuánticas ultradelgadas (capas delta NV de $1\text{--}10\text{ nm}$) y por qué el crecimiento volumétrico exige combinar dosificación coaxial directa en la punta del pincel ($P_{\text{local}} \gg P_{\text{bg}}$) con matrices masivamente paralelizadas ($N_{\text{cav}} \ge 300$).
+\end{enumerate}
+
+\subsection{Estado de Verificación, Trazabilidad y Protocolo de Falsación Experimental}
+Para garantizar total transparencia sobre el grado de respaldo computacional de cada resultado en esta primera versión del documento, la Tabla~\ref{tab:estado_verificacion} clasifica todos los parámetros en tres categorías estrictas.
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Estado de verificación y trazabilidad de los resultados, cálculos y supuestos reportados en este pre-print.}}
+\label{tab:estado_verificacion}
+\setlength{\tabcolsep}{4.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{4.2cm}p{12.8cm}@{}}
+\toprule
+\textbf{Categoría de Verificación} & \textbf{Contenido, Valores Clave y Archivos Fuente} \\ \midrule
+\textbf{1. Verificado (con archivo fuente en disco)} &
+$\bullet$ \textbf{Barrera de $\text{H}_2$ en $\text{C}_{30}\text{H}_{48}$ ($r_{\text{pore}} = -0.13\text{ \AA}$, ORCA 6.1.1):} Dataset 3 longitudinal ($20$ puntos, $18/20$ convergidos, máximo en $Z=+0.25\text{ \AA}$: $+1.7256\text{ eV}$ en $16$ ciclos desc. \texttt{opt\_down\_Zp0.25.out} y $+1.7146\text{ eV}$ en $19$ ciclos asc. \texttt{opt\_up\_Zp0.25.out}); Dataset 4 perpendicular ($20/20$ convergidos, $+1.7688\text{ eV}$ en $21$ ciclos y $+1.7673\text{ eV}$ en $10$ ciclos); refinamiento $\omega\text{B97X-D3}$/def2-TZVP (\texttt{sp\_peak\_wb97x.out}: $+1.6690\text{ eV}$); factores de Boltzmann $3 \times 10^{-20}\text{ a }1.4 \times 10^{-19}$ a $173\ ^\circ\text{C}$. \newline
+$\bullet$ \textbf{Energías DFT del Modelo A ($\text{C}_{30}\text{H}_{42}$) y controles de adsorción/calibración (B97-3c/def2-mSVP):} Confinamiento de $\text{C}_{30}\text{H}_{48}$ ($+1.3079\text{ eV}$, $\Delta E_{\text{disp}} = -0.8848\text{ eV}$, \texttt{dft\_opt.out}); Modelo 1A anclado ($+10.0295\text{ eV}$, \texttt{opt\_c30h42\_model1A\_free.out}); Modelo 1A libre sin anclajes ($+3.245\text{ eV}$ frente a $3$ adamantanos libres, $+1.937\text{ eV}$ frente a anclado, \texttt{opt\_c30h42\_model1A\_no\_anchors.out} y \texttt{unbiased.out}); Modelo 2B cabezas de puente ($+15.2621\text{ eV}$); adsorción de $\text{C}_{10}\text{H}_{15}^\bullet$ en terraza $\{111\}$ ($\mathbf{-1.8090\text{ eV}}$, \texttt{02\_flat\_terrace\_plus\_adamantyl\_BS.out}) y en escalón $\{111\}/(11\bar{1})$ ($\mathbf{-1.7155\text{ eV}}$, \texttt{02B\_step\_plus\_adamantyl\_BS.out}); dímero 1,1'-biadamantilo ($\mathbf{-3.5621\text{ eV}}$, \texttt{cal\_a\_dimero\_eclipsado.out}) y $\text{CH}_3^\bullet$ en terraza ($-3.6881\text{ eV}$, \texttt{cal\_b\_CH3\_terraza.out}). \newline
+$\bullet$ \textbf{Física analítica y datos experimentales tabulados:} Alcance de Kanaya--Okayama ($R_{\text{KO}} = 19.12\text{ nm}$ a $1.0\text{ keV}$), termodinámica de sublimación del adamantano a $446.15\text{ K}$ ($P_{\text{sat}} = 4332.2\text{ Pa}$, $Z_{\text{evap}} = 4.630 \times 10^{21}\text{ cm}^{-2}\text{s}^{-1}$, $t_{\text{ML}} = 39.44\text{ ns}$ \cite{Bazyleva2011}) y bandas de absorción VUV en fase gas ($6.49, 7.13$ y $8.23\text{ eV}$ \cite{Marder2023}). \\ \midrule
+\textbf{2. Heredado, pendiente de recálculo / verificación} &
+$\bullet$ \textbf{Potenciales exploratorios previos:} Energías MACE-MP-0 de oligómeros 1D ($N=1\dots5$; las cifras previas de MACE para la tríada lateral quedan descartadas y reemplazadas por los DFT del Modelo A), dinámica molecular en LAMMPS AIREBO (ventana sub-crítica de reconstrucción de Pandey $\theta_* \le 12\text{--}15\%$ y diferencia de apilamiento $2\text{H}-3\text{C}$ en $N=1\dots5$), simulaciones Monte Carlo de vacío en Molflow+ CERN ($S_{\text{total}} = 2350\text{ L/s}$, $P_{\text{bg}} = 4.88 \times 10^{-6}\text{ Torr}$) y análisis termomecánico/clivaje en CalculiX ($Bi = 4.69 \times 10^{-6}$, $F_{\text{crit}} = 712.5\text{ N}$). \\ \midrule
+\textbf{3. Hipótesis / supuestos sin cálculo \textit{ab initio}} &
+$\bullet$ \textbf{Parámetros cinéticos supuestos y arquitectura conceptual:} Energía de fisisorción del adamantano neutro sobre terraza ($E_{\text{des}} = 0.65\text{--}0.80\text{ eV}$, pendiente de optimización DFT directa) y barrera de difusión ($E_{\text{diff}} = 0.20\text{ eV}$); rendimiento cuántico disociativo ($\Phi_{\text{DIET}}$, $\sigma_{\text{DIET}}^{\text{act}} \approx 40\text{ Mb}$) y selectividad estimada ($>99.8\%\ sp^3$); geometría de soldadura laminar por pincel VUV en pirámide invertida (``muñecas rusas''), escalado modular $300 \times \text{VUV}$, cobertura estacionaria a $10^{-6}\text{ Torr}$ ($\theta_{\text{eq}} \sim 10^{-5}\text{ ML}$) y cota analítica de rendimiento ($\lesssim 4 \times 10^{-4}\ \mu\text{m/h}$ por cavidad). \\ \bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+El protocolo de falsación experimental contempla cinco pruebas directas: (1) trayectoria ondulatoria frente a deposición uniforme (AFM/SEM); (2) modo progresivo ($\text{Da}_{\text{DIET}} \ge 1$) frente a modo de inundación ($\text{Da}_{\text{DIET}} \ll 1$) a $173\ ^\circ\text{C}$; (3) inspección morfológica del centro de la cavidad piramidal; (4) medición experimental de $\tau_{\text{res}}$ a $173\ ^\circ\text{C}$ y de la fotoactivación en las bandas de $6.49\text{--}8.23\text{ eV}$; y (5) caracterización por micro-Raman ($1332.0\text{ cm}^{-1}$, $\text{FWHM} < 2.0\text{ cm}^{-1}$), XRD y EELS.
+
+% ==============================================================================
+% 8. CONCLUSIÓN
+% ==============================================================================
+\section{Conclusión}
+La integración de la auditoría cuántica DFT en ORCA 6.1.1 sobre la tríada no cosida $\text{C}_{30}\text{H}_{48}$ (tres adamantanos sin enlaces entre sí, $r_{\text{pore}} = -0.13\text{ \AA}$) y el Modelo A cosido $\text{C}_{30}\text{H}_{42}$ ($+10.03\text{ eV}$ anclado y $+3.25\text{ eV}$ libre frente a tres adamantanos aislados, contrastado con la quimisorción radicalaria exotérmica de $-1.809\text{ eV}$ en terraza $\{111\}$ y $-1.716\text{ eV}$ en escalón), la barrera de exclusión de $\text{H}_2$ en $Z = +0.25\text{ \AA}$ verificada en los Datasets 3 y 4 ($+1.7256$ y $+1.7146\text{ eV}$ en B97-3c, $+1.669\text{ eV}$ en $\omega\text{B97X-D3}$ y $+1.769 / +1.767\text{ eV}$ perpendicular, equivalentes a $\sim 45\,k_B T$ con factores de Boltzmann de $3 \times 10^{-20}\text{ a }1.4 \times 10^{-19}$), la autolimitación de monocapa a $+173\ ^\circ\text{C}$ ($t_{\text{ML}} = 39.44\text{ ns}$), la excitación VUV acoplada a las bandas del adamantano ($6.49, 7.13$ y $8.23\text{ eV}$), y la cinética de pincel sincronizado ($\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ para $80\%\text{--}98\%$ de fijación por pasada, con cota analítica de $\lesssim 4 \times 10^{-4}\ \mu\text{m/h}$ por cavidad) en geometría piramidal invertida de $300$ cavidades establece un marco teórico y conceptual transparente, trazable y falsable para la síntesis epitáxica de diamante a $173\ ^\circ\text{C}$ ($<400\ ^\circ\text{C}$ CMOS BEOL).
+
+% ==============================================================================
+% SECCIONES EDITORIALES FINALES
+% ==============================================================================
+\section*{Declaración de Ciencia Abierta (Open Science), Prioridad Intelectual y Retroalimentación Comunitaria}
+Este segundo pre-print oficial del Proyecto Tharos se deposita bajo acceso abierto en Zenodo (DOI: \href{https://doi.org/10.5281/zenodo.23521740}{\texttt{10.5281/zenodo.23521740}}) como publicación defensiva (\textit{Defensive Publication} / \textit{Open Science} no patentable) en continuidad directa con el Pre-print I (DOI: \href{https://doi.org/10.5281/zenodo.23427695}{\texttt{10.5281/zenodo.23427695}}) y el repositorio de auditoría en GitHub (\href{https://github.com/NocWoeder165}{\texttt{github.com/NocWoeder165}}). Al concebirse como una propuesta teórica, analítica y computacional previa a la validación física en reactor, el autor promueve activamente el escrutinio abierto de los modelos y datos aquí expuestos. Se alienta a investigadores, grupos experimentales y pares académicos a compartir críticas constructivas, sugerencias metodológicas o iniciativas de colaboración experimental dirigiéndose indistintamente a \href{mailto:sem-340007@utnay.edu.mx}{\texttt{sem-340007@utnay.edu.mx}} o \href{mailto:keepwalk165@gmail.com}{\texttt{keepwalk165@gmail.com}}.
+
+\section*{Declaración de Contribución de Autores (CRediT)}
+\textbf{César Leonardo Rodríguez García}: Conceptualización fundacional de los Priones de Carbono, dirección de la auditoría cuántica de transporte de $\text{H}_2$ (Datasets 3 y 4) y de cierre de la tríada (Modelo A y controles de adsorción en terraza y escalón $\{111\}$), formulación de la referencia térmica de $+173\ ^\circ\text{C}$ ($446.15\text{ K}$) frente a $180\ ^\circ\text{C}$ y al antecedente criogénico japonés ($-173\ ^\circ\text{C}$), invención del crecimiento lateral por malla ondulatoria (soldadura laminar sin colisión frontal) y diseño de la arquitectura Pincel--VUV--Pirámide Invertida en wafer vertical rotatorio con $300$ canales VUV independientes.
+
+\section*{Declaración sobre el Uso de Inteligencia Artificial}
+El autor declara el empleo del entorno \textbf{Google DeepMind Antigravity} (\textbf{Gemini 4 Argon} y herramientas de síntesis bibliográfica profunda) como copiloto técnico para la parametrización y ejecución de cálculos cuánticos y multifísicos (ORCA 6.1.1, MACE-MP-0, LAMMPS AIREBO, Molflow+ CERN y CalculiX), la formulación analítica de las ecuaciones diferenciales de reacción-difusión ($\text{Da}_{\text{DIET}}, \text{Pe}_{\text{scan}}$) y la maquetación editorial en \LaTeX. Todas las hipótesis nucleares, conexiones conceptuales y arquitecturas geométricas provienen de la secuencia original de investigación del autor.
+
+\begin{thebibliography}{99}
+\footnotesize
+
+\bibitem{RodriguezGarcia2026_Part1}
+C.~L.~Rodríguez García, ``Priones de Carbono: Nucleación Conformacional Dirigida y Dimerización Cuántica de Diamantoides Dopados a Baja Temperatura,'' \textit{Zenodo Pre-print}, DOI: \href{https://doi.org/10.5281/zenodo.23427695}{10.5281/zenodo.23427695}, 2026.
+
+\bibitem{Fu2025}
+J.~Fu, T.~Nakamuro y E.~Nakamura, ``Rapid, low-temperature nanodiamond formation by electron-beam activation of adamantane C--H bonds,'' \textit{Science}, vol.~389, eadw2025, DOI: \href{https://doi.org/10.1126/science.adw2025}{10.1126/science.adw2025}, 2025.
+
+\bibitem{Koizumi2001}
+S.~Koizumi, K.~Watanabe, M.~Hasegawa y H.~Kanda, ``Ultraviolet emission from a diamond $pn$ junction,'' \textit{Science}, vol.~292, no.~5523, pp.~1899--1901, 2001.
+
+\bibitem{Alden1968}
+R.~A.~Alden, J.~Kraut y T.~G.~Traylor, ``Molecular and crystal structure of 1,1'-biadamantyl,'' \textit{J. Am. Chem. Soc.}, vol.~90, no.~1, pp.~74--82, 1968.
+
+\bibitem{Dahl2003}
+J.~E.~Dahl, S.~G.~Liu y R.~M.~K.~Carlson, ``Isolation and Structural Characterization of Diamondoids from Petroleum,'' \textit{Science}, vol.~299, pp.~96--99, 2003.
+
+\bibitem{Batatia2024}
+I.~Batatia et al., ``A foundation model for atomistic materials chemistry,'' \textit{arXiv:2401.00096}, 2024.
+
+\bibitem{Grimme2010}
+S.~Grimme, J.~Antony, S.~Ehrlich y H.~Krieg, ``A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D3),'' \textit{J. Chem. Phys.}, vol.~132, p.~154104, 2010.
+
+\bibitem{Stuart2000}
+S.~J.~Stuart, A.~B.~Tutein y J.~A.~Harrison, ``A reactive potential for hydrocarbons with intermolecular interactions,'' \textit{J. Chem. Phys.}, vol.~112, no.~14, pp.~6472--6486, 2000.
+
+\bibitem{Pandey1981}
+K.~C.~Pandey, ``New dimerized-chain model for the reconstructed (111) surface of Si and diamond,'' \textit{Phys. Rev. Lett.}, vol.~47, no.~26, pp.~1913--1917, 1981.
+
+\bibitem{Bazyleva2011}
+A.~B.~Bazyleva, A.~V.~Blokhin, G.~J.~Kabo et al., ``Thermodynamic Properties of Adamantane Revisited,'' \textit{J. Phys. Chem. B}, vol.~115, no.~33, pp.~10064--10072, 2011.
+
+\bibitem{Marder2023}
+L.~Marder, A.~A.~Breier, N.~de~Oliveira et al., ``Vibrationally Resolved Absorption and Fluorescence Cross Sections of Adamantane in the Far-ultraviolet Spectral Range on an Absolute Scale,'' \textit{Astrophys. J. Suppl. Ser.}, vol.~267, no.~2, p.~23, DOI: \href{https://doi.org/10.3847/1538-4365/acd9b4}{10.3847/1538-4365/acd9b4}, 2023.
+
+\bibitem{Landt2009}
+L.~Landt, K.~Klunder, J.~E.~Dahl, R.~M.~K.~Carlson, T.~Möller y C.~Bostedt, ``Optical response of pristine diamondoids in the vacuum ultraviolet,'' \textit{Phys. Rev. Lett.}, vol.~103, p.~047402, 2009.
+
+\bibitem{Menzel1964}
+D.~Menzel y R.~Gomer, ``Desorption from metal surfaces by low-energy electrons,'' \textit{J. Chem. Phys.}, vol.~41, pp.~3311--3328, 1964.
+
+\bibitem{Avouris1984}
+P.~Avouris y R.~E.~Walkup, ``Fundamental mechanisms of desorption and fragmentation induced by electronic transitions at surfaces,'' \textit{Annu. Rev. Phys. Chem.}, vol.~40, pp.~173--206, 1989.
+
+\bibitem{Kanaya1972}
+K.~Kanaya y S.~Okayama, ``Penetration and energy-loss theory of electrons in solid targets,'' \textit{J. Phys. D: Appl. Phys.}, vol.~5, no.~1, pp.~43--58, 1972.
+
+\bibitem{Hoffman2002}
+A.~Hoffman et al., ``Electron-stimulated hydrogen desorption from diamond surfaces,'' \textit{Appl. Phys. Lett.}, vol.~81, no.~26, pp.~5027--5029, 2002.
+
+\bibitem{Kersevan2009}
+R.~Kersevan y J.-L.~Pons, ``Introduction to MOLFLOW+: New graphical tools for ultra-high-vacuum simulation,'' \textit{J. Vac. Sci. Technol. A}, vol.~27, no.~4, pp.~1017--1023, 2009.
+
+\bibitem{Dhondt2018}
+G.~Dhondt, \textit{CalculiX: A Free Software for Three-Dimensional Finite Element Calculations}, versión 2.13, 2018.
+
+\bibitem{Asmussen2002}
+J.~Asmussen y D.~K.~Reinhard, \textit{Diamond Films Handbook}, Marcel Dekker, Nueva York, 2002.
+
+\bibitem{Silva2009}
+F.~Silva, K.~Hassouni, X.~Bonnin y A.~Gicquel, ``Microwave engineering of plasma-assisted CVD diamond deposition reactors,'' \textit{J. Phys.: Condens. Matter}, vol.~21, p.~364202, 2009.
+
+\end{thebibliography}
+
+\end{document}
