@@ -10,10 +10,10 @@ Computational chemistry datasets, open-shell broken-symmetry DFT benchmarks, and
 
 > **Author:** César Leonardo Rodríguez García (*Dark Horse / NocWoeder165*)  
 > **Affiliation:** Universidad Tecnológica de Nayarit (UTNAY), Xalisco, Nayarit, México  
-> **Project:** Project Tharos $\cdot$ Academic correspondence: sem-340007@utnay.edu.mx $\mid$ keepwalk165@gmail.com  
+> **Project:** Project Tharos • Academic correspondence: sem-340007@utnay.edu.mx | keepwalk165@gmail.com  
 > **Official Pre-prints:**  
-> $\cdot$ **Part I (Dimerization):** [10.5281/zenodo.23427695](https://doi.org/10.5281/zenodo.23427695)  
-> $\cdot$ **Part II (Epitaxy & Reactor):** [10.5281/zenodo.23521740](https://doi.org/10.5281/zenodo.23521740)  
+> • **Part I (Dimerization):** [10.5281/zenodo.23427695](https://doi.org/10.5281/zenodo.23427695)  
+> • **Part II (Epitaxy & Reactor):** [10.5281/zenodo.23521740](https://doi.org/10.5281/zenodo.23521740)  
 
 ---
 
@@ -21,16 +21,15 @@ Computational chemistry datasets, open-shell broken-symmetry DFT benchmarks, and
 
 ### Part I — 1D Quantum Dimerization & Spin Invariance
 Audited via 27 open-shell broken-symmetry calculations in **ORCA 6.1.1** (BS-UKS $\omega\text{B97X-D3/def2-SVP}$ with Yamaguchi spin projection AP-UKS):
-1. **Barrierless Singlet Dimerization:** Exchange stabilization overcomes equatorial shoulder repulsion in the Antiferromagnetic Singlet channel ( = 0$), yielding zero activation barrier and deep covalent potential wells ($\Delta E = -3.65\text{ to }-3.92\text{ eV}$).
-2. **Resolution of Neural Network Artifact:** An apparent steric barrier of .251\text{ to }0.642\text{ eV}$ in MACE-MP-0 was identified as an artifact tracking the repulsive Triplet manifold (=1$).
-3. **Crystallographic Accuracy:** Structural optimization with UKS B97-3c reproduces the XRD bond length of 1,1'-biadamantyl (.578\text{ \AA}$) to within $-0.06\%$ (.5771\text{ \AA}$).
+1. **Barrierless Singlet Dimerization:** Exchange stabilization overcomes equatorial shoulder repulsion in the Antiferromagnetic Singlet channel ($M_S = 0$), yielding zero activation barrier and deep covalent potential wells ($\Delta E = -3.65\text{ to }-3.92\text{ eV}$).
+2. **Resolution of Neural Network Artifact:** An apparent steric barrier of $0.251\text{ to }0.642\text{ eV}$ in MACE-MP-0 was identified as an artifact tracking the repulsive Triplet manifold ($S = 1$).
+3. **Crystallographic Accuracy:** Structural optimization with UKS B97-3c reproduces the XRD bond length of 1,1'-biadamantyl ($1.578\text{ \AA}$) to within $-0.06\%$ ($1.5771\text{ \AA}$).
 
-### Part II — 3D Epitaxy at \ ^\circ\text{C}$, $\text{H}_2$ Steric Barrier & Synchronized VUV Brush
-1. **Pore Steric Barrier (Datasets 3 and 4 in ORCA 6.1.1):** In the unbonded $\text{C}_{30}\text{H}_{48}$ triad ({\text{pore}} = -0.13\text{ \AA}$), dense adiabatic scans locate the $\text{H}_2$ permeation barrier peak at  = +0.25\text{ \AA}$ with $+1.7256\text{ eV}$ (descending) and $+1.7146\text{ eV}$ (ascending) in B97-3c, and $+1.6690\text{ eV}$ in $\omega\text{B97X-D3}$/def2-TZVP ($\sim 45\,k_B T$ at \ ^\circ\text{C}$, Boltzmann factors  \times 10^{-20}\text{ to }1.4 \times 10^{-19}$).
+### Part II — 3D Epitaxy at +173 °C, $\text{H}_2$ Steric Barrier & Synchronized VUV Brush
+1. **Pore Steric Barrier (Datasets 3 and 4 in ORCA 6.1.1):** In the unbonded $\text{C}_{30}\text{H}_{48}$ triad ($r_{\text{pore}} = -0.13\text{ \AA}$), dense adiabatic scans locate the $\text{H}_2$ permeation barrier peak at $Z = +0.25\text{ \AA}$ with $+1.7256\text{ eV}$ (descending) and $+1.7146\text{ eV}$ (ascending) in B97-3c, and $+1.6690\text{ eV}$ in $\omega\text{B97X-D3/def2-TZVP}$ ($\sim 45\,k_B T$ at $+173\ ^\circ\text{C}$, Boltzmann factors $3 \times 10^{-20}\text{ to }1.4 \times 10^{-19}$).
 2. **Triad Thermodynamics vs. Radical Chemisorption:** Closed-shell dehydrogenative fusion ($\text{C}_{30}\text{H}_{48} \to \text{C}_{30}\text{H}_{42} + 3\,\text{H}_2$, Model 1A) is endothermic ($+3.25\text{ to }+10.03\text{ eV}$), whereas radical chemisorption of 1-adamantyl on flat terrace $\{111\}$ is exothermic ($-1.809\text{ eV}$; $-1.716\text{ eV}$ on step).
-3. **Monolayer Self-Limitation at $+173\ ^\circ\text{C}$ (.15\text{ K}$):** Rapid sublimation ({\text{ML}} = 39.44\text{ ns}$) limits the precursor to a 2D adlayer.
-4. **VUV Brush Kinetics in Inverted Pyramid ($\text{Da}_{\text{DIET}} \ge 1$):** Synchronizing exposure with residence ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$) achieves $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ (\%\text{--}98\%$ fixation per pass) in a modular matrix of $ cavities.
-
+3. **Monolayer Self-Limitation at +173 °C (446.15 K):** Rapid sublimation ($t_{\text{ML}} = 39.44\text{ ns}$) limits the precursor to a 2D adlayer.
+4. **VUV Brush Kinetics in Inverted Pyramid ($\text{Da}_{\text{DIET}} \ge 1$):** Synchronizing exposure with residence ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$) achieves $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ ($95\%\text{--}98\%$ fixation per pass) in a modular matrix of $N_{\text{cav}} = 300$ cavities.
 ---
 
 Computational chemistry dataset, open-shell broken-symmetry DFT benchmark, and equivariant neural network audit scripts accompanying the pre-print:
