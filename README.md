@@ -1,7 +1,7 @@
 # Carbon Prions: Computational Chemistry Audits, Quantum Benchmarks & Epitaxial Reactor Modeling
 
 [![Pre-print I DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23427695.svg)](https://doi.org/10.5281/zenodo.23427695)
-[![Pre-print II DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23521740.svg)](https://doi.org/10.5281/zenodo.23521740)
+[![Pre-print II v2.0 (EN) DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24361567.svg)](https://doi.org/10.5281/zenodo.24361567)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ORCA](https://img.shields.io/badge/ORCA-6.1.1-blue.svg)](https://orcaforum.kofo.mpg.de/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-green.svg)](https://www.python.org/)
@@ -13,7 +13,7 @@ Computational chemistry datasets, open-shell broken-symmetry DFT benchmarks, and
 > **Project:** Project Tharos • Academic correspondence: sem-340007@utnay.edu.mx | keepwalk165@gmail.com  
 > **Official Pre-prints:**  
 > • **Part I (Dimerization):** [10.5281/zenodo.23427695](https://doi.org/10.5281/zenodo.23427695)  
-> • **Part II (Epitaxy & Reactor):** [10.5281/zenodo.23521740](https://doi.org/10.5281/zenodo.23521740)  
+> • **Part II (Epitaxy & Reactor — v2.0 English Edition):** [10.5281/zenodo.24361567](https://doi.org/10.5281/zenodo.24361567) (v1.0 Spanish Edition: [10.5281/zenodo.23521740](https://doi.org/10.5281/zenodo.23521740))  
 
 ---
 
@@ -29,7 +29,7 @@ Audited via 27 open-shell broken-symmetry calculations in **ORCA 6.1.1** (BS-UKS
 1. **Pore Steric Barrier (Datasets 3 and 4 in ORCA 6.1.1):** In the unbonded $\text{C}_{30}\text{H}_{48}$ triad ($r_{\text{pore}} = -0.13\text{ \AA}$), dense adiabatic scans locate the $\text{H}_2$ permeation barrier peak at $Z = +0.25\text{ \AA}$ with $+1.7256\text{ eV}$ (descending) and $+1.7146\text{ eV}$ (ascending) in B97-3c, and $+1.6690\text{ eV}$ in $\omega\text{B97X-D3/def2-TZVP}$ ($\sim 45\,k_B T$ at $+173\ ^\circ\text{C}$, Boltzmann factors $3 \times 10^{-20}\text{ to }1.4 \times 10^{-19}$).
 2. **Triad Thermodynamics vs. Radical Chemisorption:** Closed-shell dehydrogenative fusion ($\text{C}_{30}\text{H}_{48} \to \text{C}_{30}\text{H}_{42} + 3\,\text{H}_2$, Model 1A) is endothermic ($+3.25\text{ to }+10.03\text{ eV}$), whereas radical chemisorption of 1-adamantyl on flat terrace $\{111\}$ is exothermic ($-1.809\text{ eV}$; $-1.716\text{ eV}$ on step).
 3. **Monolayer Self-Limitation at +173 °C (446.15 K):** Rapid sublimation ($t_{\text{ML}} = 39.44\text{ ns}$) limits the precursor to a 2D adlayer.
-4. **VUV Brush Kinetics in Inverted Pyramid ($\text{Da}_{\text{DIET}} \ge 1$):** Synchronizing exposure with residence ($\tau_{\text{pulso}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$) achieves $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ ($95\%\text{--}98\%$ fixation per pass) in a modular matrix of $N_{\text{cav}} = 300$ cavities.
+4. **VUV Brush Kinetics in Inverted Pyramid ($\text{Da}_{\text{DIET}} \ge 1$):** Synchronizing exposure with residence ($\tau_{\text{pulse}} \equiv \tau_{\text{dwell}} = 13.59\ \mu\text{s}$) achieves $\text{Da}_{\text{DIET}} = 1.6\text{--}3.9$ ($80\%\text{--}98\%$ fixation per pass) in a modular matrix of $N_{\text{cav}} = 300$ cavities.
 ---
 
 Computational chemistry dataset, open-shell broken-symmetry DFT benchmark, and equivariant neural network audit scripts accompanying the pre-print:
@@ -96,10 +96,13 @@ carbon-prions-audit/
 │   ├── datos_crudos_pes_auditoria.csv
 │   └── resumen_metricas_auditoria.json
 │
-├── figures/                   # High-resolution publication plots
+├── figures/                   # High-resolution publication plots (Part I & Part II, ES & EN)
 │   ├── figura1_relaxed_pes_auditada.png
 │   ├── figura2_perfiles_homogeneizados_A_y_B.png
-│   └── figura2_reactor_tharos.png
+│   ├── figura2_reactor_tharos.png
+│   ├── fig1_thermodynamics_pore_barrier_173C_EN.png
+│   ├── fig2_diet_ebeam_vs_vuv_contrast_EN.png
+│   └── fig3_brush_kinetics_inverted_pyramid_EN.png
 │
 ├── geometries/                # Cartesian coordinates (.xyz)
 │   ├── monomer_adamantane_radical.xyz
@@ -115,9 +118,11 @@ carbon-prions-audit/
 │   ├── optB_*.inp / optB_*.out
 │   └── vdw_*.inp / vdw_*.out
 │
-├── manuscript/                # LaTeX manuscript sources (Official preprints hosted on Zenodo)
-│   ├── preprint_priones_de_carbono.tex    (Spanish LaTeX source)
-│   └── preprint_carbon_prions_EN.tex      (English LaTeX source)
+├── manuscript/                # LaTeX manuscript sources & compiled PDFs (Official preprints hosted on Zenodo)
+│   ├── preprint_priones_de_carbono.tex        (Part I — Spanish LaTeX source)
+│   ├── preprint_carbon_prions_EN.tex          (Part I — English LaTeX source)
+│   ├── preprint_II_priones_de_carbono_2026.*  (Part II v1.0 — Spanish TeX & PDF)
+│   └── preprint_II_carbon_prions_EN.*         (Part II v2.0 — English TeX & PDF)
 │
 └── scripts/                   # Simulation, orchestration, and analysis scripts
     ├── simulacion_paper1_priones_carbono.py  (Tier 1 MACE-MP-0 + D3 scan)
@@ -173,6 +178,21 @@ If you use this dataset, coordinates, or simulation scripts, please cite the per
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.23427695},
   url          = {https://doi.org/10.5281/zenodo.23427695}
+}
+
+@misc{rodriguez_garcia_2026_zenodo_24361567,
+  author       = {Rodríguez García, César Leonardo},
+  title        = {{Carbon Prions II: Theoretical, Quantum, and Kinetic Model of
+                   Monocrystalline Diamond Epitaxy at 173 °C via Monolayer
+                   Self-Limitation, DFT Audit of the C3 Triad, H2 Steric
+                   Exclusion, and Synchronized VUV Brush in Inverted Pyramid
+                   Geometry}},
+  month        = nov,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {2.0},
+  doi          = {10.5281/zenodo.24361567},
+  url          = {https://doi.org/10.5281/zenodo.24361567}
 }
 ```
 
